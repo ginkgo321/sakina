@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="it" data-theme="day">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sakina – recitazioni coraniche per la quiete</title>
+<meta name="description" content="Le 114 Sure in cinque voci, con sottofondo di natura, timer di spegnimento e ascolto senza rete.">
+<meta name="theme-color" content="#F1EDE2" id="meta-theme">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Sakina">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="icons/icon.svg">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a class="skip" href="#main">Vai al contenuto</a>
+
+<header class="top">
+  <a class="brand" href="./" aria-label="Sakina, torna all’inizio">
+    <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><path d="M6 28V14.5C6 8.7 10.5 4 16 4s10 4.7 10 10.5V28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="17" r="3" fill="var(--warm)"/></svg>
+    <span>Sakina</span>
+  </a>
+  <div class="top-actions">
+    <button class="icon-btn" id="btn-theme" type="button" aria-label="Passa al tema notte" aria-pressed="false">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+    </button>
+    <button class="icon-btn" id="btn-info" type="button" aria-label="Informazioni su Sakina" aria-haspopup="dialog">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 11v5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="7.8" r="1.1" fill="currentColor"/></svg>
+    </button>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <!-- Saluto: lo scrive js/app.js (nome salvato solo nel telefono) -->
+  <div class="greet-wrap">
+    <p class="greet" id="greet" aria-live="polite"></p>
+    <button class="linkbtn" id="greet-edit" type="button" hidden>Aggiungi il tuo nome</button>
+  </div>
+  <!-- Il lettore e l'elenco delle Sure li disegna js/recitazioni.js -->
+  <section class="view" id="v-recitazioni" aria-label="Recitazioni coraniche"></section>
+</main>
+
+<!-- Benvenuto: il nome si chiede una volta sola -->
+<div class="sheet" id="hello" role="dialog" aria-modal="true" aria-labelledby="hello-title" hidden>
+  <div class="sheet-card" id="hello-card" tabindex="-1">
+    <h2 id="hello-title">Benvenuta, benvenuto</h2>
+    <p>Come ti chiami? Il nome serve solo a salutarti: resta nel tuo telefono e non viene inviato a nessuno.</p>
+    <form id="hello-form">
+      <label class="visually-hidden" for="hello-name">Il tuo nome</label>
+      <input type="text" id="hello-name" maxlength="30" autocomplete="given-name" autocapitalize="words" placeholder="Il tuo nome">
+      <div class="sheet-actions">
+        <button class="btn" type="submit">Continua</button>
+        <button class="btn secondary" id="hello-skip" type="button">Non adesso</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Informazioni -->
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title" hidden>
+  <div class="sheet-card" id="sheet-card" tabindex="-1">
+    <h2 id="sheet-title">Su Sakina</h2>
+    <p>Sakina (<span lang="ar" dir="rtl" class="q-ar">سكينة</span>) è la quiete, la calma che scende. Qui si ascoltano le recitazioni del Corano in tradizione Hafs, con voci lente e distensive, adatte al riposo e all’ascolto di ogni giorno.</p>
+
+    <h3>Il tuo nome</h3>
+    <form class="name-form" id="name-form">
+      <label class="visually-hidden" for="name-input">Il tuo nome</label>
+      <input type="text" id="name-input" maxlength="30" autocomplete="given-name" autocapitalize="words" placeholder="Come ti chiami?">
+      <button class="btn secondary" type="submit">Salva</button>
+    </form>
+    <p class="hint" id="name-hint" role="status" aria-live="polite">Serve solo al saluto in cima alla pagina e resta nel tuo telefono.</p>
+
+    <h3>Come funziona</h3>
+    <ul>
+      <li>Le Sure si ascoltano subito, in streaming: all’installazione l’app non occupa spazio.</li>
+      <li>«Salva sul telefono» tiene una Sura nella memoria del telefono, per ascoltarla senza rete (non oltre 100 MB).</li>
+      <li>Il timer di spegnimento abbassa piano la voce e poi si ferma; «Alla fine» decide cosa succede quando la Sura termina.</li>
+      <li>Il sottofondo di natura è facoltativo e resta sempre più basso della voce. «Pareggia il volume» porta le voci allo stesso livello.</li>
+    </ul>
+
+    <h3>Da dove arriva l’audio</h3>
+    <p>Le recitazioni arrivano dal servizio pubblico e gratuito <a href="https://mp3quran.net" target="_blank" rel="noopener">MP3Quran</a>, che, come ogni sito, vede l’indirizzo del tuo dispositivo mentre ascolti. Sakina non raccoglie nessun dato: le tue scelte (voce, Sura, sottofondo) restano nel telefono.</p>
+    <p>Le registrazioni di natura (pioggia, mare, fiume) vengono da <a href="https://freesound.org" target="_blank" rel="noopener">Freesound</a>, licenza CC0: pioggia 392304, onde 578524, ruscello 730149.</p>
+
+    <h3>Un’altra app</h3>
+    <p>Sakina è nata dentro <a href="https://ginkgo321.github.io/bonaccia/">Bonaccia</a>, l’app di suoni, respiro ed esercizi per l’acufene, e da lì è stata separata.</p>
+
+    <p class="version" id="app-version"></p>
+    <div class="sheet-actions"><button class="btn" id="sheet-close" type="button">Chiudi</button></div>
+  </div>
+</div>
+
+<script src="js/version.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/recitazioni_data.js"></script>
+<script src="js/sure_info.js"></script>
+<script src="js/recitazioni_livelli.js"></script>
+<script src="js/recitazioni.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

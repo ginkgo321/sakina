@@ -1,0 +1,459 @@
+{
+ "_stile_extra": "Flat, front-facing view of the cover surface only, filling the whole square canvas edge to edge: no book spine, no page edges, no table or background, no shadow around. No writing of any kind.",
+ "1": {
+  "soggetto": "a closed ornate book resting on a stand beneath a radiant arch",
+  "copertina": "deep midnight navy"
+ },
+ "2": {
+  "soggetto": "a heifer in profile with sprigs of wheat",
+  "copertina": "deep forest green"
+ },
+ "3": {
+  "soggetto": "an arched doorway entwined with olive branches in a circular wreath",
+  "copertina": "dark burgundy"
+ },
+ "4": {
+  "soggetto": "two interlaced lilies resting on a small balance scale",
+  "copertina": "dark chocolate brown"
+ },
+ "5": {
+  "soggetto": "a laden table with dates, figs, bread and pomegranates",
+  "copertina": "deep teal"
+ },
+ "6": {
+  "soggetto": "a ram and a lamb grazing among wild flowers",
+  "copertina": "dark plum"
+ },
+ "7": {
+  "soggetto": "a high wall on a ridge between a green garden and a barren plain",
+  "copertina": "charcoal blue-grey"
+ },
+ "8": {
+  "soggetto": "an open chest of coins with crossed palm branches",
+  "copertina": "deep midnight navy"
+ },
+ "9": {
+  "soggetto": "a door opening onto a beam of light",
+  "copertina": "deep forest green"
+ },
+ "10": {
+  "soggetto": "a whale with a gourd plant, engraved in golden lines",
+  "copertina": "dark burgundy"
+ },
+ "11": {
+  "soggetto": "a lone acacia tree on a wind-swept dune",
+  "copertina": "dark chocolate brown"
+ },
+ "12": {
+  "soggetto": "a stone well with a rope beneath eleven small stars, a sun and a moon",
+  "copertina": "deep teal"
+ },
+ "13": {
+  "soggetto": "a storm cloud with a lightning bolt and falling raindrops",
+  "copertina": "dark plum"
+ },
+ "14": {
+  "soggetto": "a tree with deep visible roots and rising branches",
+  "copertina": "charcoal blue-grey"
+ },
+ "15": {
+  "soggetto": "a rock-carved facade in a rocky valley",
+  "copertina": "deep midnight navy"
+ },
+ "16": {
+  "soggetto": "a honeybee over a hexagonal honeycomb",
+  "copertina": "deep forest green"
+ },
+ "17": {
+  "soggetto": "a crescent moon above a starry sky and a luminous path between two domes",
+  "copertina": "dark burgundy"
+ },
+ "18": {
+  "soggetto": "a cave mouth with sunbeams and ferns",
+  "copertina": "dark chocolate brown"
+ },
+ "19": {
+  "soggetto": "a date palm with fruit beside a small spring",
+  "copertina": "deep teal"
+ },
+ "20": {
+  "soggetto": "a wooden staff and a small flame on a mountain slope",
+  "copertina": "dark plum"
+ },
+ "21": {
+  "soggetto": "a lantern with seven stars surrounded by olive branches",
+  "copertina": "charcoal blue-grey"
+ },
+ "22": {
+  "soggetto": "a camel on a road leading to a domed archway",
+  "copertina": "deep midnight navy"
+ },
+ "23": {
+  "soggetto": "a mihrab niche with sprigs of wheat and a crescent",
+  "copertina": "deep forest green"
+ },
+ "24": {
+  "soggetto": "a glass oil lamp in a niche with an olive tree",
+  "copertina": "dark burgundy"
+ },
+ "25": {
+  "soggetto": "a balance scale with a radiant star above",
+  "copertina": "dark chocolate brown"
+ },
+ "26": {
+  "soggetto": "a reed pen beside a rolled, tied scroll in the wind",
+  "copertina": "deep teal"
+ },
+ "27": {
+  "soggetto": "an ant carrying a grain on a leaf",
+  "copertina": "dark plum"
+ },
+ "28": {
+  "soggetto": "a small basket floating on river waves among reeds",
+  "copertina": "charcoal blue-grey"
+ },
+ "29": {
+  "soggetto": "a spider on an intricate web",
+  "copertina": "deep midnight navy"
+ },
+ "30": {
+  "soggetto": "a classical column with a laurel wreath and a rising sun",
+  "copertina": "deep forest green"
+ },
+ "31": {
+  "soggetto": "a mustard seed sprouting from a rock",
+  "copertina": "dark burgundy"
+ },
+ "32": {
+  "soggetto": "a prayer mat seen from above with a hanging lamp",
+  "copertina": "dark chocolate brown"
+ },
+ "33": {
+  "soggetto": "desert tents encircling a dug trench",
+  "copertina": "deep teal"
+ },
+ "34": {
+  "soggetto": "a dam with flowing water between two gardens",
+  "copertina": "dark plum"
+ },
+ "35": {
+  "soggetto": "a flock of birds rising toward a sunrise",
+  "copertina": "charcoal blue-grey"
+ },
+ "36": {
+  "soggetto": "a heart-shaped rosette of vines",
+  "copertina": "deep midnight navy"
+ },
+ "37": {
+  "soggetto": "rows of birds flying in tight formation",
+  "copertina": "deep forest green"
+ },
+ "38": {
+  "soggetto": "mountains at dawn with birds in flight",
+  "copertina": "dark burgundy"
+ },
+ "39": {
+  "soggetto": "two arched gates with flocks of doves",
+  "copertina": "dark chocolate brown"
+ },
+ "40": {
+  "soggetto": "an open lock with a large key and light",
+  "copertina": "deep teal"
+ },
+ "41": {
+  "soggetto": "a closed book with fine radiating lines of light",
+  "copertina": "dark plum"
+ },
+ "42": {
+  "soggetto": "a circle of seven lanterns around a central star",
+  "copertina": "charcoal blue-grey"
+ },
+ "43": {
+  "soggetto": "a golden necklace with geometric patterns",
+  "copertina": "deep midnight navy"
+ },
+ "44": {
+  "soggetto": "swirling smoke rising among stars",
+  "copertina": "deep forest green"
+ },
+ "45": {
+  "soggetto": "a bowed palm tree in a swirling wind",
+  "copertina": "dark burgundy"
+ },
+ "46": {
+  "soggetto": "sand dunes with wind ripples and a crescent",
+  "copertina": "dark chocolate brown"
+ },
+ "47": {
+  "soggetto": "a garden with streams of clear water",
+  "copertina": "deep teal"
+ },
+ "48": {
+  "soggetto": "an olive branch with a laurel wreath and a gate opening",
+  "copertina": "dark plum"
+ },
+ "49": {
+  "soggetto": "a small house facade with an arched window and a wall lantern",
+  "copertina": "charcoal blue-grey"
+ },
+ "50": {
+  "soggetto": "rain falling on a valley turning green",
+  "copertina": "deep midnight navy"
+ },
+ "51": {
+  "soggetto": "swirling wind lines carrying seeds and small clouds",
+  "copertina": "deep forest green"
+ },
+ "52": {
+  "soggetto": "a mountain peak with a rising star",
+  "copertina": "dark burgundy"
+ },
+ "53": {
+  "soggetto": "a single star setting with radiating lines",
+  "copertina": "dark chocolate brown"
+ },
+ "54": {
+  "soggetto": "a full moon split into two halves with radiance",
+  "copertina": "deep teal"
+ },
+ "55": {
+  "soggetto": "two pomegranates and a date palm with two streams",
+  "copertina": "dark plum"
+ },
+ "56": {
+  "soggetto": "an hourglass with falling sand and a star",
+  "copertina": "charcoal blue-grey"
+ },
+ "57": {
+  "soggetto": "an anvil with a hammer, iron ingots and sparks",
+  "copertina": "deep midnight navy"
+ },
+ "58": {
+  "soggetto": "two olive branches facing each other above a scale",
+  "copertina": "deep forest green"
+ },
+ "59": {
+  "soggetto": "a fortress wall with towers beside a palm grove",
+  "copertina": "dark burgundy"
+ },
+ "60": {
+  "soggetto": "a signet ring with a rosette seal",
+  "copertina": "dark chocolate brown"
+ },
+ "61": {
+  "soggetto": "a firm wall of regular bricks with a star",
+  "copertina": "deep teal"
+ },
+ "62": {
+  "soggetto": "mosque pulpit steps with a hanging lamp",
+  "copertina": "dark plum"
+ },
+ "63": {
+  "soggetto": "a cracked mirror beside a candle",
+  "copertina": "charcoal blue-grey"
+ },
+ "64": {
+  "soggetto": "a balance scale with coins and a fruit",
+  "copertina": "deep midnight navy"
+ },
+ "65": {
+  "soggetto": "a circle of moon phases",
+  "copertina": "deep forest green"
+ },
+ "66": {
+  "soggetto": "a honey jar with a honeycomb dipper",
+  "copertina": "dark burgundy"
+ },
+ "67": {
+  "soggetto": "seven nested arches under a starry canopy",
+  "copertina": "dark chocolate brown"
+ },
+ "68": {
+  "soggetto": "a reed pen and an inkwell, no writing",
+  "copertina": "deep teal"
+ },
+ "69": {
+  "soggetto": "a single beam of light piercing heavy clouds over a plain",
+  "copertina": "dark plum"
+ },
+ "70": {
+  "soggetto": "a stairway of light rising through clouds",
+  "copertina": "charcoal blue-grey"
+ },
+ "71": {
+  "soggetto": "a wooden ark on calm waves under a clearing sky",
+  "copertina": "deep midnight navy"
+ },
+ "72": {
+  "soggetto": "a flame inside an ornate lantern with swirling smokeless fire",
+  "copertina": "deep forest green"
+ },
+ "73": {
+  "soggetto": "a folded wool blanket beside a candle and a moon",
+  "copertina": "dark burgundy"
+ },
+ "74": {
+  "soggetto": "a draped mantle beneath a morning star",
+  "copertina": "dark chocolate brown"
+ },
+ "75": {
+  "soggetto": "a seed sprouting from dry earth under a rising sun",
+  "copertina": "deep teal"
+ },
+ "76": {
+  "soggetto": "a silver cup beside a spring with a ginger plant",
+  "copertina": "dark plum"
+ },
+ "77": {
+  "soggetto": "wind-swept clouds racing over a dark plain",
+  "copertina": "charcoal blue-grey"
+ },
+ "78": {
+  "soggetto": "a long horn over mountains at dawn",
+  "copertina": "deep midnight navy"
+ },
+ "79": {
+  "soggetto": "swift wind swirls with shooting stars",
+  "copertina": "deep forest green"
+ },
+ "80": {
+  "soggetto": "a lamp turning its light toward a sapling",
+  "copertina": "dark burgundy"
+ },
+ "81": {
+  "soggetto": "a dimmed sun with falling stars",
+  "copertina": "dark chocolate brown"
+ },
+ "82": {
+  "soggetto": "a cracked sky with scattered stars",
+  "copertina": "deep teal"
+ },
+ "83": {
+  "soggetto": "a scale with unequal pans",
+  "copertina": "dark plum"
+ },
+ "84": {
+  "soggetto": "a ribbon of light parting an opening sky",
+  "copertina": "charcoal blue-grey"
+ },
+ "85": {
+  "soggetto": "an arc of constellations in a star map",
+  "copertina": "deep midnight navy"
+ },
+ "86": {
+  "soggetto": "a bright star piercing the night",
+  "copertina": "deep forest green"
+ },
+ "87": {
+  "soggetto": "grass sprouting under a high sun",
+  "copertina": "dark burgundy"
+ },
+ "88": {
+  "soggetto": "a cool spring garden with arranged cushions",
+  "copertina": "dark chocolate brown"
+ },
+ "89": {
+  "soggetto": "a sunrise over the horizon with ten glowing rays",
+  "copertina": "deep teal"
+ },
+ "90": {
+  "soggetto": "a city gate on a hill with two paths",
+  "copertina": "dark plum"
+ },
+ "91": {
+  "soggetto": "a sun and a moon side by side",
+  "copertina": "charcoal blue-grey"
+ },
+ "92": {
+  "soggetto": "a half moon and a day and night disc",
+  "copertina": "deep midnight navy"
+ },
+ "93": {
+  "soggetto": "morning sun rays over a calm landscape",
+  "copertina": "deep forest green"
+ },
+ "94": {
+  "soggetto": "a blossom opening with a ray of light",
+  "copertina": "dark burgundy"
+ },
+ "95": {
+  "soggetto": "a fig and an olive branch crossed above a mountain",
+  "copertina": "dark chocolate brown"
+ },
+ "96": {
+  "soggetto": "a reed pen beside a blank glowing tablet",
+  "copertina": "deep teal"
+ },
+ "97": {
+  "soggetto": "a luminous night sky with descending beams of light",
+  "copertina": "dark plum"
+ },
+ "98": {
+  "soggetto": "a seal stamp beside a lamp",
+  "copertina": "charcoal blue-grey"
+ },
+ "99": {
+  "soggetto": "cracked earth with a tiny seed and a balance",
+  "copertina": "deep midnight navy"
+ },
+ "100": {
+  "soggetto": "a galloping horse with a cloud of dust",
+  "copertina": "deep forest green"
+ },
+ "101": {
+  "soggetto": "scattered moths around a soft light in the night",
+  "copertina": "dark burgundy"
+ },
+ "102": {
+  "soggetto": "heaps of coins beside a dry tree",
+  "copertina": "dark chocolate brown"
+ },
+ "103": {
+  "soggetto": "an hourglass above a setting sun",
+  "copertina": "deep teal"
+ },
+ "104": {
+  "soggetto": "a net filled with coins",
+  "copertina": "dark plum"
+ },
+ "105": {
+  "soggetto": "an elephant in an ornate cloth with birds in flight above",
+  "copertina": "charcoal blue-grey"
+ },
+ "106": {
+  "soggetto": "a caravan of camels on summer and winter paths",
+  "copertina": "deep midnight navy"
+ },
+ "107": {
+  "soggetto": "a simple bowl, a loaf and a pot",
+  "copertina": "deep forest green"
+ },
+ "108": {
+  "soggetto": "a flowing river with water lilies",
+  "copertina": "dark burgundy"
+ },
+ "109": {
+  "soggetto": "two diverging roads between a sun and a moon",
+  "copertina": "dark chocolate brown"
+ },
+ "110": {
+  "soggetto": "wide-open gates with a laurel wreath and a sunrise",
+  "copertina": "deep teal"
+ },
+ "111": {
+  "soggetto": "a twisted rope of palm fibre beside a flame",
+  "copertina": "dark plum"
+ },
+ "112": {
+  "soggetto": "a perfect single circle with a radiating point and a geometric star",
+  "copertina": "charcoal blue-grey"
+ },
+ "113": {
+  "soggetto": "dawn breaking through the night over a horizon",
+  "copertina": "deep midnight navy"
+ },
+ "114": {
+  "soggetto": "concentric circles forming a shield with a crescent",
+  "copertina": "deep forest green"
+ }
+}

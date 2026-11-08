@@ -6,7 +6,7 @@
 - **Saluto per nome**: finestra alla prima apertura (si può saltare), nome in `localStorage` (`sakina.nome`), modificabile da «Su Sakina»; saluto in quattro fasce orarie; il nome è sempre testo (mai HTML).
 - **Migrazione da Bonaccia** (stesso indirizzo): riprende `bonaccia.quran_settings` e sposta le Sure da `bonaccia-recitazioni-v1`.
 - **Mini descrizioni** delle 114 Sure + luogo (dove condiviso) in `js/sure_info.js`, generato da `tools/immagini/genera_dati.py`. Revisione Opus fatta e applicata (errori di fatto, citazioni tolte, soggetti senza strumenti musicali né scritte; luogo vuoto anche per 1, 97, 112, 113, 114).
-- **Immagini**: 64 su 114 pronte e riviste (tavola), `img/sure/` con ritaglio automatico del bordo di carta; le altre in generazione.
+- **Immagini**: tutte le 114 copertine pronte, riviste a occhio (tavole) e pubblicate in `img/sure/` (4,6 MB con le miniature; ritaglio automatico del bordo di carta). Rifatte con soggetto nuovo la 37, 54, 74 e 78.
 - **Consigli per momento della giornata** (`Sakina.Momenti`: mattino, pomeriggio, sera, notte) in cima all'elenco, nel rispetto delle Sure ammesse con la voce scelta; prova `momenti_del_giorno.mjs`.
 - **Prove**: dati_corrotti, saluto_e_immagini, migrazione, lettore_*, voci_e_protezione, schermi, offline 1 e 2: tutte ok (`tools/prove/LEGGIMI.md`; una alla volta).
 
@@ -17,11 +17,11 @@
 - Bonaccia: dilettafalcone ha solo lettura su `ginkgo321/bonaccia`, quindi la ripulitura di Bonaccia è solo locale (nessun push possibile finché non ha scrittura).
 
 ## Da fare
-- Finire le copertine mancanti: `python tools/immagini/genera_gcloud.py 1-114` (salta quelle presenti), poi `python tools/immagini/prepara.py`, tavola con `lotti.py tavola`, controllo a occhio, commit e push ogni ~10 Sure.
 - `python tools/aggiorna.py` prima di ogni push; prove una alla volta.
 - Ritarare `BG_REF.ruscello` (senza campanelli): vedi `docs/livelli_audio.md`.
-- Su iPhone vero: recitazione a schermo bloccato, timer di notte, comandi dalla schermata di blocco, aspetto di saluto e copertine.
-- Bonaccia: serve il permesso di scrittura su `ginkgo321/bonaccia` per pubblicare la ripulitura.
+- Su iPhone vero: recitazione a schermo bloccato, timer di notte, comandi dalla schermata di blocco, aspetto di saluto e copertine; peso delle immagini su rete mobile (si scaricano solo quelle viste: le miniature dell'elenco sono 1-3 KB, la copertina grande 30-70 KB).
+- Bonaccia: serve il permesso di scrittura su `ginkgo321/bonaccia` per pubblicare la ripulitura (i collegamenti a Sakina sono già pronti).
+- Se si vuole, togliere `docs/analisi_suoni.md` dalla cronologia pubblica (push forzato): chiedere all'utente.
 
 ## File toccati
 Tutta la cartella `sakina` (nuova) e, in `bonaccia`: `index.html`, `css/style.css`, `js/app.js`, `js/audio.js`, `js/content.js`, `sw.js`, `js/version.js`, docs, prove, `AGENTS.md`, `README.md`, `STATO.md`; cancellati `js/recitazioni*.js`, `tools/misura_recitazioni.py` e le prove del lettore.

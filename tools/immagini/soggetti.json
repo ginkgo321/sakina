@@ -1,459 +1,573 @@
 {
- "_stile_extra": "Flat, front-facing view of the cover surface only, filling the whole square canvas edge to edge: no book spine, no page edges, no table or background, no shadow around. No writing of any kind.",
+ "_stile": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: {PALETTE}. Subject: {SOGGETTO}, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork.",
  "1": {
   "soggetto": "a closed ornate book resting on a stand beneath a radiant arch",
-  "copertina": "deep midnight navy"
+  "tema": "alba",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep plum-indigo at the top through rose and soft apricot, with a luminous pale gold glow near the horizon. Subject: a closed ornate book resting on a stand beneath a radiant arch, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "2": {
   "soggetto": "a heifer in profile with sprigs of wheat",
-  "copertina": "deep forest green"
+  "tema": "deserto",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep violet-umber at the top through ochre and warm sand, with a pale apricot glow near the horizon. Subject: a heifer in profile with sprigs of wheat, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "3": {
   "soggetto": "an arched doorway entwined with olive branches in a circular wreath",
-  "copertina": "dark burgundy"
+  "tema": "giardino",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep emerald green at the top through dark teal, with a pale warm gold glow near the horizon. Subject: an arched doorway entwined with olive branches in a circular wreath, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "4": {
   "soggetto": "two interlaced lilies resting on a small balance scale",
-  "copertina": "dark chocolate brown"
+  "tema": "giardino",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep emerald green at the top through dark teal, with a pale warm gold glow near the horizon. Subject: two interlaced lilies resting on a small balance scale, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "5": {
   "soggetto": "a laden table with dates, figs, bread and pomegranates",
-  "copertina": "deep teal"
+  "tema": "giardino",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep emerald green at the top through dark teal, with a pale warm gold glow near the horizon. Subject: a laden table with dates, figs, bread and pomegranates, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "6": {
   "soggetto": "a ram and a lamb grazing among wild flowers",
-  "copertina": "dark plum"
+  "tema": "giardino",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep emerald green at the top through dark teal, with a pale warm gold glow near the horizon. Subject: a ram and a lamb grazing among wild flowers, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "7": {
   "soggetto": "a high wall on a ridge between a green garden and a barren plain",
-  "copertina": "charcoal blue-grey"
+  "tema": "montagna",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: slate blue-grey at the top through dusky lavender, with a pale silver glow near the horizon. Subject: a high wall on a ridge between a green garden and a barren plain, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "8": {
   "soggetto": "an open chest of coins with crossed palm branches",
-  "copertina": "deep midnight navy"
+  "tema": "deserto",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep violet-umber at the top through ochre and warm sand, with a pale apricot glow near the horizon. Subject: an open chest of coins with crossed palm branches, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "9": {
   "soggetto": "a door opening onto a beam of light",
-  "copertina": "deep forest green"
+  "tema": "alba",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep plum-indigo at the top through rose and soft apricot, with a luminous pale gold glow near the horizon. Subject: a door opening onto a beam of light, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "10": {
   "soggetto": "a whale with a gourd plant, engraved in golden lines",
-  "copertina": "dark burgundy"
+  "tema": "mare",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep navy at the top through turquoise-teal, with a pale sea-foam cream glow near the horizon. Subject: a whale with a gourd plant, engraved in golden lines, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "11": {
   "soggetto": "a lone acacia tree on a wind-swept dune",
-  "copertina": "dark chocolate brown"
+  "tema": "deserto",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep violet-umber at the top through ochre and warm sand, with a pale apricot glow near the horizon. Subject: a lone acacia tree on a wind-swept dune, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "12": {
   "soggetto": "a stone well with a rope beneath eleven small stars, a sun and a moon",
-  "copertina": "deep teal"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: a stone well with a rope beneath eleven small stars, a sun and a moon, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "13": {
   "soggetto": "a storm cloud with a lightning bolt and falling raindrops",
-  "copertina": "dark plum"
+  "tema": "montagna",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: slate blue-grey at the top through dusky lavender, with a pale silver glow near the horizon. Subject: a storm cloud with a lightning bolt and falling raindrops, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "14": {
   "soggetto": "a tree with deep visible roots and rising branches",
-  "copertina": "charcoal blue-grey"
+  "tema": "giardino",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep emerald green at the top through dark teal, with a pale warm gold glow near the horizon. Subject: a tree with deep visible roots and rising branches, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "15": {
   "soggetto": "a rock-carved facade in a rocky valley",
-  "copertina": "deep midnight navy"
+  "tema": "deserto",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep violet-umber at the top through ochre and warm sand, with a pale apricot glow near the horizon. Subject: a rock-carved facade in a rocky valley, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "16": {
   "soggetto": "a honeybee over a hexagonal honeycomb",
-  "copertina": "deep forest green"
+  "tema": "giardino",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep emerald green at the top through dark teal, with a pale warm gold glow near the horizon. Subject: a honeybee over a hexagonal honeycomb, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "17": {
   "soggetto": "a crescent moon above a starry sky and a luminous path between two domes",
-  "copertina": "dark burgundy"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: a crescent moon above a starry sky and a luminous path between two domes, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "18": {
   "soggetto": "a cave mouth with sunbeams and ferns",
-  "copertina": "dark chocolate brown"
+  "tema": "montagna",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: slate blue-grey at the top through dusky lavender, with a pale silver glow near the horizon. Subject: a cave mouth with sunbeams and ferns, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "19": {
   "soggetto": "a date palm with fruit beside a small spring",
-  "copertina": "deep teal"
+  "tema": "giardino",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep emerald green at the top through dark teal, with a pale warm gold glow near the horizon. Subject: a date palm with fruit beside a small spring, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "20": {
   "soggetto": "a wooden staff and a small flame on a mountain slope",
-  "copertina": "dark plum"
+  "tema": "montagna",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: slate blue-grey at the top through dusky lavender, with a pale silver glow near the horizon. Subject: a wooden staff and a small flame on a mountain slope, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "21": {
   "soggetto": "a lantern with seven stars surrounded by olive branches",
-  "copertina": "charcoal blue-grey"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: a lantern with seven stars surrounded by olive branches, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "22": {
   "soggetto": "a camel on a road leading to a domed archway",
-  "copertina": "deep midnight navy"
+  "tema": "deserto",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep violet-umber at the top through ochre and warm sand, with a pale apricot glow near the horizon. Subject: a camel on a road leading to a domed archway, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "23": {
   "soggetto": "a mihrab niche with sprigs of wheat and a crescent",
-  "copertina": "deep forest green"
+  "tema": "giardino",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep emerald green at the top through dark teal, with a pale warm gold glow near the horizon. Subject: a mihrab niche with sprigs of wheat and a crescent, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "24": {
   "soggetto": "a glass oil lamp in a niche with an olive tree",
-  "copertina": "dark burgundy"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: a glass oil lamp in a niche with an olive tree, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "25": {
   "soggetto": "a balance scale with a radiant star above",
-  "copertina": "dark chocolate brown"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: a balance scale with a radiant star above, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "26": {
   "soggetto": "a reed pen beside a rolled, tied scroll in the wind",
-  "copertina": "deep teal"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: a reed pen beside a rolled, tied scroll in the wind, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "27": {
   "soggetto": "an ant carrying a grain on a leaf",
-  "copertina": "dark plum"
+  "tema": "giardino",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep emerald green at the top through dark teal, with a pale warm gold glow near the horizon. Subject: an ant carrying a grain on a leaf, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "28": {
   "soggetto": "a small basket floating on river waves among reeds",
-  "copertina": "charcoal blue-grey"
+  "tema": "mare",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep navy at the top through turquoise-teal, with a pale sea-foam cream glow near the horizon. Subject: a small basket floating on river waves among reeds, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "29": {
   "soggetto": "a spider on an intricate web",
-  "copertina": "deep midnight navy"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: a spider on an intricate web, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "30": {
   "soggetto": "a classical column with a laurel wreath and a rising sun",
-  "copertina": "deep forest green"
+  "tema": "alba",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep plum-indigo at the top through rose and soft apricot, with a luminous pale gold glow near the horizon. Subject: a classical column with a laurel wreath and a rising sun, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "31": {
   "soggetto": "a mustard seed sprouting from a rock",
-  "copertina": "dark burgundy"
+  "tema": "giardino",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep emerald green at the top through dark teal, with a pale warm gold glow near the horizon. Subject: a mustard seed sprouting from a rock, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "32": {
   "soggetto": "a prayer mat seen from above with a hanging lamp",
-  "copertina": "dark chocolate brown"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: a prayer mat seen from above with a hanging lamp, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "33": {
   "soggetto": "desert tents encircling a dug trench",
-  "copertina": "deep teal"
+  "tema": "deserto",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep violet-umber at the top through ochre and warm sand, with a pale apricot glow near the horizon. Subject: desert tents encircling a dug trench, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "34": {
   "soggetto": "a dam with flowing water between two gardens",
-  "copertina": "dark plum"
+  "tema": "giardino",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep emerald green at the top through dark teal, with a pale warm gold glow near the horizon. Subject: a dam with flowing water between two gardens, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "35": {
   "soggetto": "a flock of birds rising toward a sunrise",
-  "copertina": "charcoal blue-grey"
+  "tema": "alba",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep plum-indigo at the top through rose and soft apricot, with a luminous pale gold glow near the horizon. Subject: a flock of birds rising toward a sunrise, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "36": {
   "soggetto": "a heart-shaped rosette of vines",
-  "copertina": "deep midnight navy"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: a heart-shaped rosette of vines, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "37": {
   "soggetto": "rows of birds flying in tight formation",
-  "copertina": "deep forest green"
+  "tema": "alba",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep plum-indigo at the top through rose and soft apricot, with a luminous pale gold glow near the horizon. Subject: rows of birds flying in tight formation, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "38": {
   "soggetto": "mountains at dawn with birds in flight",
-  "copertina": "dark burgundy"
+  "tema": "montagna",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: slate blue-grey at the top through dusky lavender, with a pale silver glow near the horizon. Subject: mountains at dawn with birds in flight, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "39": {
   "soggetto": "two arched gates with flocks of doves",
-  "copertina": "dark chocolate brown"
+  "tema": "alba",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep plum-indigo at the top through rose and soft apricot, with a luminous pale gold glow near the horizon. Subject: two arched gates with flocks of doves, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "40": {
   "soggetto": "an open lock with a large key and light",
-  "copertina": "deep teal"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: an open lock with a large key and light, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "41": {
   "soggetto": "a closed book with fine radiating lines of light",
-  "copertina": "dark plum"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: a closed book with fine radiating lines of light, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "42": {
   "soggetto": "a circle of seven lanterns around a central star",
-  "copertina": "charcoal blue-grey"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: a circle of seven lanterns around a central star, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "43": {
   "soggetto": "a golden necklace with geometric patterns",
-  "copertina": "deep midnight navy"
+  "tema": "deserto",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep violet-umber at the top through ochre and warm sand, with a pale apricot glow near the horizon. Subject: a golden necklace with geometric patterns, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "44": {
   "soggetto": "swirling smoke rising among stars",
-  "copertina": "deep forest green"
+  "tema": "giudizio",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep aubergine at the top through dark indigo, with a pale amber glow near the horizon (solemn but calm). Subject: swirling smoke rising among stars, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "45": {
   "soggetto": "a bowed palm tree in a swirling wind",
-  "copertina": "dark burgundy"
+  "tema": "deserto",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep violet-umber at the top through ochre and warm sand, with a pale apricot glow near the horizon. Subject: a bowed palm tree in a swirling wind, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "46": {
   "soggetto": "sand dunes with wind ripples and a crescent",
-  "copertina": "dark chocolate brown"
+  "tema": "deserto",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep violet-umber at the top through ochre and warm sand, with a pale apricot glow near the horizon. Subject: sand dunes with wind ripples and a crescent, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "47": {
   "soggetto": "a garden with streams of clear water",
-  "copertina": "deep teal"
+  "tema": "giardino",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep emerald green at the top through dark teal, with a pale warm gold glow near the horizon. Subject: a garden with streams of clear water, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "48": {
   "soggetto": "an olive branch with a laurel wreath and a gate opening",
-  "copertina": "dark plum"
+  "tema": "alba",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep plum-indigo at the top through rose and soft apricot, with a luminous pale gold glow near the horizon. Subject: an olive branch with a laurel wreath and a gate opening, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "49": {
   "soggetto": "a small house facade with an arched window and a wall lantern",
-  "copertina": "charcoal blue-grey"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: a small house facade with an arched window and a wall lantern, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "50": {
   "soggetto": "rain falling on a valley turning green",
-  "copertina": "deep midnight navy"
+  "tema": "giardino",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep emerald green at the top through dark teal, with a pale warm gold glow near the horizon. Subject: rain falling on a valley turning green, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "51": {
   "soggetto": "swirling wind lines carrying seeds and small clouds",
-  "copertina": "deep forest green"
+  "tema": "montagna",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: slate blue-grey at the top through dusky lavender, with a pale silver glow near the horizon. Subject: swirling wind lines carrying seeds and small clouds, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "52": {
   "soggetto": "a mountain peak with a rising star",
-  "copertina": "dark burgundy"
+  "tema": "montagna",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: slate blue-grey at the top through dusky lavender, with a pale silver glow near the horizon. Subject: a mountain peak with a rising star, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "53": {
   "soggetto": "a single star setting with radiating lines",
-  "copertina": "dark chocolate brown"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: a single star setting with radiating lines, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "54": {
   "soggetto": "a full moon split into two halves with radiance",
-  "copertina": "deep teal"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: a full moon split into two halves with radiance, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "55": {
   "soggetto": "two pomegranates and a date palm with two streams",
-  "copertina": "dark plum"
+  "tema": "giardino",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep emerald green at the top through dark teal, with a pale warm gold glow near the horizon. Subject: two pomegranates and a date palm with two streams, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "56": {
   "soggetto": "an hourglass with falling sand and a star",
-  "copertina": "charcoal blue-grey"
+  "tema": "giudizio",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep aubergine at the top through dark indigo, with a pale amber glow near the horizon (solemn but calm). Subject: an hourglass with falling sand and a star, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "57": {
   "soggetto": "an anvil with a hammer, iron ingots and sparks",
-  "copertina": "deep midnight navy"
+  "tema": "montagna",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: slate blue-grey at the top through dusky lavender, with a pale silver glow near the horizon. Subject: an anvil with a hammer, iron ingots and sparks, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "58": {
   "soggetto": "two olive branches facing each other above a scale",
-  "copertina": "deep forest green"
+  "tema": "giardino",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep emerald green at the top through dark teal, with a pale warm gold glow near the horizon. Subject: two olive branches facing each other above a scale, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "59": {
   "soggetto": "a fortress wall with towers beside a palm grove",
-  "copertina": "dark burgundy"
+  "tema": "deserto",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep violet-umber at the top through ochre and warm sand, with a pale apricot glow near the horizon. Subject: a fortress wall with towers beside a palm grove, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "60": {
   "soggetto": "a signet ring with a rosette seal",
-  "copertina": "dark chocolate brown"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: a signet ring with a rosette seal, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "61": {
   "soggetto": "a firm wall of regular bricks with a star",
-  "copertina": "deep teal"
+  "tema": "montagna",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: slate blue-grey at the top through dusky lavender, with a pale silver glow near the horizon. Subject: a firm wall of regular bricks with a star, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "62": {
   "soggetto": "mosque pulpit steps with a hanging lamp",
-  "copertina": "dark plum"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: mosque pulpit steps with a hanging lamp, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "63": {
   "soggetto": "a cracked mirror beside a candle",
-  "copertina": "charcoal blue-grey"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: a cracked mirror beside a candle, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "64": {
   "soggetto": "a balance scale with coins and a fruit",
-  "copertina": "deep midnight navy"
+  "tema": "deserto",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep violet-umber at the top through ochre and warm sand, with a pale apricot glow near the horizon. Subject: a balance scale with coins and a fruit, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "65": {
   "soggetto": "a circle of moon phases",
-  "copertina": "deep forest green"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: a circle of moon phases, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "66": {
   "soggetto": "a honey jar with a honeycomb dipper",
-  "copertina": "dark burgundy"
+  "tema": "deserto",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep violet-umber at the top through ochre and warm sand, with a pale apricot glow near the horizon. Subject: a honey jar with a honeycomb dipper, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "67": {
   "soggetto": "seven nested arches under a starry canopy",
-  "copertina": "dark chocolate brown"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: seven nested arches under a starry canopy, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "68": {
   "soggetto": "a reed pen and an inkwell, no writing",
-  "copertina": "deep teal"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: a reed pen and an inkwell, no writing, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "69": {
   "soggetto": "a single beam of light piercing heavy clouds over a plain",
-  "copertina": "dark plum"
+  "tema": "giudizio",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep aubergine at the top through dark indigo, with a pale amber glow near the horizon (solemn but calm). Subject: a single beam of light piercing heavy clouds over a plain, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "70": {
   "soggetto": "a stairway of light rising through clouds",
-  "copertina": "charcoal blue-grey"
+  "tema": "alba",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep plum-indigo at the top through rose and soft apricot, with a luminous pale gold glow near the horizon. Subject: a stairway of light rising through clouds, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "71": {
   "soggetto": "a wooden ark on calm waves under a clearing sky",
-  "copertina": "deep midnight navy"
+  "tema": "mare",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep navy at the top through turquoise-teal, with a pale sea-foam cream glow near the horizon. Subject: a wooden ark on calm waves under a clearing sky, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "72": {
   "soggetto": "a flame inside an ornate lantern with swirling smokeless fire",
-  "copertina": "deep forest green"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: a flame inside an ornate lantern with swirling smokeless fire, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "73": {
   "soggetto": "a folded wool blanket beside a candle and a moon",
-  "copertina": "dark burgundy"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: a folded wool blanket beside a candle and a moon, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "74": {
   "soggetto": "a draped mantle beneath a morning star",
-  "copertina": "dark chocolate brown"
+  "tema": "alba",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep plum-indigo at the top through rose and soft apricot, with a luminous pale gold glow near the horizon. Subject: a draped mantle beneath a morning star, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "75": {
   "soggetto": "a seed sprouting from dry earth under a rising sun",
-  "copertina": "deep teal"
+  "tema": "alba",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep plum-indigo at the top through rose and soft apricot, with a luminous pale gold glow near the horizon. Subject: a seed sprouting from dry earth under a rising sun, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "76": {
   "soggetto": "a silver cup beside a spring with a ginger plant",
-  "copertina": "dark plum"
+  "tema": "giardino",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep emerald green at the top through dark teal, with a pale warm gold glow near the horizon. Subject: a silver cup beside a spring with a ginger plant, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "77": {
   "soggetto": "wind-swept clouds racing over a dark plain",
-  "copertina": "charcoal blue-grey"
+  "tema": "giudizio",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep aubergine at the top through dark indigo, with a pale amber glow near the horizon (solemn but calm). Subject: wind-swept clouds racing over a dark plain, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "78": {
   "soggetto": "a long horn over mountains at dawn",
-  "copertina": "deep midnight navy"
+  "tema": "alba",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep plum-indigo at the top through rose and soft apricot, with a luminous pale gold glow near the horizon. Subject: a long horn over mountains at dawn, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "79": {
   "soggetto": "swift wind swirls with shooting stars",
-  "copertina": "deep forest green"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: swift wind swirls with shooting stars, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "80": {
   "soggetto": "a lamp turning its light toward a sapling",
-  "copertina": "dark burgundy"
+  "tema": "giardino",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep emerald green at the top through dark teal, with a pale warm gold glow near the horizon. Subject: a lamp turning its light toward a sapling, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "81": {
   "soggetto": "a dimmed sun with falling stars",
-  "copertina": "dark chocolate brown"
+  "tema": "giudizio",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep aubergine at the top through dark indigo, with a pale amber glow near the horizon (solemn but calm). Subject: a dimmed sun with falling stars, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "82": {
   "soggetto": "a cracked sky with scattered stars",
-  "copertina": "deep teal"
+  "tema": "giudizio",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep aubergine at the top through dark indigo, with a pale amber glow near the horizon (solemn but calm). Subject: a cracked sky with scattered stars, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "83": {
   "soggetto": "a scale with unequal pans",
-  "copertina": "dark plum"
+  "tema": "deserto",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep violet-umber at the top through ochre and warm sand, with a pale apricot glow near the horizon. Subject: a scale with unequal pans, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "84": {
   "soggetto": "a ribbon of light parting an opening sky",
-  "copertina": "charcoal blue-grey"
+  "tema": "alba",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep plum-indigo at the top through rose and soft apricot, with a luminous pale gold glow near the horizon. Subject: a ribbon of light parting an opening sky, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "85": {
   "soggetto": "an arc of constellations in a star map",
-  "copertina": "deep midnight navy"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: an arc of constellations in a star map, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "86": {
   "soggetto": "a bright star piercing the night",
-  "copertina": "deep forest green"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: a bright star piercing the night, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "87": {
   "soggetto": "grass sprouting under a high sun",
-  "copertina": "dark burgundy"
+  "tema": "alba",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep plum-indigo at the top through rose and soft apricot, with a luminous pale gold glow near the horizon. Subject: grass sprouting under a high sun, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "88": {
   "soggetto": "a cool spring garden with arranged cushions",
-  "copertina": "dark chocolate brown"
+  "tema": "giardino",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep emerald green at the top through dark teal, with a pale warm gold glow near the horizon. Subject: a cool spring garden with arranged cushions, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "89": {
   "soggetto": "a sunrise over the horizon with ten glowing rays",
-  "copertina": "deep teal"
+  "tema": "alba",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep plum-indigo at the top through rose and soft apricot, with a luminous pale gold glow near the horizon. Subject: a sunrise over the horizon with ten glowing rays, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "90": {
   "soggetto": "a city gate on a hill with two paths",
-  "copertina": "dark plum"
+  "tema": "deserto",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep violet-umber at the top through ochre and warm sand, with a pale apricot glow near the horizon. Subject: a city gate on a hill with two paths, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "91": {
   "soggetto": "a sun and a moon side by side",
-  "copertina": "charcoal blue-grey"
+  "tema": "alba",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep plum-indigo at the top through rose and soft apricot, with a luminous pale gold glow near the horizon. Subject: a sun and a moon side by side, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "92": {
   "soggetto": "a half moon and a day and night disc",
-  "copertina": "deep midnight navy"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: a half moon and a day and night disc, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "93": {
   "soggetto": "morning sun rays over a calm landscape",
-  "copertina": "deep forest green"
+  "tema": "alba",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep plum-indigo at the top through rose and soft apricot, with a luminous pale gold glow near the horizon. Subject: morning sun rays over a calm landscape, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "94": {
   "soggetto": "a blossom opening with a ray of light",
-  "copertina": "dark burgundy"
+  "tema": "alba",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep plum-indigo at the top through rose and soft apricot, with a luminous pale gold glow near the horizon. Subject: a blossom opening with a ray of light, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "95": {
   "soggetto": "a fig and an olive branch crossed above a mountain",
-  "copertina": "dark chocolate brown"
+  "tema": "giardino",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep emerald green at the top through dark teal, with a pale warm gold glow near the horizon. Subject: a fig and an olive branch crossed above a mountain, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "96": {
   "soggetto": "a reed pen beside a blank glowing tablet",
-  "copertina": "deep teal"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: a reed pen beside a blank glowing tablet, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "97": {
   "soggetto": "a luminous night sky with descending beams of light",
-  "copertina": "dark plum"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: a luminous night sky with descending beams of light, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "98": {
   "soggetto": "a seal stamp beside a lamp",
-  "copertina": "charcoal blue-grey"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: a seal stamp beside a lamp, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "99": {
   "soggetto": "cracked earth with a tiny seed and a balance",
-  "copertina": "deep midnight navy"
+  "tema": "deserto",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep violet-umber at the top through ochre and warm sand, with a pale apricot glow near the horizon. Subject: cracked earth with a tiny seed and a balance, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "100": {
   "soggetto": "a galloping horse with a cloud of dust",
-  "copertina": "deep forest green"
+  "tema": "deserto",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep violet-umber at the top through ochre and warm sand, with a pale apricot glow near the horizon. Subject: a galloping horse with a cloud of dust, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "101": {
   "soggetto": "scattered moths around a soft light in the night",
-  "copertina": "dark burgundy"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: scattered moths around a soft light in the night, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "102": {
   "soggetto": "heaps of coins beside a dry tree",
-  "copertina": "dark chocolate brown"
+  "tema": "deserto",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep violet-umber at the top through ochre and warm sand, with a pale apricot glow near the horizon. Subject: heaps of coins beside a dry tree, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "103": {
   "soggetto": "an hourglass above a setting sun",
-  "copertina": "deep teal"
+  "tema": "deserto",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep violet-umber at the top through ochre and warm sand, with a pale apricot glow near the horizon. Subject: an hourglass above a setting sun, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "104": {
   "soggetto": "a net filled with coins",
-  "copertina": "dark plum"
+  "tema": "deserto",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep violet-umber at the top through ochre and warm sand, with a pale apricot glow near the horizon. Subject: a net filled with coins, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "105": {
   "soggetto": "an elephant in an ornate cloth with birds in flight above",
-  "copertina": "charcoal blue-grey"
+  "tema": "deserto",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep violet-umber at the top through ochre and warm sand, with a pale apricot glow near the horizon. Subject: an elephant in an ornate cloth with birds in flight above, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "106": {
   "soggetto": "a caravan of camels on summer and winter paths",
-  "copertina": "deep midnight navy"
+  "tema": "deserto",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep violet-umber at the top through ochre and warm sand, with a pale apricot glow near the horizon. Subject: a caravan of camels on summer and winter paths, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "107": {
   "soggetto": "a simple bowl, a loaf and a pot",
-  "copertina": "deep forest green"
+  "tema": "deserto",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep violet-umber at the top through ochre and warm sand, with a pale apricot glow near the horizon. Subject: a simple bowl, a loaf and a pot, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "108": {
   "soggetto": "a flowing river with water lilies",
-  "copertina": "dark burgundy"
+  "tema": "mare",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep navy at the top through turquoise-teal, with a pale sea-foam cream glow near the horizon. Subject: a flowing river with water lilies, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "109": {
   "soggetto": "two diverging roads between a sun and a moon",
-  "copertina": "dark chocolate brown"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: two diverging roads between a sun and a moon, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "110": {
   "soggetto": "wide-open gates with a laurel wreath and a sunrise",
-  "copertina": "deep teal"
+  "tema": "alba",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep plum-indigo at the top through rose and soft apricot, with a luminous pale gold glow near the horizon. Subject: wide-open gates with a laurel wreath and a sunrise, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "111": {
   "soggetto": "a twisted rope of palm fibre beside a flame",
-  "copertina": "dark plum"
+  "tema": "giudizio",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep aubergine at the top through dark indigo, with a pale amber glow near the horizon (solemn but calm). Subject: a twisted rope of palm fibre beside a flame, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "112": {
   "soggetto": "a perfect single circle with a radiating point and a geometric star",
-  "copertina": "charcoal blue-grey"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: a perfect single circle with a radiating point and a geometric star, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "113": {
   "soggetto": "dawn breaking through the night over a horizon",
-  "copertina": "deep midnight navy"
+  "tema": "alba",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep plum-indigo at the top through rose and soft apricot, with a luminous pale gold glow near the horizon. Subject: dawn breaking through the night over a horizon, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  },
  "114": {
   "soggetto": "concentric circles forming a shield with a crescent",
-  "copertina": "deep forest green"
+  "tema": "notte",
+  "prompt": "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. Soft blended washes: deep indigo at the top through midnight teal, with a pale pearl glow near the horizon. Subject: concentric circles forming a shield with a crescent, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; outside the circle the same wash colours continue to the edges of the paper. Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
  }
 }

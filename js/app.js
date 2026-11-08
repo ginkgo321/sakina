@@ -83,20 +83,14 @@
 
   /* Saluto secondo l'ora: mattina, pomeriggio, sera, notte. */
   function greetingWord(d) {
-    var h = (d || new Date()).getHours();
-    if (h >= 5 && h < 12) return 'Buongiorno';
-    if (h >= 12 && h < 18) return 'Buon pomeriggio';
-    if (h >= 18 && h < 22) return 'Buonasera';
-    return 'Buonanotte';
+    return { mattino: 'Buongiorno', pomeriggio: 'Buon pomeriggio', sera: 'Buonasera', notte: 'Buonanotte' }[S.dayPart(d)];
   }
   S.greetingWord = greetingWord;   // esposta per le prove
   function renderGreeting() {
-    var name = getName(), g = $('#greet'), b = $('#greet-edit');
-    g.textContent = greetingWord() + (name ? ', ' + name : '');   // textContent: il nome non è mai interpretato come HTML
-    b.textContent = name ? 'Cambia il nome' : 'Aggiungi il tuo nome';
-    b.hidden = false;
+    var name = getName();
+    $('#greet').textContent = greetingWord() + (name ? ', ' + name : '');   // textContent: il nome non è mai interpretato come HTML
+    if (S.QuranPlayer && S.QuranPlayer.refreshMoment) S.QuranPlayer.refreshMoment();   // cambia fascia oraria: cambiano le proposte
   }
-  $('#greet-edit').addEventListener('click', function () { $('#hello-name').value = getName(); openDialog(hello, $('#hello-card'), $('#hello-name')); });
   function skipHello() {
     try { localStorage.setItem('sakina.nome_chiesto', '1'); } catch (e) {}
     closeDialog();

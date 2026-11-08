@@ -112,6 +112,13 @@
 
   /* Immagine, luogo e mini descrizione di ogni Sura (js/sure_info.js, immagini in img/sure/). Se manca un'immagine, la scheda resta com'è. */
   var SI = B.SureInfo || {};
+  var MOM = B.Momenti || {};
+  /* Momento della giornata (le stesse fasce del saluto): mattino 5-12, pomeriggio 12-18, sera 18-22, notte 22-5. */
+  function dayPart(d) {
+    var h = (d || new Date()).getHours();
+    return h >= 5 && h < 12 ? 'mattino' : (h >= 12 && h < 18 ? 'pomeriggio' : (h >= 18 && h < 22 ? 'sera' : 'notte'));
+  }
+  B.dayPart = dayPart;
   function coverUrl(s) { return 'img/sure/' + s.pad + '.webp'; }
   function thumbHtml(s) {
     return '<span class="q-th"><span class="q-badge-num">' + s.n + '</span><img class="q-thumb" src="img/sure/t/' + s.pad + '.webp" alt="" width="52" height="52" loading="lazy" decoding="async"></span>';
@@ -651,7 +658,6 @@
 
     var html = '' +
       '<h1>Recitazioni coraniche</h1>' +
-      '<p class="lede">Tradizione <strong>Hafs</strong>: recitazione lenta e distensiva, adatta al riposo.</p>' +
 
       '<!-- Scelta della voce -->' +
       '<div class="q-reciter-chips" role="radiogroup" aria-label="Seleziona il recitatore">' +
@@ -663,6 +669,8 @@
 
       '<!-- Player attivo -->' +
       '<div class="panel q-player-card" id="q-player-box"></div>' +
+
+      '<div id="q-moment"></div>' +
 
       '<!-- Consigliate per la notte -->' +
       '<h2 id="q-rec-title">⭐ Consigliate per il riposo</h2>' +
@@ -708,6 +716,7 @@
         rChips.forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-reciter') === rId); });
         updateCacheIndex();
         renderPlayerCard();
+        renderMoment(true);
         renderRecommended();
         renderAllSurahs();
         if (wasPlaying && keep) playSurah(state.surah);      // se la Sura non esiste con questa voce resta in pausa: non parte mai una Sura che non hai scelto tu
@@ -725,6 +734,7 @@
     }
 
     renderPlayerCard();
+    renderMoment(true);
     renderRecommended();
     renderAllSurahs();
     updateCacheIndex();
@@ -892,6 +902,34 @@
     }
   }
 
+  /* Proposte per il momento della giornata: solo Sure che esistono con la voce scelta (selezione protetta rispettata). */
+  var lastBand = '';
+  function renderMoment(force) {
+    var box = document.getElementById('q-moment');
+    if (!box) return;
+    var band = dayPart();
+    if (!force && band === lastBand) return;
+    lastBand = band;
+    var m = MOM[band];
+    var list = m ? m.sure.filter(function (n) { return isAllowed(state.reciter, n); }).slice(0, 4) : [];
+    if (!list.length) { box.innerHTML = ''; return; }
+    var html = '<h2>' + m.titolo + '</h2><p class="sub">' + m.testo + '</p><div class="list" id="q-moment-list">';
+    list.forEach(function (n) {
+      var s = getSurah(n), isCur = state.surah === s.n, isPl = isCur && state.playing;
+      var isSaved = !!state.cachedUrls[getAudioUrl(state.reciter, s.pad)];
+      html += '' +
+        '<div class="session-item q-item' + (isCur ? ' active' : '') + '" data-surah="' + s.n + '">' +
+          '<div class="session-main"><div class="session-meta">' + thumbHtml(s) +
+            '<div><strong>' + s.nome + ' <span class="q-ar">' + s.ar + '</span></strong>' +
+            '<small class="sub">' + s.trad + (isSaved ? ' · <span style="color:var(--deep)">✓ Offline</span>' : '') + '</small></div>' +
+          '</div></div>' +
+          '<button type="button" class="btn secondary piccolo q-play-item-btn" data-play-surah="' + s.n + '">' + (isPl ? 'Pausa' : 'Ascolta') + '</button>' +
+        '</div>';
+    });
+    box.innerHTML = html + '</div>';
+    bindListEvents(box);
+  }
+
   function renderRecommended() {
     var list = document.getElementById('q-recommended-list');
     if (!list) return;
@@ -1045,6 +1083,7 @@
     _debugSleep: function (sec) { sleepClear(); state.sleepMin = 1; state.sleepEnd = Date.now() + sec * 1000; sleepIv = setInterval(sleepTick, 1000); sleepLabel(); },
     _debugState: function () { return { surah: state.surah, playing: state.playing, loading: state.loading, scrub: state.scrub, endMode: state.endMode, fading: fading, sleepMin: state.sleepMin, paused: audioEl.paused, src: (audioEl.getAttribute('src') || '').slice(-7), reciter: state.reciter, time: audioEl.currentTime }; },
     _debug: function () { return { audioEl: audioEl === elRouted ? 'routed' : 'plain', routedFailed: routedFailed, master: bgMaster(), gain: levelDb(state.reciter, state.surah) }; },
+    refreshMoment: function () { renderMoment(false); },
     init: function () {
       renderView();
       migrateOldCache().then(updateCacheIndex);

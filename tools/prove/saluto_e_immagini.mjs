@@ -34,15 +34,18 @@ prova('senza dati la finestra ricompare', (await vis('hello')) === true);
 await ev(`document.getElementById('hello-skip').click()`); await sleep(200);
 await ricarica('');
 prova('dopo «Non adesso» non viene richiesto di nuovo', (await vis('hello')) === false);
-prova('il tasto «Aggiungi il tuo nome» resta disponibile', /Aggiungi/.test(await ev(`document.getElementById('greet-edit').textContent`)));
+prova('nella schermata principale non ci sono tasti per cambiare il nome', (await ev(`document.getElementById('greet-edit')`)) === null);
+prova('la frase «Tradizione Hafs…» è sparita', !(await ev(`document.body.innerText`)).includes('adatta al riposo'));
 // 5. saluto secondo l'ora
 const ore = await ev(`[3, 4, 5, 8, 11, 12, 15, 17, 18, 21, 22, 23].map(h => Sakina.greetingWord(new Date(2026, 10, 8, h, 30)))`);
 prova('le fasce orarie del saluto (5, 12, 18 e 22)', J(ore) === J(['Buonanotte', 'Buonanotte', 'Buongiorno', 'Buongiorno', 'Buongiorno', 'Buon pomeriggio', 'Buon pomeriggio', 'Buon pomeriggio', 'Buonasera', 'Buonasera', 'Buonanotte', 'Buonanotte']), J(ore));
 // 6. immagini: se manca il file la scheda non resta con un buco
+await b.send('Network.setBlockedURLs', { urls: ['*img/sure/004.webp'] });   // come se il file non esistesse
 await ev(`localStorage.setItem('sakina.settings', JSON.stringify({ reciter: 'minshawi', surah: 4 }))`); await ricarica('');
 await sleep(800);
 const im = await ev(`({ cover: document.querySelector('.q-cover') && document.querySelector('.q-cover').hidden, desc: (document.querySelector('.q-desc') || {}).textContent || '' })`);
-prova('Sura senza immagine: la copertina sparisce, la descrizione resta', im.cover === true && im.desc.length > 40, J(im));
+prova('Sura con immagine non raggiungibile: la copertina sparisce, la descrizione resta', im.cover === true && im.desc.length > 40, J(im));
+await b.send('Network.setBlockedURLs', { urls: [] });
 await ev(`localStorage.setItem('sakina.settings', JSON.stringify({ reciter: 'minshawi', surah: 2 }))`); await ricarica('');
 await sleep(800);
 const im2 = await ev(`(() => { const i = document.querySelector('.q-cover-img'); return { vis: !document.querySelector('.q-cover').hidden, ok: i.complete && i.naturalWidth === 480 }; })()`);

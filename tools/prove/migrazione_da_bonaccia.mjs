@@ -2,7 +2,7 @@ import { avvia, sleep, J } from './harness.mjs';
 const b = await avvia(9396);
 const { ev, vai, ricarica, prova, T } = b;
 await vai('');
-// come se la paziente avesse salvato una Sura quando le recitazioni stavano in Bonaccia (stesso indirizzo, stessa memoria)
+// come se un utente avesse salvato una Sura quando le recitazioni stavano in Bonaccia (stesso indirizzo, stessa memoria)
 const url = 'https://cdn.mp3quran.net/audio/mishary-alafasy/r1/108.mp3';
 await ev(`(async () => { await caches.delete('sakina-recitazioni-v1'); const c = await caches.open('bonaccia-recitazioni-v1'); await c.put(${J(url)}, new Response(new Uint8Array(2000), { headers: { 'content-type': 'audio/mpeg' } })); })()`);
 await ricarica('');

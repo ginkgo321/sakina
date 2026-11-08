@@ -4,7 +4,7 @@ r"""genera_dati.py - sorgente unico per le descrizioni e i soggetti delle immagi
 
 Scrive:
   js/sure_info.js                     per ogni Sura il luogo («Mecca» o «Medina», vuoto se discusso) e la mini descrizione
-  tools/immagini/soggetti.json        per ogni Sura il soggetto inglese dell'immagine (serve solo ai prompt, non va sul sito)
+  tools/immagini/soggetti.json        per ogni Sura soggetto, tema di colore e prompt completo (serve solo alla generazione, non va sul sito)
 
 Le descrizioni dicono il TEMA della Sura in parole semplici, senza interpretazioni e senza citare versetti: sono diverse dalle note
 «consigliate per il riposo» di js/recitazioni_data.js. Il luogo (Mecca/Medina) si indica solo dove l'elenco tradizionale è
@@ -137,10 +137,51 @@ SURE = [
  (114, "Una preghiera di rifugio presso il Signore degli uomini, dal sussurro che si nasconde e si ritrae.", "concentric circles forming a shield with a crescent"),
 ]
 
-# da aggiungere a ogni prompt: il generatore tende a disegnare il libro come oggetto e a inventare scritte
-STILE_EXTRA = "Flat, front-facing view of the cover surface only, filling the whole square canvas edge to edge: no book spine, no page edges, no table or background, no shadow around. No writing of any kind."
+# Proposte per momento della giornata (stesse fasce del saluto: 5-12, 12-18, 18-22, 22-5). Neutre: tema e ritmo, non regole.
+# Con una voce a selezione protetta (Afasy) il lettore mostra solo le Sure che esistono con quella voce.
+MOMENTI = {
+    "mattino": {"titolo": "Per il mattino", "testo": "Sure di luce e di speranza per iniziare la giornata.", "sure": [93, 94, 87, 91, 1]},
+    "pomeriggio": {"titolo": "Per il pomeriggio", "testo": "Sure brevi e di riflessione, adatte a una pausa.", "sure": [103, 55, 95, 108]},
+    "sera": {"titolo": "Per la sera", "testo": "Per chiudere la giornata con calma.", "sure": [36, 67, 55, 112, 113, 114]},
+    "notte": {"titolo": "Per la notte", "testo": "Ritmo lento, per addormentarsi: meglio con il timer di spegnimento.", "sure": [67, 32, 19, 112, 113, 114]},
+}
 
-COVER = ["deep midnight navy", "deep forest green", "dark burgundy", "dark chocolate brown", "deep teal", "dark plum", "charcoal blue-grey"]
+# ---------- stile D (scelto dall'utente l'8 novembre 2026): acquerello notturno con foglia d'oro ----------
+STILE = (
+    "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. "
+    "Soft blended washes: {PALETTE}. "
+    "Subject: {SOGGETTO}, softly lit, with gentle gold-leaf highlights and fine gold contour lines, and a scatter of tiny gold-leaf stars or sparkles. "
+    "Everything sits inside one large circular moon-gate with a fine thin gold ring and, just outside it, a delicate band of a gold triangle-and-diamond lattice; "
+    "outside the circle the same wash colours continue to the edges of the paper. "
+    "Flat, front-facing, the artwork fills the whole square canvas edge to edge, with at most a very thin paper margin; no frame object, no table, no shadow. "
+    "Serene, dignified, hand-painted, readable at thumbnail size (clear silhouette, strong central focus). "
+    "Absolutely NO text, NO letters, NO calligraphy, NO numbers, NO people, NO faces, NO logos, NO watermark. Original artwork."
+)
+
+PALETTE = {
+    "notte": "deep indigo at the top through midnight teal, with a pale pearl glow near the horizon",
+    "mare": "deep navy at the top through turquoise-teal, with a pale sea-foam cream glow near the horizon",
+    "giardino": "deep emerald green at the top through dark teal, with a pale warm gold glow near the horizon",
+    "deserto": "deep violet-umber at the top through ochre and warm sand, with a pale apricot glow near the horizon",
+    "alba": "deep plum-indigo at the top through rose and soft apricot, with a luminous pale gold glow near the horizon",
+    "montagna": "slate blue-grey at the top through dusky lavender, with a pale silver glow near the horizon",
+    "giudizio": "deep aubergine at the top through dark indigo, with a pale amber glow near the horizon (solemn but calm)",
+}
+
+# tema di colore di ogni Sura (a seconda del soggetto)
+CLIMA = {}
+for _k, _v in {
+    "alba": [1, 9, 30, 35, 37, 39, 48, 70, 74, 75, 78, 84, 87, 89, 91, 93, 94, 110, 113],
+    "deserto": [2, 8, 11, 15, 22, 33, 43, 45, 46, 59, 64, 66, 83, 90, 99, 100, 102, 103, 104, 105, 106, 107],
+    "giardino": [3, 4, 5, 6, 14, 16, 19, 23, 27, 31, 34, 47, 50, 55, 58, 76, 80, 88, 95],
+    "montagna": [7, 13, 18, 20, 38, 51, 52, 57, 61],
+    "mare": [10, 28, 71, 108],
+    "giudizio": [44, 56, 69, 77, 81, 82, 111],
+    "notte": [12, 17, 21, 24, 25, 26, 29, 32, 36, 40, 41, 42, 49, 53, 54, 60, 62, 63, 65, 67, 68, 72, 73, 79, 85, 86, 92, 96, 97, 98, 101, 109, 112, 114],
+}.items():
+    for _n in _v:
+        assert _n not in CLIMA, _n
+        CLIMA[_n] = _k
 
 
 def main():
@@ -154,9 +195,14 @@ def main():
         "/* Sakina – mini descrizioni delle 114 Sure. Le scrive tools/immagini/genera_dati.py: non modificarle qui.\n"
         "   l = luogo della rivelazione secondo l'elenco tradizionale (vuoto dove gli studiosi sono divisi); t = tema, in parole semplici. */\n"
         "window.Sakina = window.Sakina || {};\n"
-        "window.Sakina.SureInfo = {\n" + corpo + "\n};\n", encoding="utf-8")
-    soggetti = {"_stile_extra": STILE_EXTRA}
-    soggetti.update({str(n): {"soggetto": s, "copertina": COVER[(n - 1) % len(COVER)]} for n, _, s in SURE})
+        "window.Sakina.SureInfo = {\n" + corpo + "\n};\n"
+        "/* Proposte per momento della giornata (mattino 5-12, pomeriggio 12-18, sera 18-22, notte 22-5). */\n"
+        "window.Sakina.Momenti = " + json.dumps(MOMENTI, ensure_ascii=False, indent=1) + ";\n", encoding="utf-8")
+    assert sorted(CLIMA) == list(range(1, 115)), "manca il tema di colore di qualche Sura"
+    soggetti = {"_stile": STILE}
+    for n, _, sj in SURE:
+        k = CLIMA[n]
+        soggetti[str(n)] = {"soggetto": sj, "tema": k, "prompt": STILE.format(PALETTE=PALETTE[k], SOGGETTO=sj)}
     (RADICE / "tools" / "immagini" / "soggetti.json").write_text(json.dumps(soggetti, ensure_ascii=False, indent=1), encoding="utf-8")
     print("scritti js/sure_info.js e tools/immagini/soggetti.json (114 Sure)")
 

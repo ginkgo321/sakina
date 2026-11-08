@@ -16,7 +16,7 @@ Per ogni file stampa:
   bande    quota di energia sotto 250 Hz | 250-2k | 2-4k | 4-8k | oltre 8k (in %)
   CENT     centroide spettrale in Hz (più alto = più chiaro e sibilante)
   PEND     pendenza dello spettro in dB per ottava (rosa = -3, marrone = -6, bianco = 0)
-  ACUTI    quota di energia oltre 4 kHz, dove cade spesso la frequenza dell'acufene
+  ACUTI    quota di energia oltre 4 kHz, il contenuto più acuto e più fastidioso
 
 Serve ffmpeg nel PATH, numpy e scipy.
 """

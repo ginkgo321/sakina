@@ -2,7 +2,7 @@
 
 Sito (PWA) in italiano per ascoltare le recitazioni coraniche (tradizione Hafs): le 114 Sure in cinque voci, con sottofondo di natura, timer di spegnimento e ascolto senza rete delle Sure salvate. Solo HTML, CSS e JavaScript, senza dipendenze e senza build. Non raccoglie dati: nome, voce, Sura e impostazioni restano nel telefono (`localStorage` e Cache del browser).
 
-Nata dentro [Bonaccia](https://github.com/ginkgo321/bonaccia) (app per l'acufene) e separata l'8 novembre 2026. *Sakina* (سكينة) è la quiete.
+*Sakina* (سكينة) è la quiete. Le recitazioni nascono dentro un'altra app dello stesso autore (Bonaccia) e l'8 novembre 2026 sono state separate in questa.
 
 ## Provarla sul computer
 
@@ -29,19 +29,20 @@ Bonaccia vive sullo stesso indirizzo (`ginkgo321.github.io`), quindi le due app 
 - **Sottofondo** di pioggia, onde, vento o ruscello, a distanza regolabile dalla voce (`js/audio.js`).
 - **Pareggia il volume**: tutte le voci e le Sure a −18 LUFS (`js/recitazioni_livelli.js`, generato da `tools/misura_recitazioni.py`).
 - **Salva sul telefono** (non oltre 100 MB) per ascoltare senza rete.
-- **Saluto** per nome, secondo l'ora; il nome si chiede la prima volta e si cambia da «Su Sakina».
+- **Saluto** per nome, secondo l'ora; il nome si chiede la prima volta e si cambia solo da «Su Sakina».
+- **Proposte per il momento della giornata** (mattino, pomeriggio, sera, notte) in cima all'elenco, sempre rispettando le Sure ammesse con la voce scelta.
 - **Copertina e mini descrizione** di ogni Sura (`img/sure/`, `js/sure_info.js`).
 
 ## Immagini e descrizioni delle Sure
 
-`tools/immagini/genera_dati.py` contiene, per ogni Sura, la mini descrizione, il luogo della rivelazione (dove l'elenco tradizionale è condiviso) e il soggetto dell'immagine; scrive `js/sure_info.js` e `tools/immagini/soggetti.json`. Le copertine sono illustrazioni originali (libro antico in rilievo, simbolo inciso in oro; mai persone, volti o scritte) generate con Antigravity e preparate con `tools/immagini/prepara.py` (WebP 480 px e miniature 104 px). Dettagli e regole in `AGENTS.md`.
+`tools/immagini/genera_dati.py` contiene, per ogni Sura, la mini descrizione, il luogo della rivelazione (dove l'elenco tradizionale è condiviso) e il soggetto dell'immagine; scrive `js/sure_info.js` e `tools/immagini/soggetti.json`. Le copertine sono illustrazioni originali (acquerello notturno con foglia d'oro, simbolo dentro un cerchio con anello dorato, colori diversi per tema; mai persone, volti o scritte) generate con Antigravity e, a quota finita, con la chiave Google Cloud (`tools/immagini/lotti.py`, `genera_gcloud.py`) e preparate con `tools/immagini/prepara.py` (WebP 480 px e miniature 104 px). Dettagli e regole in `AGENTS.md`.
 
 ## File
 
 - `index.html`, `css/style.css`, `js/app.js`: struttura, stile, saluto, finestre, tema.
 - `js/recitazioni*.js`, `js/sure_info.js`, `js/audio.js`: lettore, dati, livelli, motore audio.
 - `audio/natura/`: registrazioni CC0 di Freesound (+ `CREDITS.txt`). `img/sure/`: copertine.
-- `tools/prove/`: prove automatiche in Chrome senza finestra (`tools/prove/LEGGIMI.md`). `docs/analisi_suoni.md`: analisi dei suoni.
+- `tools/prove/`: prove automatiche in Chrome senza finestra (`tools/prove/LEGGIMI.md`). `docs/livelli_audio.md`: livelli audio.
 - `AGENTS.md`: istruzioni per gli agenti. `STATO.md`: appunti di ripartenza.
 
 ## Da provare su un iPhone vero

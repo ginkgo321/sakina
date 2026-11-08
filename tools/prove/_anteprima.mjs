@@ -2,7 +2,7 @@ import { avvia, sleep, SP } from './harness.mjs';
 const b = await avvia(9391, { w: 390, h: 844 });
 const { ev, vai, shot } = b;
 await vai('');
-await ev(`localStorage.setItem('sakina.nome','Diletta'); localStorage.setItem('sakina.nome_chiesto','1'); localStorage.setItem('sakina.settings', JSON.stringify({reciter:'minshawi',surah:55}));`);
+await ev(`localStorage.setItem('sakina.nome','Anna'); localStorage.setItem('sakina.nome_chiesto','1'); localStorage.setItem('sakina.settings', JSON.stringify({reciter:'minshawi',surah:55}));`);
 await b.ricarica('');
 await sleep(1200);
 await shot('anteprima_notte.png');

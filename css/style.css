@@ -87,8 +87,6 @@ main { max-width: 600px; margin: 0 auto; padding: 8px 18px calc(110px + env(safe
 /* ---- saluto ---- */
 .greet-wrap { margin: .4rem 0 1.1rem; }
 .greet { font-family: var(--serif); font-size: 1.7rem; line-height: 1.25; margin: 0; max-width: none; overflow-wrap: anywhere; }
-.linkbtn { background: none; border: 0; padding: 8px 0; font: inherit; font-size: .95rem; color: var(--ink2); text-decoration: underline; cursor: pointer; min-height: 44px; }
-.linkbtn[hidden] { display: none; }
 input[type="text"] {
   width: 100%; font: inherit; color: var(--ink); background: var(--surf);
   border: 1.5px solid var(--line); border-radius: 12px; padding: 12px 14px; min-height: 48px;

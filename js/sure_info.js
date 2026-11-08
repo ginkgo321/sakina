@@ -117,3 +117,51 @@ window.Sakina.SureInfo = {
   113: {"l": "", "t": "Una preghiera di rifugio presso il Signore dell’alba dal male delle creature, dalla notte e dall’invidia."},
   114: {"l": "", "t": "Una preghiera di rifugio presso il Signore degli uomini, dal sussurro che si nasconde e si ritrae."}
 };
+/* Proposte per momento della giornata (mattino 5-12, pomeriggio 12-18, sera 18-22, notte 22-5). */
+window.Sakina.Momenti = {
+ "mattino": {
+  "titolo": "Per il mattino",
+  "testo": "Sure di luce e di speranza per iniziare la giornata.",
+  "sure": [
+   93,
+   94,
+   87,
+   91,
+   1
+  ]
+ },
+ "pomeriggio": {
+  "titolo": "Per il pomeriggio",
+  "testo": "Sure brevi e di riflessione, adatte a una pausa.",
+  "sure": [
+   103,
+   55,
+   95,
+   108
+  ]
+ },
+ "sera": {
+  "titolo": "Per la sera",
+  "testo": "Per chiudere la giornata con calma.",
+  "sure": [
+   36,
+   67,
+   55,
+   112,
+   113,
+   114
+  ]
+ },
+ "notte": {
+  "titolo": "Per la notte",
+  "testo": "Ritmo lento, per addormentarsi: meglio con il timer di spegnimento.",
+  "sure": [
+   67,
+   32,
+   19,
+   112,
+   113,
+   114
+  ]
+ }
+};

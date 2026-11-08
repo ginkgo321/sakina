@@ -1,6 +1,6 @@
 /* Sakina – service worker: tiene l’app e i suoni di sottofondo in memoria per usarla senza rete.
    Sullo stesso indirizzo (github.io) vivono anche altre app (Bonaccia): qui si toccano solo le memorie che iniziano per «sakina-». */
-var CACHE = 'sakina-v3';
+var CACHE = 'sakina-v4';
 var QURAN_CACHE = 'sakina-recitazioni-v1';
 var FILES = [
   './', 'index.html', 'manifest.webmanifest',

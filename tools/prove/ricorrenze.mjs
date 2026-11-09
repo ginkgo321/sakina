@@ -31,17 +31,21 @@ for (const [nome, d, ok] of casi) {
   const r = await leggi();
   prova(nome, ok(r), J(r));
 }
-// con Afasy nessuna Sura del venerdì esiste: il riquadro non compare, restano le proposte dell'ora
+// con Afasy le Sure del venerdì non esistono: compaiono «con Al-Minshawi»
 await ev(`localStorage.setItem('sakina.settings', JSON.stringify({ reciter: 'afasy', surah: 108 }))`);
 await quando(2026, 11, 13, 10);
-let r = await leggi();
-prova('Afasy il venerdì: nessun riquadro speciale, restano le proposte dell\'ora', ids(r) === '' && r.ora === 'Per il mattino', J(r));
-// cambiando voce durante il venerdì il riquadro compare
-await ev(`document.querySelector('[data-reciter=minshawi]').click()`); await sleep(500);
-r = await leggi();
-prova('passando a Minshawi il venerdì compare Al-Kahf', ids(r) === 'venerdi' && r.eventi[0].sure[0] === 18, J(r));
+let r = await ev(`({ voci: [...document.querySelectorAll('#q-special [data-surah]')].map(e => e.dataset.surah + ':' + (e.dataset.voice || '')), tag: (document.querySelector('#q-special .q-voice-tag') || {}).textContent, aria: (document.querySelector('#q-special [data-play-surah]') || { getAttribute: () => '' }).getAttribute('aria-label'), afasy: document.querySelector('[data-reciter].on').dataset.reciter })`);
+prova('Afasy il venerdì: Al-Kahf e Al-Jumu’ah compaiono «con Al-Minshawi»', J(r.voci) === J(['18:minshawi', '62:minshawi']) && r.tag === 'con Al-Minshawi' && /Ascolta Al-Kahf con Al-Minshawi/.test(r.aria) && r.afasy === 'afasy', J(r));
 await ev(`document.querySelector('#q-special [data-play-surah="18"]').click()`); await sleep(4000);
 const st = await ev(`Sakina.QuranPlayer._debugState()`);
-prova('«Ascolta» su Al-Kahf la avvia', st.playing && st.surah === 18, J(st));
+prova('«Ascolta» su Al-Kahf passa ad Al-Minshawi e la avvia', st.playing && st.surah === 18 && st.reciter === 'minshawi', J(st));
+r = await leggi();
+prova('dopo il passaggio la proposta non ha più la scritta «con …» (è la voce scelta)', ids(r) === 'venerdi' && (await ev(`document.querySelectorAll('#q-special [data-voice]').length`)) === 0, J(r));
+// la selezione protetta resta: con Afasy una Sura fuori elenco non parte mai
+await ev(`document.getElementById('q-play-toggle').click()`); await sleep(500);
+await ev(`document.querySelector('[data-reciter=afasy]').click()`); await sleep(500);
+await ev(`Sakina.QuranPlayer.playSurah(18)`); await sleep(1500);
+const st2 = await ev(`Sakina.QuranPlayer._debugState()`);
+prova('con Afasy, Al-Kahf forzata dal codice non parte (selezione protetta intatta)', !st2.playing && st2.reciter === 'afasy' && st2.surah !== 18, J(st2));
 prova('nessun errore JS', T.errs.length === 0, J(T.errs));
 b.chiudi(); process.exit(0);

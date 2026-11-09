@@ -756,23 +756,7 @@
     // Event listener per recitatori
     var rChips = v.querySelectorAll('[data-reciter]');
     rChips.forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var rId = btn.getAttribute('data-reciter');
-        if (state.reciter === rId) return;
-        var wasPlaying = state.playing || state.loading;
-        state.reciter = rId;
-        var keep = isAllowed(rId, state.surah);
-        if (!keep) state.surah = reciterSurahs(rId)[0].n;    // la Sura in corso non esiste con questa voce
-        saveSettings();
-        if (!(wasPlaying && keep)) resetMedia();             // se suonava la stessa Sura riparte da sola con la nuova voce
-        rChips.forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-reciter') === rId); });
-        updateCacheIndex();
-        renderPlayerCard();
-        renderMoment(true);
-        renderRecommended();
-        renderAllSurahs();
-        if (wasPlaying && keep) playSurah(state.surah);      // se la Sura non esiste con questa voce resta in pausa: non parte mai una Sura che non hai scelto tu
-      });
+      btn.addEventListener('click', function () { switchReciter(btn.getAttribute('data-reciter')); });
     });
 
     // Ricerca live
@@ -790,6 +774,28 @@
     renderRecommended();
     renderAllSurahs();
     updateCacheIndex();
+  }
+
+  /* Cambio di voce. Con «target» (una Sura proposta con un'altra voce) passa a quella voce e avvia quella Sura;
+     senza, tiene la Sura in corso se esiste con la nuova voce, altrimenti resta in pausa sulla prima disponibile. */
+  function switchReciter(rId, target) {
+    if (!D.reciters[rId]) return;
+    if (state.reciter === rId && target == null) return;
+    var wasPlaying = state.playing || state.loading;
+    state.reciter = rId;
+    var keep = isAllowed(rId, state.surah);
+    if (target != null && isAllowed(rId, target)) { state.surah = target; keep = false; }
+    else if (!keep) state.surah = reciterSurahs(rId)[0].n;    // la Sura in corso non esiste con questa voce
+    saveSettings();
+    if (!(wasPlaying && keep)) resetMedia();                   // se suonava la stessa Sura riparte da sola con la nuova voce
+    document.querySelectorAll('[data-reciter]').forEach(function (b) { b.classList.toggle('on', b.getAttribute('data-reciter') === rId); });
+    updateCacheIndex();
+    renderPlayerCard();
+    renderMoment(true);
+    renderRecommended();
+    renderAllSurahs();
+    if (target != null) playSurah(state.surah);                 // scelta esplicita dell'utente: «Ascolta» su una Sura proposta con un'altra voce
+    else if (wasPlaying && keep) playSurah(state.surah);        // se la Sura non esiste con questa voce resta in pausa: non parte mai una Sura che non hai scelto tu
   }
 
   function renderPlayerCard() {
@@ -956,19 +962,32 @@
 
   /* Proposte per il momento della giornata: solo Sure che esistono con la voce scelta (selezione protetta rispettata). */
   var lastBand = '';
-  function rowHtml(n) {
-    var s = getSurah(n), isCur = state.surah === s.n, isPl = isCur && state.playing;
-    var isSaved = !!state.cachedUrls[getAudioUrl(state.reciter, s.pad)];
+  /* Una proposta (ora del giorno, venerdì, feste…) che non esiste con la voce scelta (selezione protetta di Afasy)
+     si propone con la voce di riserva e la scritta «con Al-Minshawi»: la voce protetta resta con le sue sole Sure. */
+  var VOCE_RISERVA = 'minshawi';
+  function rowHtml(it) {
+    var s = getSurah(it.n), altra = it.voice ? D.reciters[it.voice] : null;
+    var nomeVoce = altra ? (altra.corto || altra.nome) : '';
+    var isCur = !altra && state.surah === s.n, isPl = isCur && state.playing;
+    var isSaved = !!state.cachedUrls[getAudioUrl(it.voice || state.reciter, s.pad)];
     return '' +
-      '<div class="session-item q-item' + (isCur ? ' active' : '') + '" data-surah="' + s.n + '">' +
+      '<div class="session-item q-item' + (isCur ? ' active' : '') + (altra ? ' q-other-voice' : '') + '" data-surah="' + s.n + '"' + (altra ? ' data-voice="' + it.voice + '"' : '') + '>' +
         '<div class="session-main"><div class="session-meta">' + thumbHtml(s) +
           '<div><strong>' + s.nome + ' <span class="q-ar">' + s.ar + '</span></strong>' +
-          '<small class="sub">' + s.trad + (isSaved ? ' · <span style="color:var(--deep)">✓ Offline</span>' : '') + '</small></div>' +
+          '<small class="sub">' + s.trad + (altra ? ' · <span class="q-voice-tag">con ' + nomeVoce + '</span>' : '') + (isSaved ? ' · <span style="color:var(--deep)">✓ Offline</span>' : '') + '</small></div>' +
         '</div></div>' +
-        '<button type="button" class="btn secondary piccolo q-play-item-btn" data-play-surah="' + s.n + '">' + (isPl ? 'Pausa' : 'Ascolta') + '</button>' +
+        '<button type="button" class="btn secondary piccolo q-play-item-btn" data-play-surah="' + s.n + '"' + (altra ? ' aria-label="Ascolta ' + s.nome + ' con ' + nomeVoce + '"' : '') + '>' + (isPl ? 'Pausa' : 'Ascolta') + '</button>' +
       '</div>';
   }
-  function allowedOf(list, max) { return list.filter(function (n) { return isAllowed(state.reciter, n); }).slice(0, max); }
+  function proposalItems(list, max, gia) {
+    var out = [];
+    list.forEach(function (n) {
+      if (out.length >= max || (gia && gia[n])) return;
+      if (isAllowed(state.reciter, n)) out.push({ n: n, voice: null });
+      else if (VOCE_RISERVA !== state.reciter && isAllowed(VOCE_RISERVA, n)) out.push({ n: n, voice: VOCE_RISERVA });
+    });
+    return out;
+  }
 
   function renderMoment(force) {
     var box = document.getElementById('q-moment');
@@ -982,8 +1001,8 @@
     if (sp) {
       var h = '', gia = {};
       ev.forEach(function (e) {
-        var l = allowedOf(e.sure.filter(function (n) { return !gia[n]; }), 3);   // una Sura già proposta più su non si ripete
-        l.forEach(function (n) { gia[n] = true; });
+        var l = proposalItems(e.sure, 3, gia);   // una Sura già proposta più su non si ripete
+        l.forEach(function (it) { gia[it.n] = true; });
         if (!l.length) return;
         h += '<section class="q-special" data-evento="' + e.id + '"><h2>' + e.titolo + '</h2><p class="sub">' + e.testo + '</p>' +
           '<div class="list">' + l.map(rowHtml).join('') + '</div>' +
@@ -993,7 +1012,7 @@
       bindListEvents(sp);
     }
     var m = MOM[band];
-    var list = m ? allowedOf(m.sure, 4) : [];
+    var list = m ? proposalItems(m.sure, 4) : [];
     if (!list.length) { box.innerHTML = ''; return; }
     box.innerHTML = '<h2>' + m.titolo + '</h2><p class="sub">' + m.testo + '</p><div class="list" id="q-moment-list">' + list.map(rowHtml).join('') + '</div>';
     bindListEvents(box);
@@ -1111,7 +1130,8 @@
     var items = document.querySelectorAll('[data-surah]');
     items.forEach(function (it) {
       var sn = parseInt(it.getAttribute('data-surah'), 10);
-      var isCur = state.surah === sn;
+      var v = it.getAttribute('data-voice');
+      var isCur = state.surah === sn && (!v || v === state.reciter);   // una proposta «con un'altra voce» non è la Sura in corso
       it.classList.toggle('active', isCur);
       var btn = it.querySelector('.q-play-item-btn');
       if (btn) {
@@ -1126,6 +1146,8 @@
       b.addEventListener('click', function (e) {
         e.stopPropagation();
         var sn = parseInt(b.getAttribute('data-play-surah'), 10);
+        var row = b.closest('[data-voice]'), v = row && row.getAttribute('data-voice');
+        if (v && v !== state.reciter) { switchReciter(v, sn); return; }
         if (state.surah === sn && state.playing) {
           togglePlay();
         } else {
@@ -1138,6 +1160,8 @@
     rows.forEach(function (r) {
       r.addEventListener('click', function () {
         var sn = parseInt(r.getAttribute('data-surah'), 10);
+        var v = r.getAttribute('data-voice');
+        if (v && v !== state.reciter) { switchReciter(v, sn); return; }
         if (state.surah === sn && state.playing) {
           togglePlay();
         } else {

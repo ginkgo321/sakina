@@ -83,6 +83,8 @@
 
   /* Saluto secondo l'ora: mattina, pomeriggio, sera, notte. */
   function greetingWord(d) {
+    var feste = S.activeEvents ? S.activeEvents(d).filter(function (e) { return e.saluto; }) : [];
+    if (feste.length) return feste[0].saluto;                     // nei giorni delle feste: «ʿĪd mubārak»
     return { mattino: 'Buongiorno', pomeriggio: 'Buon pomeriggio', sera: 'Buonasera', notte: 'Buonanotte' }[S.dayPart(d)];
   }
   S.greetingWord = greetingWord;   // esposta per le prove

@@ -7,6 +7,7 @@
 - **Migrazione da Bonaccia** (stesso indirizzo): riprende `bonaccia.quran_settings` e sposta le Sure da `bonaccia-recitazioni-v1`.
 - **Mini descrizioni** delle 114 Sure + luogo (dove condiviso) in `js/sure_info.js`, generato da `tools/immagini/genera_dati.py`. Revisione Opus fatta e applicata (errori di fatto, citazioni tolte, soggetti senza strumenti musicali né scritte; luogo vuoto anche per 1, 97, 112, 113, 114).
 - **Immagini**: tutte le 114 copertine pronte, riviste a occhio (tavole) e pubblicate in `img/sure/` (4,6 MB con le miniature; ritaglio automatico del bordo di carta). Rifatte con soggetto nuovo la 37, 54, 74 e 78.
+- **Ricorrenze** (9 novembre 2026, scelte dell'utente): venerdì da giovedì al tramonto (Al-Kahf, Al-Jumu'ah), Ramadan (97, 2, 96), notti dispari delle ultime dieci (97, 44), ʿĪd al-Fiṭr (87, 88) e ʿĪd al-Aḍḥā (87, 88, 22) con saluto «ʿĪd mubārak»; riquadro sopra le proposte dell'ora, nascosto se la voce non ha quelle Sure. Miniatura della Sura nella barra fissa in basso; toccando nome o miniatura si torna in cima. Immagine della Sura sulla schermata di blocco (JPEG 512).
 - **Consigli per momento della giornata** (`Sakina.Momenti`: mattino, pomeriggio, sera, notte) in cima all'elenco, nel rispetto delle Sure ammesse con la voce scelta; prova `momenti_del_giorno.mjs`.
 - **Prove**: dati_corrotti, saluto_e_immagini, migrazione, lettore_*, voci_e_protezione, schermi, offline 1 e 2: tutte ok (`tools/prove/LEGGIMI.md`; una alla volta).
 

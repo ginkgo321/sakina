@@ -146,6 +146,19 @@ MOMENTI = {
     "notte": {"titolo": "Per la notte", "testo": "Ritmo lento, per addormentarsi: meglio con il timer di spegnimento.", "sure": [67, 32, 19, 112, 113, 114]},
 }
 
+# Ricorrenze (scelte dell'utente il 9 novembre 2026): venerdì, Ramadan, notti dispari delle ultime dieci, le due feste.
+# Il giorno islamico comincia al tramonto: TRAMONTO dà l'ora indicativa in Italia (ora locale, metà mese), senza chiedere la posizione.
+# Le date lunari le calcola il telefono (calendario Umm al-Qura): possono differire di un giorno da quelle della comunità.
+TRAMONTO = ["17:05", "17:40", "18:15", "19:50", "20:20", "20:45", "20:45", "20:15", "19:25", "18:35", "16:55", "16:40"]
+NOTA_LUNARE = "Date calcolate dal telefono: possono differire di un giorno da quelle della tua comunità."
+RICORRENZE = {
+    "notte_destino": {"titolo": "Una delle notti dispari", "testo": "Nelle ultime dieci notti di Ramadan, una delle notti dispari è la Notte del destino, di cui parla la Sura Al-Qadr.", "sure": [97, 44], "nota": NOTA_LUNARE},
+    "fitr": {"titolo": "ʿĪd al-Fiṭr", "testo": "La festa della fine del digiuno. Al-Aʿlā e Al-Ghāshiyah sono le Sure che spesso si recitano nella preghiera della festa.", "sure": [87, 88], "nota": NOTA_LUNARE, "saluto": "ʿĪd mubārak"},
+    "adha": {"titolo": "ʿĪd al-Aḍḥā", "testo": "La festa del sacrificio, nei giorni del pellegrinaggio. Al-Aʿlā e Al-Ghāshiyah si recitano spesso nella preghiera della festa; Al-Ḥajj parla del pellegrinaggio.", "sure": [87, 88, 22], "nota": NOTA_LUNARE, "saluto": "ʿĪd mubārak"},
+    "venerdi": {"titolo": "Oggi è venerdì", "titolo_vigilia": "Questa sera comincia il venerdì", "testo": "Il giorno della preghiera comunitaria. Al-Kahf è la Sura che molti leggono il venerdì.", "sure": [18, 62]},
+    "ramadan": {"titolo": "È il mese di Ramadan", "testo": "Il mese del digiuno, in cui cominciò la rivelazione del Corano.", "sure": [97, 2, 96], "nota": NOTA_LUNARE},
+}
+
 # ---------- stile D (scelto dall'utente l'8 novembre 2026): acquerello notturno con foglia d'oro ----------
 STILE = (
     "Luminous gouache and watercolour painting with real gold-leaf accents, cold-press paper grain visible. "
@@ -197,7 +210,9 @@ def main():
         "window.Sakina = window.Sakina || {};\n"
         "window.Sakina.SureInfo = {\n" + corpo + "\n};\n"
         "/* Proposte per momento della giornata (mattino 5-12, pomeriggio 12-18, sera 18-22, notte 22-5). */\n"
-        "window.Sakina.Momenti = " + json.dumps(MOMENTI, ensure_ascii=False, indent=1) + ";\n", encoding="utf-8")
+        "window.Sakina.Momenti = " + json.dumps(MOMENTI, ensure_ascii=False, indent=1) + ";\n"
+        "/* Ricorrenze: venerdì (da giovedì al tramonto), Ramadan, notti dispari delle ultime dieci, le due feste. TRAMONTO: ora indicativa in Italia per mese. */\n"
+        "window.Sakina.Ricorrenze = " + json.dumps({"tramonto": TRAMONTO, "voci": RICORRENZE}, ensure_ascii=False, indent=1) + ";\n", encoding="utf-8")
     assert sorted(CLIMA) == list(range(1, 115)), "manca il tema di colore di qualche Sura"
     soggetti = {"_stile": STILE}
     for n, _, sj in SURE:

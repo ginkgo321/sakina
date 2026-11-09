@@ -165,3 +165,71 @@ window.Sakina.Momenti = {
   ]
  }
 };
+/* Ricorrenze: venerdì (da giovedì al tramonto), Ramadan, notti dispari delle ultime dieci, le due feste. TRAMONTO: ora indicativa in Italia per mese. */
+window.Sakina.Ricorrenze = {
+ "tramonto": [
+  "17:05",
+  "17:40",
+  "18:15",
+  "19:50",
+  "20:20",
+  "20:45",
+  "20:45",
+  "20:15",
+  "19:25",
+  "18:35",
+  "16:55",
+  "16:40"
+ ],
+ "voci": {
+  "notte_destino": {
+   "titolo": "Una delle notti dispari",
+   "testo": "Nelle ultime dieci notti di Ramadan, una delle notti dispari è la Notte del destino, di cui parla la Sura Al-Qadr.",
+   "sure": [
+    97,
+    44
+   ],
+   "nota": "Date calcolate dal telefono: possono differire di un giorno da quelle della tua comunità."
+  },
+  "fitr": {
+   "titolo": "ʿĪd al-Fiṭr",
+   "testo": "La festa della fine del digiuno. Al-Aʿlā e Al-Ghāshiyah sono le Sure che spesso si recitano nella preghiera della festa.",
+   "sure": [
+    87,
+    88
+   ],
+   "nota": "Date calcolate dal telefono: possono differire di un giorno da quelle della tua comunità.",
+   "saluto": "ʿĪd mubārak"
+  },
+  "adha": {
+   "titolo": "ʿĪd al-Aḍḥā",
+   "testo": "La festa del sacrificio, nei giorni del pellegrinaggio. Al-Aʿlā e Al-Ghāshiyah si recitano spesso nella preghiera della festa; Al-Ḥajj parla del pellegrinaggio.",
+   "sure": [
+    87,
+    88,
+    22
+   ],
+   "nota": "Date calcolate dal telefono: possono differire di un giorno da quelle della tua comunità.",
+   "saluto": "ʿĪd mubārak"
+  },
+  "venerdi": {
+   "titolo": "Oggi è venerdì",
+   "titolo_vigilia": "Questa sera comincia il venerdì",
+   "testo": "Il giorno della preghiera comunitaria. Al-Kahf è la Sura che molti leggono il venerdì.",
+   "sure": [
+    18,
+    62
+   ]
+  },
+  "ramadan": {
+   "titolo": "È il mese di Ramadan",
+   "testo": "Il mese del digiuno, in cui cominciò la rivelazione del Corano.",
+   "sure": [
+    97,
+    2,
+    96
+   ],
+   "nota": "Date calcolate dal telefono: possono differire di un giorno da quelle della tua comunità."
+  }
+ }
+};

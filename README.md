@@ -31,6 +31,7 @@ Bonaccia vive sullo stesso indirizzo (`ginkgo321.github.io`), quindi le due app 
 - **Salva sul telefono** (non oltre 100 MB) per ascoltare senza rete.
 - **Saluto** per nome, secondo l'ora; il nome si chiede la prima volta e si cambia solo da «Su Sakina».
 - **Proposte per il momento della giornata** (mattino, pomeriggio, sera, notte) in cima all'elenco, sempre rispettando le Sure ammesse con la voce scelta.
+- **Ricorrenze**: il venerdì (da giovedì al tramonto) Al-Kahf e Al-Jumu'ah; in Ramadan, nelle sue notti dispari delle ultime dieci e nelle due feste (con il saluto «ʿĪd mubārak») le Sure di quei giorni. Il tramonto è un orario indicativo per l'Italia; le date lunari le calcola il telefono (calendario Umm al-Qura) e possono differire di un giorno.
 - **Copertina e mini descrizione** di ogni Sura (`img/sure/`, `js/sure_info.js`).
 
 ## Immagini e descrizioni delle Sure

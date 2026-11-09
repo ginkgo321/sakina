@@ -119,6 +119,42 @@
     return h >= 5 && h < 12 ? 'mattino' : (h >= 12 && h < 18 ? 'pomeriggio' : (h >= 18 && h < 22 ? 'sera' : 'notte'));
   }
   B.dayPart = dayPart;
+
+  /* Ricorrenze: il giorno islamico comincia al tramonto (ora indicativa in Italia, per mese: Sakina.Ricorrenze.tramonto).
+     Le date lunari le dà il telefono (calendario Umm al-Qura); se il browser non lo conosce, restano solo il venerdì e le proposte dell'ora. */
+  var RIC = B.Ricorrenze || null;
+  function afterSunset(d) {
+    var t = ((RIC && RIC.tramonto[d.getMonth()]) || '18:00').split(':');
+    return d.getHours() * 60 + d.getMinutes() >= parseInt(t[0], 10) * 60 + parseInt(t[1], 10);
+  }
+  var hijriFmt = null;
+  try {
+    var hf = new Intl.DateTimeFormat('en-u-ca-islamic-umalqura', { day: 'numeric', month: 'numeric' });
+    if (/^islamic/.test(hf.resolvedOptions().calendar)) hijriFmt = hf;
+  } catch (e) {}
+  function hijri(d) {
+    if (!hijriFmt) return null;
+    var x = new Date(d.getTime());
+    if (afterSunset(d)) x.setDate(x.getDate() + 1);          // dopo il tramonto è già il giorno islamico seguente
+    var o = {};
+    try { hijriFmt.formatToParts(x).forEach(function (p) { if (p.type === 'day' || p.type === 'month') o[p.type] = parseInt(p.value, 10); }); } catch (e) { return null; }
+    return o.day && o.month ? o : null;
+  }
+  /* Ricorrenze attive in questo momento, in ordine: notte dispari, feste, venerdì, Ramadan */
+  function activeEvents(d) {
+    d = d || new Date();
+    var V = (RIC && RIC.voci) || {}, h = hijri(d), sera = afterSunset(d), wd = d.getDay(), ids = [];
+    if (h && h.month === 9 && h.day >= 21 && h.day % 2 === 1 && (sera || d.getHours() < 5)) ids.push('notte_destino');
+    if (h && h.month === 10 && h.day <= 3) ids.push('fitr');
+    if (h && h.month === 12 && h.day >= 10 && h.day <= 13) ids.push('adha');
+    if ((wd === 4 && sera) || (wd === 5 && !sera)) ids.push('venerdi');
+    if (h && h.month === 9) ids.push('ramadan');
+    return ids.filter(function (k) { return V[k]; }).map(function (k) {
+      var v = V[k];
+      return { id: k, titolo: (k === 'venerdi' && wd === 4 && v.titolo_vigilia) ? v.titolo_vigilia : v.titolo, testo: v.testo, sure: v.sure, nota: v.nota || '', saluto: v.saluto || '' };
+    });
+  }
+  B.activeEvents = activeEvents;
   function coverUrl(s) { return 'img/sure/' + s.pad + '.webp'; }
   function thumbHtml(s) {
     return '<span class="q-th"><span class="q-badge-num">' + s.n + '</span><img class="q-thumb" src="img/sure/t/' + s.pad + '.webp" alt="" width="52" height="52" loading="lazy" decoding="async"></span>';
@@ -682,6 +718,7 @@
       '<!-- Player attivo -->' +
       '<div class="panel q-player-card" id="q-player-box"></div>' +
 
+      '<div id="q-special"></div>' +
       '<div id="q-moment"></div>' +
 
       '<!-- Consigliate per la notte -->' +
@@ -919,29 +956,46 @@
 
   /* Proposte per il momento della giornata: solo Sure che esistono con la voce scelta (selezione protetta rispettata). */
   var lastBand = '';
+  function rowHtml(n) {
+    var s = getSurah(n), isCur = state.surah === s.n, isPl = isCur && state.playing;
+    var isSaved = !!state.cachedUrls[getAudioUrl(state.reciter, s.pad)];
+    return '' +
+      '<div class="session-item q-item' + (isCur ? ' active' : '') + '" data-surah="' + s.n + '">' +
+        '<div class="session-main"><div class="session-meta">' + thumbHtml(s) +
+          '<div><strong>' + s.nome + ' <span class="q-ar">' + s.ar + '</span></strong>' +
+          '<small class="sub">' + s.trad + (isSaved ? ' · <span style="color:var(--deep)">✓ Offline</span>' : '') + '</small></div>' +
+        '</div></div>' +
+        '<button type="button" class="btn secondary piccolo q-play-item-btn" data-play-surah="' + s.n + '">' + (isPl ? 'Pausa' : 'Ascolta') + '</button>' +
+      '</div>';
+  }
+  function allowedOf(list, max) { return list.filter(function (n) { return isAllowed(state.reciter, n); }).slice(0, max); }
+
   function renderMoment(force) {
     var box = document.getElementById('q-moment');
+    var sp = document.getElementById('q-special');
     if (!box) return;
-    var band = dayPart();
-    if (!force && band === lastBand) return;
-    lastBand = band;
+    var band = dayPart(), ev = activeEvents();
+    var key = band + '|' + ev.map(function (e) { return e.id + e.titolo; }).join(',');
+    if (!force && key === lastBand) return;
+    lastBand = key;
+    // ricorrenze (venerdì, Ramadan, notti dispari, feste): sopra le proposte dell'ora; si mostrano solo se la voce ha quelle Sure
+    if (sp) {
+      var h = '', gia = {};
+      ev.forEach(function (e) {
+        var l = allowedOf(e.sure.filter(function (n) { return !gia[n]; }), 3);   // una Sura già proposta più su non si ripete
+        l.forEach(function (n) { gia[n] = true; });
+        if (!l.length) return;
+        h += '<section class="q-special" data-evento="' + e.id + '"><h2>' + e.titolo + '</h2><p class="sub">' + e.testo + '</p>' +
+          '<div class="list">' + l.map(rowHtml).join('') + '</div>' +
+          (e.nota ? '<p class="hint q-special-note">' + e.nota + '</p>' : '') + '</section>';
+      });
+      sp.innerHTML = h;
+      bindListEvents(sp);
+    }
     var m = MOM[band];
-    var list = m ? m.sure.filter(function (n) { return isAllowed(state.reciter, n); }).slice(0, 4) : [];
+    var list = m ? allowedOf(m.sure, 4) : [];
     if (!list.length) { box.innerHTML = ''; return; }
-    var html = '<h2>' + m.titolo + '</h2><p class="sub">' + m.testo + '</p><div class="list" id="q-moment-list">';
-    list.forEach(function (n) {
-      var s = getSurah(n), isCur = state.surah === s.n, isPl = isCur && state.playing;
-      var isSaved = !!state.cachedUrls[getAudioUrl(state.reciter, s.pad)];
-      html += '' +
-        '<div class="session-item q-item' + (isCur ? ' active' : '') + '" data-surah="' + s.n + '">' +
-          '<div class="session-main"><div class="session-meta">' + thumbHtml(s) +
-            '<div><strong>' + s.nome + ' <span class="q-ar">' + s.ar + '</span></strong>' +
-            '<small class="sub">' + s.trad + (isSaved ? ' · <span style="color:var(--deep)">✓ Offline</span>' : '') + '</small></div>' +
-          '</div></div>' +
-          '<button type="button" class="btn secondary piccolo q-play-item-btn" data-play-surah="' + s.n + '">' + (isPl ? 'Pausa' : 'Ascolta') + '</button>' +
-        '</div>';
-    });
-    box.innerHTML = html + '</div>';
+    box.innerHTML = '<h2>' + m.titolo + '</h2><p class="sub">' + m.testo + '</p><div class="list" id="q-moment-list">' + list.map(rowHtml).join('') + '</div>';
     bindListEvents(box);
   }
 

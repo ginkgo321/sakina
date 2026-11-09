@@ -17,6 +17,7 @@ Pilotano Chrome senza finestra (protocollo CDP, solo Node 22 o successivo: nessu
 | `momenti_del_giorno.mjs` | le proposte cambiano con l'ora (3, 8, 14, 20, 23: ora finta nella pagina), con Afasy compaiono solo le sue 11 Sure, il cambio voce aggiorna l'elenco, «Ascolta» avvia la Sura | 1 min |
 | `schermata_di_blocco.mjs` | la Media Session riporta titolo, voce e immagine JPEG 512 × 512 della Sura in corso, e le cambia con la Sura successiva o con un'altra voce; esistono tutte le 114 immagini | 30 s |
 | `barra_torna_su.mjs` | miniatura della Sura (44 px) nella barra fissa in basso, che cambia con la Sura e sparisce se il file manca; toccando miniatura o nome si torna in cima al lettore grande (la barra sparisce, il focus va sul tasto play, l'ascolto continua) | 30 s |
+| `ricorrenze.mjs` | con date finte: venerdì (anche giovedì dopo il tramonto, non venerdì sera), Ramadan 2027, notti dispari (anche prima dell'alba), ʿĪd al-Fiṭr e ʿĪd al-Aḍḥā con il saluto, giorno qualunque; con Afasy il riquadro non compare; «Ascolta» avvia la Sura | 2 min |
 | `migrazione_da_bonaccia.mjs` | una Sura salvata in `bonaccia-recitazioni-v1` passa in `sakina-recitazioni-v1` e la vecchia memoria si svuota | 20 s |
 | `lettore_barra_timer.mjs` | spinner, barra (trascinamento senza salti, rilascio), tempo rimanente, precedente/successiva, timer con dissolvenza, «Alla fine» | 2 min |
 | `lettore_tocchi_rapidi.mjs` | tocchi a raffica, cambio voce e livelli durante il caricamento, sottofondo che parte e si ferma con la recitazione, «Ripeti» | 2 min |

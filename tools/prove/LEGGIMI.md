@@ -14,15 +14,15 @@ Pilotano Chrome senza finestra (protocollo CDP, solo Node 22 o successivo: nessu
 |---|---|---|
 | `dati_corrotti.mjs` | l'app parte con dati salvati rovinati (tipi sbagliati, JSON rotto, Sure inesistenti o protette), riprende le impostazioni della vecchia chiave di Bonaccia | 1 min |
 | `saluto_e_immagini.mjs` | finestra del nome alla prima apertura, nome mostrato come testo (niente HTML), cambio e rimozione solo da «Su Sakina», «Non adesso», fasce orarie del saluto, copertina che sparisce se il file manca | 1 min |
-| `momenti_del_giorno.mjs` | le proposte cambiano con l'ora (3, 8, 14, 20, 23: ora finta nella pagina), con Afasy le Sure fuori dalla sua selezione compaiono «con Al-Minshawi» e partono con quella voce, le sue con la sua; «Ascolta» avvia la Sura | 1 min |
+| `momenti_del_giorno.mjs` | le proposte cambiano con l'ora (3, 8, 14, 20, 23: ora finta nella pagina), con una selezione protetta simulata le Sure escluse compaiono «con Al-Minshawi» e partono con quella voce, le altre con la sua; «Ascolta» avvia la Sura | 1 min |
 | `schermata_di_blocco.mjs` | la Media Session riporta titolo, voce e immagine JPEG 512 × 512 della Sura in corso, e le cambia con la Sura successiva o con un'altra voce; esistono tutte le 114 immagini | 30 s |
 | `barra_torna_su.mjs` | miniatura della Sura (44 px) nella barra fissa in basso, che cambia con la Sura e sparisce se il file manca; toccando miniatura o nome si torna in cima al lettore grande (la barra sparisce, il focus va sul tasto play, l'ascolto continua) | 30 s |
-| `ricorrenze.mjs` | con date finte: venerdì (anche giovedì dopo il tramonto, non venerdì sera), Ramadan 2027, notti dispari (anche prima dell'alba), ʿĪd al-Fiṭr e ʿĪd al-Aḍḥā con il saluto, giorno qualunque; con Afasy Al-Kahf e Al-Jumu'ah compaiono «con Al-Minshawi» e la selezione protetta resta intatta; «Ascolta» avvia la Sura | 2 min |
+| `ricorrenze.mjs` | con date finte: venerdì (anche giovedì dopo il tramonto, non venerdì sera), Ramadan 2027, notti dispari (anche prima dell'alba), ʿĪd al-Fiṭr e ʿĪd al-Aḍḥā con il saluto, giorno qualunque; con una selezione protetta simulata Al-Kahf e Al-Jumu'ah compaiono «con Al-Minshawi» e la selezione resta intatta; «Ascolta» avvia la Sura | 2 min |
 | `migrazione_da_bonaccia.mjs` | una Sura salvata in `bonaccia-recitazioni-v1` passa in `sakina-recitazioni-v1` e la vecchia memoria si svuota | 20 s |
 | `lettore_barra_timer.mjs` | spinner, barra (trascinamento senza salti, rilascio), tempo rimanente, precedente/successiva, timer con dissolvenza, «Alla fine» | 2 min |
 | `lettore_tocchi_rapidi.mjs` | tocchi a raffica, cambio voce e livelli durante il caricamento, sottofondo che parte e si ferma con la recitazione, «Ripeti» | 2 min |
 | `lettore_focus.mjs` | il focus da tastiera non si perde quando la scheda viene ridisegnata | 20 s |
-| `voci_e_protezione.mjs` | 5 voci, selezione protetta di Mishary Al-Afasy (elenco, ricerca, riproduzione forzata, precedente/successiva, fine Sura, cambio voce, preferenze salvate), Al-Salimi e Al-Baqarah, salvataggio offline rifiutato oltre 100 MB | 3 min |
+| `voci_e_protezione.mjs` | 5 voci, Afasy con tutte le 114 Sure e i loro livelli, selezione protetta simulata (elenco, ricerca, riproduzione forzata, precedente/successiva, fine Sura), Al-Salimi e Al-Baqarah, salvataggio offline rifiutato oltre 100 MB | 3 min |
 | `schermi.mjs` | nessuno scorrimento orizzontale e lettore dentro la scheda da 320 a 1280 px | 1 min |
 | `offline_1_con_rete.mjs` poi `offline_2_senza_rete.mjs` | uso senza rete: la fase 1 installa il service worker e salva una Sura; **poi si ferma il server** e la fase 2 controlla che app, Sura salvata (con salto di posizione) e sottofondo funzionino e che un errore di rete non lasci lo stato bloccato | 2 min |
 

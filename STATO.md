@@ -1,7 +1,7 @@
 # STATO: Sakina – 8 novembre 2026
 
 ## Fatto
-- **App creata** in `C:\Users\df\Dev\GitHub\sakina` separando le recitazioni da Bonaccia: lettore, 5 voci, selezione protetta di Afasy (11 Sure), sottofondo di natura (pioggia, onde, vento, ruscello), timer, «Alla fine», offline per le singole Sure, livelli pareggiati, Media Session. Motore audio ridotto (`js/audio.js`), nuovo aspetto (sabbia e verde; notte marrone e oro).
+- **App creata** in `C:\Users\df\Dev\GitHub\sakina` separando le recitazioni da Bonaccia: lettore, 5 voci, Afasy con tutte le 114 Sure (dal 9 novembre 2026; prima 11), sottofondo di natura (pioggia, onde, vento, ruscello), timer, «Alla fine», offline per le singole Sure, livelli pareggiati, Media Session. Motore audio ridotto (`js/audio.js`), nuovo aspetto (sabbia e verde; notte marrone e oro).
 - **Bonaccia ripulita** (senza commit): niente più recitazioni, tre collegamenti a `https://ginkgo321.github.io/sakina/`, versione 1.10, cache `bonaccia-v13`; il suo service worker cancella solo Cache `bonaccia-*` e lascia `bonaccia-recitazioni-v1`. Prove di Bonaccia rilanciate: ok.
 - **Saluto per nome**: finestra alla prima apertura (si può saltare), nome in `localStorage` (`sakina.nome`), modificabile da «Su Sakina»; saluto in quattro fasce orarie; il nome è sempre testo (mai HTML).
 - **Migrazione da Bonaccia** (stesso indirizzo): riprende `bonaccia.quran_settings` e sposta le Sure da `bonaccia-recitazioni-v1`.
@@ -14,7 +14,7 @@
 ## Decisioni
 - **Stile delle copertine: D** (acquerello e guazzo notturno con foglia d'oro, cerchio con anello dorato, colore del cielo per tema). Scelto dall'utente l'8 novembre 2026; prompt in `soggetti.json`.
 - Immagini: nessuna figura umana, nessun profeta, nessuno strumento musicale; originali, non copie di altre app. Antigravity ha finito la quota del modello di immagini dopo 2 immagini (HTTP 429, ripristino circa 4 ore); il resto con la chiave Google Cloud, 2 alla volta (con 4 arriva il 429).
-- **Repository pubblico** `github.com/ginkgo321/sakina` (Pages attive su `ginkgo321.github.io/sakina/`): `dilettafalcone` è collaboratore con scrittura; il primo commit («Primo commit», 22:26) l'ha fatto l'utente. Si pubblica ogni ~10 Sure riviste a occhio (idea dell'utente). Regole in `CLAUDE.md`: niente dati personali o di salute; per questo `docs/analisi_suoni.md` (parlava di acufene e di una paziente) è solo in `docs/locale/` (ignorata) e il pubblico ha `docs/livelli_audio.md`. **Il vecchio file resta nella cronologia del primo commit**: per toglierlo serve riscrivere la storia (push forzato), da chiedere all'utente.
+- **Repository pubblico** `github.com/ginkgo321/sakina` (Pages attive su `ginkgo321.github.io/sakina/`): `dilettafalcone` è collaboratore con scrittura; il primo commit («Primo commit», 22:26) l'ha fatto l'utente. Si pubblica ogni ~10 Sure riviste a occhio (idea dell'utente). Regole in `CLAUDE.md`: niente dati personali o di salute; per questo `docs/analisi_suoni.md` (parlava di acufene e di un'utente) è solo in `docs/locale/` (ignorata) e il pubblico ha `docs/livelli_audio.md`. **Il vecchio file resta nella cronologia del primo commit**: per toglierlo serve riscrivere la storia (push forzato), da chiedere all'utente.
 - Bonaccia: dilettafalcone ha solo lettura su `ginkgo321/bonaccia`, quindi la ripulitura di Bonaccia è solo locale (nessun push possibile finché non ha scrittura).
 
 ## Da fare

@@ -13,7 +13,7 @@ Sito (PWA) in italiano per ascoltare le recitazioni coraniche (tradizione Hafs):
 - File che deve funzionare offline: mettilo in `FILES` (o in `NATURA`) in `sw.js`; un file elencato che non esiste fa fallire l'installazione del service worker.
 - Dopo ogni modifica a un `.js`: `node --check js/<file>.js` (e `sw.js`).
 - Stesso indirizzo (`ginkgo321.github.io`) di Bonaccia: le memorie del browser sono condivise. Qui si toccano solo le Cache `sakina-*` e le chiavi `sakina.*` di `localStorage`. Il lettore, al primo avvio, riprende dalla vecchia chiave `bonaccia.quran_settings` e sposta le Sure salvate da `bonaccia-recitazioni-v1`.
-- **Recitatori con selezione protetta**: se un recitatore in `js/recitazioni_data.js` ha la proprietà `surahs`, solo quelle Sure esistono con quella voce (oggi Mishary Al-Afasy: 1, 12, 19, 31, 93, 94, 95, 108, 112, 113, 114). Non allargare l'elenco e non aggirarlo: è una scelta voluta dell'utente finale.
+- **Recitatori con selezione protetta**: se un recitatore in `js/recitazioni_data.js` ha la proprietà `surahs`, solo quelle Sure esistono con quella voce. Oggi nessuna voce lo usa: dal 9 novembre 2026, per scelta dell'utente, Mishary Al-Afasy ha tutte le 114 Sure (prima ne aveva 11). Il meccanismo resta e non va aggirato se lo si rimette.
 - Commit locali; push e pubblicazione solo se l'utente lo chiede.
 - Non committare `tools/immagini/lavoro/` (bozze e originali delle immagini) né `docs/locale/` (note di lavoro locali).
 

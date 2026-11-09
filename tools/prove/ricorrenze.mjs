@@ -31,11 +31,13 @@ for (const [nome, d, ok] of casi) {
   const r = await leggi();
   prova(nome, ok(r), J(r));
 }
-// con Afasy le Sure del venerdì non esistono: compaiono «con Al-Minshawi»
+// voce con selezione protetta (simulata su Afasy): le Sure del venerdì compaiono «con Al-Minshawi»
 await ev(`localStorage.setItem('sakina.settings', JSON.stringify({ reciter: 'afasy', surah: 108 }))`);
 await quando(2026, 11, 13, 10);
+const AFASY = [1, 12, 19, 31, 93, 94, 95, 108, 112, 113, 114];
+await ev(`Sakina.QuranData.reciters.afasy.surahs = ${J(AFASY)}; Sakina.QuranPlayer.init();`); await sleep(500);   // selezione protetta simulata (oggi nessuna voce la usa)
 let r = await ev(`({ voci: [...document.querySelectorAll('#q-special [data-surah]')].map(e => e.dataset.surah + ':' + (e.dataset.voice || '')), tag: (document.querySelector('#q-special .q-voice-tag') || {}).textContent, aria: (document.querySelector('#q-special [data-play-surah]') || { getAttribute: () => '' }).getAttribute('aria-label'), afasy: document.querySelector('[data-reciter].on').dataset.reciter })`);
-prova('Afasy il venerdì: Al-Kahf e Al-Jumu’ah compaiono «con Al-Minshawi»', J(r.voci) === J(['18:minshawi', '62:minshawi']) && r.tag === 'con Al-Minshawi' && /Ascolta Al-Kahf con Al-Minshawi/.test(r.aria) && r.afasy === 'afasy', J(r));
+prova('selezione simulata il venerdì: Al-Kahf e Al-Jumu’ah compaiono «con Al-Minshawi»', J(r.voci) === J(['18:minshawi', '62:minshawi']) && r.tag === 'con Al-Minshawi' && /Ascolta Al-Kahf con Al-Minshawi/.test(r.aria) && r.afasy === 'afasy', J(r));
 await ev(`document.querySelector('#q-special [data-play-surah="18"]').click()`); await sleep(4000);
 const st = await ev(`Sakina.QuranPlayer._debugState()`);
 prova('«Ascolta» su Al-Kahf passa ad Al-Minshawi e la avvia', st.playing && st.surah === 18 && st.reciter === 'minshawi', J(st));
@@ -46,6 +48,6 @@ await ev(`document.getElementById('q-play-toggle').click()`); await sleep(500);
 await ev(`document.querySelector('[data-reciter=afasy]').click()`); await sleep(500);
 await ev(`Sakina.QuranPlayer.playSurah(18)`); await sleep(1500);
 const st2 = await ev(`Sakina.QuranPlayer._debugState()`);
-prova('con Afasy, Al-Kahf forzata dal codice non parte (selezione protetta intatta)', !st2.playing && st2.reciter === 'afasy' && st2.surah !== 18, J(st2));
+prova('selezione simulata: Al-Kahf forzata dal codice non parte con quella voce', !st2.playing && st2.reciter === 'afasy' && st2.surah !== 18, J(st2));
 prova('nessun errore JS', T.errs.length === 0, J(T.errs));
 b.chiudi(); process.exit(0);

@@ -17,16 +17,18 @@ for (const [h, titolo, saluto] of casi) {
   const r = await leggi();
   prova(`ore ${h}: «${titolo}» con 1-4 Sure e saluto coerente`, r.titolo === titolo && r.sure.length >= 1 && r.sure.length <= 4 && r.saluto.startsWith(saluto), J(r));
 }
-// con Afasy: le sue Sure con la sua voce, le altre proposte con Al-Minshawi (mai con Afasy)
+// voce con selezione protetta (simulata su Afasy): le sue Sure con la sua voce, le altre «con Al-Minshawi»
 for (const h of [8, 14, 20, 3]) {
   await ev(`localStorage.setItem('sakina.settings', JSON.stringify({ reciter: 'afasy', surah: 108 }))`);
   await oraFinta(h); await ricarica('');
+  await ev(`Sakina.QuranData.reciters.afasy.surahs = ${J(AFASY)}; Sakina.QuranPlayer.init();`); await sleep(500);   // selezione protetta simulata (oggi nessuna voce la usa)
   const r = await leggi();
   const ok = r.sure.length >= 1 && r.sure.every((n, i) => AFASY.includes(n) ? r.voci[i] === '' : r.voci[i] === 'minshawi');
-  prova(`Afasy, ore ${h}: le Sure fuori dalla sua selezione compaiono «con Al-Minshawi»`, ok, J(r));
+  prova(`selezione simulata, ore ${h}: le Sure fuori dalla selezione compaiono «con Al-Minshawi»`, ok, J(r));
 }
 await ev(`localStorage.setItem('sakina.settings', JSON.stringify({ reciter: 'minshawi', surah: 55 }))`);
 await oraFinta(20); await ricarica('');
+await ev(`Sakina.QuranData.reciters.afasy.surahs = ${J(AFASY)}; Sakina.QuranPlayer.init();`); await sleep(500);   // selezione protetta simulata (oggi nessuna voce la usa)
 const prima = await leggi();
 await ev(`document.querySelector('[data-reciter=afasy]').click()`); await sleep(500);
 const dopo = await leggi();

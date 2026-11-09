@@ -35,12 +35,10 @@ const WL = [1, 12, 19, 31, 93, 94, 95, 108, 112, 113, 114];
 try {
   await send('Runtime.enable'); await send('Page.enable');
   await send('Emulation.setDeviceMetricsOverride', { width: 390, height: 844, deviceScaleFactor: 2, mobile: true });
-  // preferenze «vecchie» con Ya-Sin + Afasy: la Sura protetta non deve restare selezionata
-  await send('Page.navigate', { url: 'http://127.0.0.1:8093/index.html#ora' });
+  // dal 9 novembre 2026 Afasy ha tutte le 114 Sure: una preferenza salvata con Ya-Sin + Afasy resta valida
+  await send('Page.navigate', { url: 'http://127.0.0.1:8093/index.html' });
   await sleep(1500);
-  await ev(`localStorage.setItem('sakina.settings', JSON.stringify({ reciter: 'afasy', surah: 36 }))`);
-  await ev(`location.hash = '#recitazioni'`);
-  await sleep(300);
+  await ev(`localStorage.setItem('sakina.nome_chiesto','1'); localStorage.setItem('sakina.settings', JSON.stringify({ reciter: 'afasy', surah: 36 }))`);
   await send('Page.reload', { ignoreCache: true });
   await sleep(2000);
   for (let i = 0; i < 40; i++) { if (await ev("document.readyState === 'complete' && !!window.Sakina && !!Sakina.QuranPlayer && !!document.getElementById('q-prog')")) break; await sleep(250); }
@@ -48,58 +46,53 @@ try {
 
   ok('5 voci tra i chip', (await ev(`document.querySelectorAll('[data-reciter]').length`)) === 5);
   let s0 = await st();
-  ok('preferenza salvata con Ya-Sin + Afasy: la Sura viene corretta', WL.includes(s0.surah), J({ surah: s0.surah }));
+  ok('preferenza salvata con Ya-Sin + Afasy: resta Ya-Sin', s0.surah === 36 && s0.reciter === 'afasy', J({ surah: s0.surah }));
   let n0 = await nums();
-  ok('Afasy: nell\'elenco solo le 11 Sure approvate', J(n0) === J(WL), J(n0));
+  ok('Afasy: nell\'elenco tutte le 114 Sure', n0.length === 114, String(n0.length));
   console.log('     titolo elenco:', await ev(`document.getElementById('q-all-title').textContent`));
-  ok('Afasy: nessuna delle Sure protette (36, 56, 75, 50) nell\'elenco né tra le consigliate',
-     ![36, 56, 75, 50].some(x => n0.includes(x) || false) , '');
-  console.log('     consigliate con Afasy:', J(await recs()));
-  // ricerca: Ya-Sin non deve uscire
   await ev(`(() => { const e = document.getElementById('q-search-input'); e.value = 'ya'; e.dispatchEvent(new Event('input', { bubbles: true })); })()`);
   let rs = await nums();
-  ok('ricerca "ya" con Afasy: nessun risultato protetto', !rs.includes(36), J(rs));
-  await ev(`(() => { const e = document.getElementById('q-search-input'); e.value = '36'; e.dispatchEvent(new Event('input', { bubbles: true })); })()`);
-  rs = await nums();
-  ok('ricerca "36" con Afasy: nulla', rs.length === 0, J(rs));
+  ok('ricerca "ya" con Afasy: trova Ya-Sin', rs.includes(36), J(rs));
   await ev(`(() => { const e = document.getElementById('q-search-input'); e.value = ''; e.dispatchEvent(new Event('input', { bubbles: true })); })()`);
-  // riproduzione forzata di una Sura protetta
-  await ev(`Sakina.QuranPlayer.playSurah(36)`);
-  await sleep(1500);
-  let s1 = await st();
-  ok('playSurah(36) con Afasy: rifiutato, non parte', !s1.playing && !s1.loading && s1.surah !== 36, J(s1));
-
-  // navigazione tra le Sure approvate con precedente/successiva
-  await ev(`document.querySelector('#q-all-surahs-list [data-play-surah="93"]').click()`);
+  await ev(`document.querySelector('#q-all-surahs-list [data-play-surah="36"]').click()`);
   await sleep(5000);
-  let s2 = await st();
-  ok('parte la 93', s2.playing && s2.surah === 93, J(s2));
+  let s1 = await st();
+  ok('Afasy: parte Ya-Sin (036)', s1.playing && s1.surah === 36 && s1.src === '036.mp3', J(s1));
+  const g36 = await ev(`Sakina.QuranLevels && Sakina.QuranLevels.gain && Sakina.QuranLevels.gain.afasy ? Sakina.QuranLevels.gain.afasy[36] : null`);
+  ok('Afasy: livello misurato anche per Ya-Sin (pareggio del volume)', typeof g36 === 'number', String(g36));
+  const mancanti = await ev(`(() => { const g = (Sakina.QuranLevels.gain || {}).afasy || {}; const m = []; for (let n = 1; n <= 114; n++) if (typeof g[n] !== 'number') m.push(n); return m; })()`);
+  ok('Afasy: livelli misurati per tutte le 114 Sure', mancanti.length === 0, J(mancanti));
+  await ev(`document.querySelector('#q-all-surahs-list [data-play-surah="35"]').click()`);
+  await sleep(4000);
   await ev(`document.getElementById('q-next').click()`);
   await sleep(4000);
   let s3 = await st();
-  ok('successiva dalla 93 con Afasy: 94 (non 94 per caso, ma la successiva approvata)', s3.surah === 94, J(s3));
+  ok('Afasy: dalla 35 la successiva è la 36', s3.surah === 36 && s3.reciter === 'afasy', J(s3));
+  await ev(`document.getElementById('q-play-toggle').click()`); await sleep(500);
+
+  // il meccanismo della selezione protetta resta nel codice: lo si prova con una selezione simulata
+  await ev(`Sakina.QuranData.reciters.afasy.surahs = ${J(WL)}; Sakina.QuranPlayer.init();`);
+  await sleep(800);
+  await ev(`document.querySelector('[data-reciter=minshawi]').click()`); await sleep(400);
+  await ev(`document.querySelector('[data-reciter=afasy]').click()`); await sleep(800);
+  n0 = await nums();
+  ok('selezione simulata: nell\'elenco solo le Sure ammesse', J(n0) === J(WL), J(n0));
+  await ev(`(() => { const e = document.getElementById('q-search-input'); e.value = '36'; e.dispatchEvent(new Event('input', { bubbles: true })); })()`);
+  rs = await nums();
+  ok('selezione simulata: la ricerca non trova una Sura esclusa', rs.length === 0, J(rs));
+  await ev(`(() => { const e = document.getElementById('q-search-input'); e.value = ''; e.dispatchEvent(new Event('input', { bubbles: true })); })()`);
+  await ev(`Sakina.QuranPlayer.playSurah(36)`);
+  await sleep(1500);
+  let s2 = await st();
+  ok('selezione simulata: playSurah(36) rifiutato', !s2.playing && !s2.loading && s2.surah !== 36, J(s2));
   await ev(`(() => { const e = document.getElementById('q-end-select'); e.value = 'next'; e.dispatchEvent(new Event('change', { bubbles: true })); })()`);
-  // vai in fondo alla 114 (ultima approvata): alla fine non deve partire niente
   await ev(`document.querySelector('#q-all-surahs-list [data-play-surah="114"]').click()`);
   await sleep(4500);
-  ok('ultima approvata: tasto successiva disattivato', await ev(`document.getElementById('q-next').disabled`));
-  await ev(`(() => { const e = document.getElementById('q-prog'); e.value = 99.5; e.dispatchEvent(new Event('input', { bubbles: true })); e.dispatchEvent(new Event('change', { bubbles: true })); })()`);
-  await sleep(5000);
-  let s4 = await st();
-  ok('fine della 114 con «Passa alla successiva»: si ferma', !s4.playing && s4.surah === 114, J(s4));
-
-  // cambio voce mentre suona una Sura che con Afasy non esiste: pausa, nessuna ripartenza
-  await ev(`document.querySelector('[data-reciter=minshawi]').click()`);
-  await sleep(500);
-  await ev(`document.querySelector('#q-all-surahs-list [data-play-surah="36"]').click()`);
-  await sleep(5000);
-  let s5 = await st();
-  ok('con Minshawi parte la 36', s5.playing && s5.surah === 36, J(s5));
-  await ev(`document.querySelector('[data-reciter=afasy]').click()`);
-  await sleep(2500);
-  let s6 = await st();
-  ok('passando ad Afasy mentre suona la 36: si mette in pausa e la Sura passa a una approvata', !s6.playing && WL.includes(s6.surah), J(s6));
-  ok('dopo il cambio voce la barra non mostra il tempo del brano precedente', (await ev(`document.getElementById('q-time-dur').textContent`)) === '–:––' && (await ev(`document.getElementById('q-prog').disabled`)), await ev(`document.getElementById('q-time-dur').textContent`));
+  ok('selezione simulata: sull\'ultima ammessa il tasto successiva è disattivato', await ev(`document.getElementById('q-next').disabled`));
+  await ev(`document.getElementById('q-play-toggle').click()`); await sleep(500);
+  await ev(`delete Sakina.QuranData.reciters.afasy.surahs; Sakina.QuranPlayer.init();`);
+  await sleep(800);
+  ok('tolta la selezione simulata, Afasy torna a 114 Sure', (await nums()).length === 114);
   await shot('n1.png');
 
   // Salimi

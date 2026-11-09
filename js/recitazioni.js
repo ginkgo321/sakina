@@ -962,7 +962,7 @@
 
   /* Proposte per il momento della giornata: solo Sure che esistono con la voce scelta (selezione protetta rispettata). */
   var lastBand = '';
-  /* Una proposta (ora del giorno, venerdì, feste…) che non esiste con la voce scelta (selezione protetta di Afasy)
+  /* Una proposta (ora del giorno, venerdì, feste…) che non esiste con la voce scelta (voce con selezione protetta; oggi nessuna)
      si propone con la voce di riserva e la scritta «con Al-Minshawi»: la voce protetta resta con le sue sole Sure. */
   var VOCE_RISERVA = 'minshawi';
   function rowHtml(it) {

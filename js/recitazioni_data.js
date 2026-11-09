@@ -1,6 +1,6 @@
 /* Sakina – Dati recitazioni coraniche: 114 Sure, 3 maestri egiziani storici (Hafs Mujawwad) e 2 voci più recenti.
-   Campo opzionale «surahs» di un recitatore: se c'è, SOLO quelle Sure sono disponibili con quella voce
-   (non compaiono nell'elenco, nella ricerca, nei tasti precedente/successiva né alla fine di una Sura).
+   Campo opzionale «surahs» di un recitatore: se c'è, SOLO quelle Sure sono disponibili con quella voce (oggi nessuna voce lo usa:
+   fino al 9 novembre 2026 Afasy aveva 11 Sure). Le Sure assenti non compaiono in elenco, ricerca, precedente/successiva né a fine Sura.
    Campi «cons» (numeri di Sura) e «note» (testo per numero): consigliate per il riposo solo con quella voce. */
 window.Sakina = window.Sakina || {};
 window.Sakina.QuranData = {
@@ -52,9 +52,8 @@ window.Sakina.QuranData = {
     "arabo": "مشاري راشد العفاسي",
     "corto": "Al-Afasy",
     "stile": "Hafs",
-    "desc": "Voce chiara e luminosa, per l'ascolto di ogni giorno. Con questa voce trovi 11 Sure scelte: brevi e di sollievo, protezioni quotidiane e racconti.",
-    "baseUrl": "https://cdn.mp3quran.net/audio/mishary-alafasy/r1/",
-    "surahs": [1, 12, 19, 31, 93, 94, 95, 108, 112, 113, 114]
+    "desc": "Voce chiara e luminosa, per l'ascolto di ogni giorno.",
+    "baseUrl": "https://cdn.mp3quran.net/audio/mishary-alafasy/r1/"
   }
 },
   surahs: [

@@ -12,7 +12,7 @@ Sigle: **LUFS** sonorità media (più alto = più forte); **LRA** quanto la sono
 | **Abdul Basit** | **−4,9 … −6,9** | **+6,6 … +8,3** | 6,7 … 10,1 |
 | Al-Hussary | −11,9 … −17,0 | −1,8 … +0,3 | 8,7 … 12,5 |
 | Mansour Al-Salimi | circa −17 (Al-Baqarah) | — | 2,7 LU di escursione |
-| Mishary Al-Afasy | mediana −14,1, da −16,6 a −10,6 (11 Sure) | — | — |
+| Mishary Al-Afasy | mediana −15,1, da −21,4 a −10,4 (114 Sure) | — | — |
 
 - Abdul Basit è 6-10 dB più forte delle altre voci e ha picchi oltre il fondo scala (+8 dBTP): senza correzione, passare da una voce all'altra dà un colpo improvviso.
 - Anche tra Sure della stessa voce ci sono fino a 5 dB di differenza.
@@ -36,6 +36,6 @@ Le registrazioni della natura (pioggia, mare, fiume) stanno a circa −19,5 LUFS
 
 Se cambi i guadagni del motore o i sottofondi, ritara `BG_REF` e rilancia `lettore_barra_timer.mjs`, `voci_e_protezione.mjs` e `lettore_tocchi_rapidi.mjs`.
 
-## Selezione protetta di Mishary Al-Afasy
+## Selezione protetta (campo `surahs`)
 
-Solo 11 Sure (1, 12, 19, 31, 93, 94, 95, 108, 112, 113, 114), scelte per l'ascolto quotidiano. Verificato con `voci_e_protezione.mjs` che le altre non compaiono in elenco, ricerca, riproduzione forzata, precedente/successiva, fine Sura, cambio voce, preferenze salvate e proposte per momento della giornata.
+Fino al 9 novembre 2026 Mishary Al-Afasy aveva solo 11 Sure; ora ha tutte le 114, misurate e pareggiate come le altre voci. Il meccanismo resta nel codice: se un recitatore ha il campo `surahs`, solo quelle Sure esistono con quella voce. `voci_e_protezione.mjs` lo prova con una selezione simulata (elenco, ricerca, riproduzione forzata, precedente/successiva, fine Sura).

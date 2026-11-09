@@ -24,13 +24,13 @@ Bonaccia vive sullo stesso indirizzo (`ginkgo321.github.io`), quindi le due app 
 ## Cosa c'è
 
 - **Lettore**: barra con traccia colorata (si trascina senza salti), tempo rimanente, spinner di caricamento, Sura precedente/successiva, indietro/avanti di 15 secondi, lettore compatto fisso, comandi e immagine della Sura sulla schermata di blocco (Media Session, JPEG in `img/sure/art/`).
-- **Voci**: Al-Minshawi, Abdul Basit, Al-Hussary, Mansour Al-Salimi (per la notte; con Al-Baqarah, 2 h 20) e Mishary Al-Afasy (solo 11 Sure, `surahs` in `js/recitazioni_data.js`).
+- **Voci**: Al-Minshawi, Abdul Basit, Al-Hussary, Mansour Al-Salimi (per la notte; con Al-Baqarah, 2 h 20) e Mishary Al-Afasy, tutte con le 114 Sure.
 - **Timer** di spegnimento (15-90 minuti, dissolvenza di 12 secondi) e «Alla fine»: fermati, prossima Sura, ripeti.
 - **Sottofondo** di pioggia, onde, vento o ruscello, a distanza regolabile dalla voce (`js/audio.js`).
 - **Pareggia il volume**: tutte le voci e le Sure a −18 LUFS (`js/recitazioni_livelli.js`, generato da `tools/misura_recitazioni.py`).
 - **Salva sul telefono** (non oltre 100 MB) per ascoltare senza rete.
 - **Saluto** per nome, secondo l'ora; il nome si chiede la prima volta e si cambia solo da «Su Sakina».
-- **Proposte per il momento della giornata** (mattino, pomeriggio, sera, notte) in cima all'elenco; se una Sura non esiste con la voce scelta (Afasy) compare «con Al-Minshawi» e parte con quella voce.
+- **Proposte per il momento della giornata** (mattino, pomeriggio, sera, notte) in cima all'elenco; se una Sura non esiste con la voce scelta (voce con selezione protetta, oggi nessuna) compare «con Al-Minshawi» e parte con quella voce.
 - **Ricorrenze**: il venerdì (da giovedì al tramonto) Al-Kahf e Al-Jumu'ah; in Ramadan, nelle sue notti dispari delle ultime dieci e nelle due feste (con il saluto «ʿĪd mubārak») le Sure di quei giorni. Il tramonto è un orario indicativo per l'Italia; le date lunari le calcola il telefono (calendario Umm al-Qura) e possono differire di un giorno.
 - **Copertina e mini descrizione** di ogni Sura (`img/sure/`, `js/sure_info.js`).
 

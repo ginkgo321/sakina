@@ -7,6 +7,7 @@ r"""prepara.py - trasforma le immagini generate in quelle del sito.
 Cerca in tools/immagini/lavoro/grezze i file chiamati sura_NNN.(png|jpg|jpeg|webp), toglie la carta bianca attorno, li ritaglia a quadrato dal centro e scrive
   img/sure/NNN.webp      480 x 480  (scheda del lettore)
   img/sure/t/NNN.webp    104 x 104  (miniature nelle liste, a 2x per gli schermi retina)
+  img/sure/art/NNN.jpg   512 x 512  JPEG (immagine sulla schermata di blocco e nel centro di controllo: Media Session)
 Serve Pillow (Python di sistema). I file grezzi non vanno nel repository (vedi .gitignore).
 """
 import sys
@@ -57,6 +58,7 @@ def main():
         del args[i:i + 2]
     solo = {int(a) for a in args if a.isdigit()}
     (USCITA / "t").mkdir(parents=True, exist_ok=True)
+    (USCITA / "art").mkdir(parents=True, exist_ok=True)
     fatte = 0
     for p in sorted(GREZZE.glob("sura_*.*")):
         try:
@@ -69,6 +71,7 @@ def main():
         nome = f"{n:03d}.webp"
         im.resize((480, 480), Image.LANCZOS).save(USCITA / nome, "WEBP", quality=80, method=6)
         im.resize((104, 104), Image.LANCZOS).save(USCITA / "t" / nome, "WEBP", quality=78, method=6)
+        im.resize((512, 512), Image.LANCZOS).save(USCITA / "art" / f"{n:03d}.jpg", "JPEG", quality=82, optimize=True, progressive=True)
         fatte += 1
         print(f"Sura {n:3d}: {(USCITA / nome).stat().st_size // 1024} KB + miniatura {(USCITA / 't' / nome).stat().st_size // 1024} KB")
     print(f"{fatte} immagini preparate in {USCITA}")

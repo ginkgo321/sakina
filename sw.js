@@ -1,6 +1,6 @@
 /* Sakina – service worker: tiene l’app e i suoni di sottofondo in memoria per usarla senza rete.
    Sullo stesso indirizzo (github.io) vivono anche altre app (Bonaccia): qui si toccano solo le memorie che iniziano per «sakina-». */
-var CACHE = 'sakina-v6';
+var CACHE = 'sakina-v7';
 var QURAN_CACHE = 'sakina-recitazioni-v1';
 var FILES = [
   './', 'index.html', 'manifest.webmanifest',
@@ -66,8 +66,8 @@ self.addEventListener('fetch', function (e) {
 
   if (url.origin !== location.origin) return;
 
-  if (/\.(mp3|webp)$/.test(url.pathname)) {
-    /* audio di sottofondo e immagini delle Sure: prima la copia salvata, poi la rete */
+  if (/\.(mp3|webp|jpg)$/.test(url.pathname)) {
+    /* audio di sottofondo e immagini delle Sure (anche quella della schermata di blocco): prima la copia salvata, poi la rete */
     e.respondWith(caches.match(req).then(function (m) {
       return m || fetch(req).then(function (res) {
         if (res.ok) { var copy = res.clone(); caches.open(CACHE).then(function (c) { c.put(req, copy); }); }   // un 404 (immagine non ancora pubblicata) non si salva

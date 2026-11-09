@@ -15,6 +15,7 @@ Pilotano Chrome senza finestra (protocollo CDP, solo Node 22 o successivo: nessu
 | `dati_corrotti.mjs` | l'app parte con dati salvati rovinati (tipi sbagliati, JSON rotto, Sure inesistenti o protette), riprende le impostazioni della vecchia chiave di Bonaccia | 1 min |
 | `saluto_e_immagini.mjs` | finestra del nome alla prima apertura, nome mostrato come testo (niente HTML), cambio e rimozione solo da «Su Sakina», «Non adesso», fasce orarie del saluto, copertina che sparisce se il file manca | 1 min |
 | `momenti_del_giorno.mjs` | le proposte cambiano con l'ora (3, 8, 14, 20, 23: ora finta nella pagina), con Afasy compaiono solo le sue 11 Sure, il cambio voce aggiorna l'elenco, «Ascolta» avvia la Sura | 1 min |
+| `schermata_di_blocco.mjs` | la Media Session riporta titolo, voce e immagine JPEG 512 × 512 della Sura in corso, e le cambia con la Sura successiva o con un'altra voce; esistono tutte le 114 immagini | 30 s |
 | `migrazione_da_bonaccia.mjs` | una Sura salvata in `bonaccia-recitazioni-v1` passa in `sakina-recitazioni-v1` e la vecchia memoria si svuota | 20 s |
 | `lettore_barra_timer.mjs` | spinner, barra (trascinamento senza salti, rilascio), tempo rimanente, precedente/successiva, timer con dissolvenza, «Alla fine» | 2 min |
 | `lettore_tocchi_rapidi.mjs` | tocchi a raffica, cambio voce e livelli durante il caricamento, sottofondo che parte e si ferma con la recitazione, «Ripeti» | 2 min |

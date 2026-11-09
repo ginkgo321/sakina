@@ -23,7 +23,7 @@ Sito (PWA) in italiano per ascoltare le recitazioni coraniche (tradizione Hafs):
 - `js/app.js`: tema, saluto con il nome (`sakina.nome`), finestre «Benvenuto» e «Su Sakina», versione.
 - `js/recitazioni.js`, `js/recitazioni_data.js`, `js/recitazioni_livelli.js`: lettore, 114 Sure e 5 voci in streaming dalla CDN MP3Quran, salvataggio offline, livelli, sottofondo, timer.
 - `js/sure_info.js`: luogo e mini descrizione di ogni Sura, più le proposte per momento della giornata (`Sakina.Momenti`: mattino 5-12, pomeriggio 12-18, sera 18-22, notte 22-5, stesse fasce del saluto). **Generato** da `tools/immagini/genera_dati.py`: si modificano lì. Con una voce a selezione protetta le proposte mostrano solo le Sure che esistono con quella voce.
-- `img/sure/NNN.webp` (480 px) e `img/sure/t/NNN.webp` (miniature 104 px): una copertina per Sura. Senza persone, volti o scritte.
+- `img/sure/NNN.webp` (480 px), `img/sure/t/NNN.webp` (miniature 104 px) e `img/sure/art/NNN.jpg` (512 px, per la schermata di blocco: JPEG perché il WebP non è sicuro su iOS): una copertina per Sura. Senza persone, volti o scritte.
 - `js/audio.js`: motore audio (sottofondo di natura e livello della voce).
 - `js/version.js`: versione (lo scrive `tools/aggiorna.py`).
 - `audio/natura/`: registrazioni CC0 di Freesound (+ `CREDITS.txt`).

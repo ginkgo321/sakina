@@ -23,7 +23,7 @@ Bonaccia vive sullo stesso indirizzo (`ginkgo321.github.io`), quindi le due app 
 
 ## Cosa c'è
 
-- **Lettore**: barra con traccia colorata (si trascina senza salti), tempo rimanente, spinner di caricamento, Sura precedente/successiva, indietro/avanti di 15 secondi, lettore compatto fisso, comandi sulla schermata di blocco.
+- **Lettore**: barra con traccia colorata (si trascina senza salti), tempo rimanente, spinner di caricamento, Sura precedente/successiva, indietro/avanti di 15 secondi, lettore compatto fisso, comandi e immagine della Sura sulla schermata di blocco (Media Session, JPEG in `img/sure/art/`).
 - **Voci**: Al-Minshawi, Abdul Basit, Al-Hussary, Mansour Al-Salimi (per la notte; con Al-Baqarah, 2 h 20) e Mishary Al-Afasy (solo 11 Sure, `surahs` in `js/recitazioni_data.js`).
 - **Timer** di spegnimento (15-90 minuti, dissolvenza di 12 secondi) e «Alla fine»: fermati, prossima Sura, ripeti.
 - **Sottofondo** di pioggia, onde, vento o ruscello, a distanza regolabile dalla voce (`js/audio.js`).

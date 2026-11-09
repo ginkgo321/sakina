@@ -312,7 +312,9 @@
       navigator.mediaSession.metadata = new MediaMetadata({
         title: s.n + '. ' + s.nome + ' (' + s.trad + ') - ' + s.ar,
         artist: r.nome + ' (' + (r.stile ? r.stile.replace(/ \(studio\)/, '') : 'Hafs') + ')',
-        album: 'Recitazioni coraniche - Sakina'
+        album: 'Recitazioni coraniche - Sakina',
+        // immagine della Sura sulla schermata di blocco e nel centro di controllo (JPEG: il WebP non è sicuro su iOS); senza file, il sistema usa l'icona dell'app
+        artwork: [{ src: new URL('img/sure/art/' + s.pad + '.jpg', location.href).href, sizes: '512x512', type: 'image/jpeg' }]
       });
     } catch (e) {}
     function azione(nome, fn) { try { navigator.mediaSession.setActionHandler(nome, fn); } catch (e) {} }   // un browser può non supportarla

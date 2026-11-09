@@ -52,11 +52,16 @@
     if (!openedSheet) return;
     openedSheet.hidden = true;
     openedSheet = null;
-    if (opener && opener.focus && document.contains(opener)) opener.focus();
+    var back = opener;
+    if (back && !document.contains(back) && back.id) back = document.getElementById(back.id);   // ridisegnato nel frattempo (il lettore si aggiorna mentre suona)
+    if (back && back.focus && document.contains(back)) back.focus();
   }
+  S.openDialog = openDialog;     // usate anche dal lettore (menu ⋯, coda e liste)
+  S.closeDialog = closeDialog;
   var sheet = $('#sheet'), hello = $('#hello');
   $('#btn-info').addEventListener('click', function () {
     $('#name-input').value = getName();
+    if (S.QuranPlayer && S.QuranPlayer.refreshEscl) S.QuranPlayer.refreshEscl();
     openDialog(sheet, $('#sheet-card'));
   });
   $('#sheet-close').addEventListener('click', closeDialog);

@@ -73,11 +73,15 @@
     </form>
     <p class="hint" id="name-hint" role="status" aria-live="polite">Serve solo al saluto in cima alla pagina e resta nel tuo telefono.</p>
 
+    <h3>Sure escluse</h3>
+    <div id="q-escl"></div>
+
     <h3>Come funziona</h3>
     <ul>
       <li>Le Sure si ascoltano subito, in streaming: all’installazione l’app non occupa spazio.</li>
       <li>«Salva sul telefono» tiene una Sura nella memoria del telefono, per ascoltarla senza rete (non oltre 100 MB).</li>
       <li>Il timer di spegnimento abbassa piano la voce e poi si ferma; «Alla fine» decide cosa succede quando la Sura termina.</li>
+      <li>Con ⋯ accanto a ogni Sura la metti in coda («Riproduci dopo» o in fondo) o in una lista. Le Sure in coda partono da sole, ognuna con la sua voce, prima di «Alla fine». «Coda e liste», sotto il lettore, mostra la coda e le liste salvate.</li>
       <li>Il sottofondo di natura è facoltativo e resta sempre più basso della voce. «Pareggia il volume» porta le voci allo stesso livello.</li>
     </ul>
 
@@ -89,6 +93,15 @@
     <div class="sheet-actions"><button class="btn" id="sheet-close" type="button">Chiudi</button></div>
   </div>
 </div>
+
+<!-- Menu ⋯ di una Sura e finestra «Coda e liste»: li disegna js/recitazioni.js -->
+<div class="sheet" id="q-menu" role="dialog" aria-modal="true" aria-labelledby="q-menu-title" hidden>
+  <div class="sheet-card q-menu-card" id="q-menu-card" tabindex="-1"></div>
+</div>
+<div class="sheet" id="q-coda" role="dialog" aria-modal="true" aria-labelledby="q-coda-title" hidden>
+  <div class="sheet-card" id="q-coda-card" tabindex="-1"></div>
+</div>
+<p class="q-toast" id="q-toast" role="status" aria-live="polite"></p>
 
 <script src="js/version.js"></script>
 <script src="js/audio.js"></script>

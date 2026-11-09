@@ -61,6 +61,75 @@
     }
   } catch (e) {}
 
+  /* Sure escluse dall'utente («Su Sakina» → Sure escluse), per una voce o per tutte. Reversibili.
+     Con quella voce una Sura esclusa sparisce da elenco, ricerca, consigliate, precedente/successiva, «Alla fine» e coda;
+     le proposte del giorno la offrono con un'altra voce. Una voce non resta mai senza Sure. */
+  var ESCL_KEY = 'sakina.escluse';
+  var escluse = {};          // { tutte: [n…], minshawi: [n…], … }
+  var exclMap = {};          // voce -> { n: true }
+  function own(o, k) { return Object.prototype.hasOwnProperty.call(o, k); }
+  function cleanNums(a) {
+    var out = [], seen = {};
+    if (!Array.isArray(a)) return out;
+    a.forEach(function (x) { var n = Number(x); if (n % 1 === 0 && n >= 1 && n <= D.surahs.length && !seen[n]) { seen[n] = true; out.push(n); } });
+    return out.sort(function (x, y) { return x - y; });
+  }
+  try {
+    var es = JSON.parse(localStorage.getItem(ESCL_KEY) || '{}');
+    if (es && typeof es === 'object') ['tutte'].concat(RECITERS).forEach(function (k) { if (own(es, k)) { var l = cleanNums(es[k]); if (l.length) escluse[k] = l; } });
+  } catch (e) {}
+  function exclFor(rid, src) {     // le escluse di una voce; nessuna se toglierebbero tutte le sue Sure
+    var m = {};
+    (src.tutte || []).concat(src[rid] || []).forEach(function (n) { m[n] = true; });
+    return baseSurahs(rid).some(function (x) { return !m[x.n]; }) ? m : {};
+  }
+  function voceSenzaSure(src) {    // la prima voce che resterebbe senza Sure con queste esclusioni
+    for (var i = 0; i < RECITERS.length; i++) {
+      var rid = RECITERS[i], m = {};
+      (src.tutte || []).concat(src[rid] || []).forEach(function (n) { m[n] = true; });
+      if (!baseSurahs(rid).some(function (x) { return !m[x.n]; })) return rid;
+    }
+    return null;
+  }
+  function rebuildExcl() { exclMap = {}; RECITERS.forEach(function (rid) { exclMap[rid] = exclFor(rid, escluse); }); }
+  rebuildExcl();
+
+  /* Coda e liste di riproduzione: ogni elemento è una Sura con la sua voce. Restano nel telefono. */
+  var CODA_KEY = 'sakina.coda', LISTE_KEY = 'sakina.liste', MAX_ITEMS = 200, MAX_LISTE = 40;
+  function cleanItem(x) {
+    if (!x || typeof x !== 'object') return null;
+    var n = Number(x.n);
+    if (!(n % 1 === 0 && n >= 1 && n <= D.surahs.length)) return null;
+    if (typeof x.voice !== 'string' || RECITERS.indexOf(x.voice) < 0) return null;
+    return { n: n, voice: x.voice };
+  }
+  function cleanItems(a) { return Array.isArray(a) ? a.map(cleanItem).filter(Boolean).slice(0, MAX_ITEMS) : []; }
+  function cleanNome(v) { return String(v == null ? '' : v).replace(/\s+/g, ' ').trim().slice(0, 40); }
+  function newId() {
+    var id;
+    do { id = 'l' + Date.now().toString(36) + Math.floor(Math.random() * 1e6).toString(36); } while (liste.some(function (l) { return l.id === id; }));
+    return id;
+  }
+  var coda = { items: [], pos: -1, ripeti: false };   // pos: l'elemento suonato per ultimo dalla coda (-1: nessuno)
+  var liste = [];
+  try {
+    var cs = JSON.parse(localStorage.getItem(CODA_KEY) || 'null');
+    if (cs && typeof cs === 'object') {
+      coda.items = cleanItems(cs.items);
+      var cp = Number(cs.pos);
+      coda.pos = (cp % 1 === 0 && cp >= -1 && cp < coda.items.length) ? cp : -1;
+      coda.ripeti = cs.ripeti === true;
+    }
+  } catch (e) {}
+  try {
+    var ls = JSON.parse(localStorage.getItem(LISTE_KEY) || '[]');
+    if (Array.isArray(ls)) ls.slice(0, MAX_LISTE).forEach(function (l, i) {
+      if (!l || typeof l !== 'object') return;
+      var id = (typeof l.id === 'string' && /^[a-z0-9]{1,24}$/.test(l.id) && !liste.some(function (x) { return x.id === l.id; })) ? l.id : newId();
+      liste.push({ id: id, nome: cleanNome(l.nome) || ('Lista ' + (i + 1)), items: cleanItems(l.items) });
+    });
+  } catch (e) {}
+
   if (!isAllowed(state.reciter, state.surah)) state.surah = reciterSurahs(state.reciter)[0].n;
 
   function saveSettings() {
@@ -83,22 +152,25 @@
     return D.surahs[0];
   }
 
-  /* Sure disponibili con un recitatore: se ha «surahs», solo quelle (selezione protetta, vedi recitazioni_data.js) */
-  function reciterSurahs(rid) {
+  /* Sure che esistono con un recitatore: se ha «surahs», solo quelle (selezione protetta, vedi recitazioni_data.js) */
+  function baseSurahs(rid) {
     var r = D.reciters[rid];
     if (!r || !r.surahs) return D.surahs;
     return D.surahs.filter(function (s) { return r.surahs.indexOf(s.n) >= 0; });
   }
+  /* …tolte quelle che l'utente ha escluso con quella voce */
+  function reciterSurahs(rid) {
+    var m = exclMap[rid] || {};
+    return baseSurahs(rid).filter(function (s) { return !m[s.n]; });
+  }
   function isAllowed(rid, n) {
     var r = D.reciters[rid];
-    if (!r || typeof n !== 'number' || n % 1 !== 0 || n < 1 || n > D.surahs.length) return false;
-    return !r.surahs || r.surahs.indexOf(n) >= 0;
+    if (!r || !own(D.reciters, rid) || typeof n !== 'number' || n % 1 !== 0 || n < 1 || n > D.surahs.length) return false;
+    return (!r.surahs || r.surahs.indexOf(n) >= 0) && !(exclMap[rid] || {})[n];
   }
+  /* Sura ammessa più vicina nella direzione data (anche se quella di partenza non è più ammessa) */
   function neighbour(n, dir) {
-    var list = reciterSurahs(state.reciter);
-    for (var i = 0; i < list.length; i++) {
-      if (list[i].n === n) return list[i + dir] ? list[i + dir].n : null;
-    }
+    for (var k = n + dir; k >= 1 && k <= D.surahs.length; k += dir) if (isAllowed(state.reciter, k)) return k;
     return null;
   }
   function isRecommended(rid, s) {
@@ -431,7 +503,12 @@
   }
 
   /* Sura precedente e successiva */
-  function goNext() { var n = neighbour(state.surah, 1); if (n) playSurah(n); }
+  function goNext() {
+    var qi = codaNext();
+    if (qi >= 0) { playCodaAt(qi); return; }       // la coda ha la precedenza
+    var n = neighbour(state.surah, 1);
+    if (n) playSurah(n);
+  }
   function goPrev() {
     if (audioEl.currentTime > 5) { audioEl.currentTime = 0; return; }
     var n = neighbour(state.surah, -1);
@@ -660,7 +737,9 @@
       if (B.Engine) B.Engine.mediaActive(false);
       renderPlayerCard();
       renderActiveItem();
-      // a fine Sura: ferma, passa alla successiva o ripeti
+      // a fine Sura: prima la coda; finita la coda, «Alla fine» (ferma, successiva o ripeti)
+      var qi = codaNext();
+      if (qi >= 0) { playCodaAt(qi); return; }
       if (state.endMode === 'repeat') {
         playSurah(state.surah);
       } else if (state.endMode === 'next') {
@@ -835,7 +914,7 @@
         '<button type="button" class="q-skip" id="q-bwd" aria-label="Indietro 15 secondi">' + ICON_BWD + '<span>15 s</span></button>' +
         '<button type="button" class="q-play-btn" id="q-play-toggle" aria-label="Avvia"></button>' +
         '<button type="button" class="q-skip" id="q-fwd" aria-label="Avanti 15 secondi">' + ICON_FWD + '<span>15 s</span></button>' +
-        '<button type="button" class="q-nav" id="q-next" aria-label="Sura successiva"' + (neighbour(state.surah, 1) ? '' : ' disabled') + '>' + ICON_NEXT + '</button>' +
+        '<button type="button" class="q-nav" id="q-next" aria-label="Sura successiva"' + ((neighbour(state.surah, 1) || codaNext() >= 0) ? '' : ' disabled') + '>' + ICON_NEXT + '</button>' +
       '</div>' +
 
       '<div class="q-opts-row">' +
@@ -850,6 +929,7 @@
         '</select></label>' +
       '</div>' +
       '<p class="hint q-sleep-left" id="q-sleep-left" role="status" aria-live="off"></p>' +
+      queueRowHtml() +
 
       (state.reciter === 'basit' && !wantRouted()
         ? '<p class="hint q-warn">Questa voce è registrata molto più forte delle altre (fino a 10 dB). Abbassa il volume del telefono prima di avviare.</p>'
@@ -958,13 +1038,22 @@
         toggleOffline(state.surah, btnOff);
       });
     }
+
+    var btnQ = document.getElementById('q-queue-btn');
+    if (btnQ) btnQ.addEventListener('click', openCoda);
+    renderCodaSheet();      // la finestra della coda, se aperta, segue l'ascolto
   }
 
   /* Proposte per il momento della giornata: solo Sure che esistono con la voce scelta (selezione protetta rispettata). */
   var lastBand = '';
-  /* Una proposta (ora del giorno, venerdì, feste…) che non esiste con la voce scelta (voce con selezione protetta; oggi nessuna)
-     si propone con la voce di riserva e la scritta «con Al-Minshawi»: la voce protetta resta con le sue sole Sure. */
+  /* Una proposta (ora del giorno, venerdì, feste…) che non c'è con la voce scelta (esclusa dall'utente o fuori da una
+     selezione protetta) si propone con un'altra voce, di preferenza Al-Minshawi, con la scritta «con …». */
   var VOCE_RISERVA = 'minshawi';
+  function voceAlternativa(n) {
+    var ordine = [VOCE_RISERVA].concat(RECITERS);
+    for (var i = 0; i < ordine.length; i++) if (ordine[i] !== state.reciter && isAllowed(ordine[i], n)) return ordine[i];
+    return null;
+  }
   function rowHtml(it) {
     var s = getSurah(it.n), altra = it.voice ? D.reciters[it.voice] : null;
     var nomeVoce = altra ? (altra.corto || altra.nome) : '';
@@ -977,6 +1066,7 @@
           '<small class="sub">' + s.trad + (altra ? ' · <span class="q-voice-tag">con ' + nomeVoce + '</span>' : '') + (isSaved ? ' · <span style="color:var(--deep)">✓ Offline</span>' : '') + '</small></div>' +
         '</div></div>' +
         '<button type="button" class="btn secondary piccolo q-play-item-btn" data-play-surah="' + s.n + '"' + (altra ? ' aria-label="Ascolta ' + s.nome + ' con ' + nomeVoce + '"' : '') + '>' + (isPl ? 'Pausa' : 'Ascolta') + '</button>' +
+        moreBtn(s) +
       '</div>';
   }
   function proposalItems(list, max, gia) {
@@ -984,7 +1074,7 @@
     list.forEach(function (n) {
       if (out.length >= max || (gia && gia[n])) return;
       if (isAllowed(state.reciter, n)) out.push({ n: n, voice: null });
-      else if (VOCE_RISERVA !== state.reciter && isAllowed(VOCE_RISERVA, n)) out.push({ n: n, voice: VOCE_RISERVA });
+      else { var v = voceAlternativa(n); if (v) out.push({ n: n, voice: v }); }
     });
     return out;
   }
@@ -1049,6 +1139,7 @@
           '<button type="button" class="btn secondary piccolo q-play-item-btn" data-play-surah="' + s.n + '">' +
             (isPl ? 'Pausa' : 'Ascolta') +
           '</button>' +
+          moreBtn(s) +
         '</div>';
     });
 
@@ -1065,9 +1156,11 @@
     var limited = all.length < D.surahs.length;
     var at = document.getElementById('q-all-title'), as = document.getElementById('q-all-sub'), sw = document.getElementById('q-search-wrap');
     if (at) at.textContent = limited ? '📖 Le Sure per questa voce (' + all.length + ')' : '📖 Tutte le 114 Sure';
-    if (as) as.textContent = limited
+    var nEscl = baseSurahs(state.reciter).length - all.length;
+    if (as) as.textContent = (limited
       ? 'Con questa voce trovi queste Sure. Selezionane una per avviare l\'ascolto immediato.'
-      : 'Puoi ascoltare in streaming qualsiasi Sura del Corano. Seleziona una Sura per avviare l\'ascolto immediato o salvarla per l\'uso senza rete.';
+      : 'Puoi ascoltare in streaming qualsiasi Sura del Corano. Seleziona una Sura per avviare l\'ascolto immediato o salvarla per l\'uso senza rete.') +
+      (nEscl ? ' ' + (nEscl === 1 ? 'Una Sura è esclusa' : nEscl + ' Sure sono escluse') + ' con questa voce: le rimetti in «Su Sakina» (ⓘ in alto).' : '');
     if (sw) sw.hidden = limited && all.length <= 12;
     var filtered = all.filter(function (s) {
       if (!filter) return true;
@@ -1102,6 +1195,7 @@
           '<button type="button" class="btn secondary piccolo q-play-item-btn" data-play-surah="' + s.n + '">' +
             (isPl ? 'Pausa' : 'Ascolta') +
           '</button>' +
+          moreBtn(s) +
         '</div>';
     });
 
@@ -1141,6 +1235,13 @@
   }
 
   function bindListEvents(container) {
+    container.querySelectorAll('[data-menu-surah]').forEach(function (b) {
+      b.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var row = b.closest('[data-surah]'), v = row && row.getAttribute('data-voice');
+        openMenu({ n: parseInt(b.getAttribute('data-menu-surah'), 10), voice: v || state.reciter });
+      });
+    });
     var btns = container.querySelectorAll('[data-play-surah]');
     btns.forEach(function (b) {
       b.addEventListener('click', function (e) {
@@ -1171,14 +1272,481 @@
     });
   }
 
+  /* ======================================================================
+     Coda (come su Spotify) e liste di riproduzione.
+     - Ogni elemento è { n: Sura, voice: voce }: parte con la sua voce.
+     - A fine Sura, e con «Sura successiva», la coda ha la precedenza; finita la coda vale «Alla fine».
+     - «Ripeti la coda» ricomincia dalla prima. Il timer di spegnimento ferma tutto.
+     - Una Sura esclusa con la sua voce si salta.
+     ====================================================================== */
+  function esc(t) { return String(t).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+  function voceCorta(rid) { var r = D.reciters[rid]; return r ? (r.corto || r.nome) : ''; }
+  function saveCoda() { try { localStorage.setItem(CODA_KEY, JSON.stringify(coda)); } catch (e) {} }
+  function saveListe() { try { localStorage.setItem(LISTE_KEY, JSON.stringify(liste)); } catch (e) {} }
+  function okItem(it) { return !!it && isAllowed(it.voice, it.n); }
+
+  /* indice del prossimo elemento da suonare, -1 se la coda è finita */
+  function codaNext() {
+    var L = coda.items.length, i;
+    for (i = coda.pos + 1; i < L; i++) if (okItem(coda.items[i])) return i;
+    if (coda.ripeti) for (i = 0; i <= coda.pos && i < L; i++) if (okItem(coda.items[i])) return i;
+    return -1;
+  }
+  function codaInArrivo() {
+    var c = 0;
+    for (var i = coda.pos + 1; i < coda.items.length; i++) if (okItem(coda.items[i])) c++;
+    return c;
+  }
+  function playCodaAt(i) {
+    var it = coda.items[i];
+    if (!okItem(it)) return false;
+    coda.pos = i;
+    saveCoda();
+    if (it.voice === state.reciter && it.n === state.surah && audioEl.getAttribute('src')) { try { audioEl.currentTime = 0; } catch (e) {} }   // dalla coda una Sura parte sempre dall'inizio
+    if (it.voice !== state.reciter) switchReciter(it.voice, it.n); else playSurah(it.n);
+    renderPlayerCard();
+    return true;
+  }
+  function codaChanged() { saveCoda(); renderPlayerCard(); }
+  function codaAdd(it, subito) {
+    if (coda.items.length >= MAX_ITEMS) { toast('La coda è piena: al massimo ' + MAX_ITEMS + ' Sure.'); return false; }
+    if (subito) coda.items.splice(coda.pos + 1, 0, { n: it.n, voice: it.voice });
+    else coda.items.push({ n: it.n, voice: it.voice });
+    codaChanged();
+    return true;
+  }
+  function codaRemove(i) {
+    if (i < 0 || i >= coda.items.length) return;
+    coda.items.splice(i, 1);
+    if (i <= coda.pos) coda.pos--;
+    codaChanged();
+  }
+  function codaMove(i, d) {
+    var j = i + d;
+    if (i <= coda.pos || j <= coda.pos || j >= coda.items.length) return false;   // si riordinano solo le Sure in arrivo
+    var t = coda.items[i]; coda.items[i] = coda.items[j]; coda.items[j] = t;
+    codaChanged();
+    return true;
+  }
+  function inAscolto(it) { return !!it && it.n === state.surah && it.voice === state.reciter && (state.playing || state.loading); }
+  function codaTogliAscoltate() {
+    var keep = inAscolto(coda.items[coda.pos]) ? coda.pos : coda.pos + 1;   // la Sura in ascolto resta
+    if (keep <= 0) return;
+    coda.items.splice(0, keep);
+    coda.pos -= keep;
+    codaChanged();
+  }
+  function codaSvuota() { coda.items = []; coda.pos = -1; codaChanged(); }
+
+  function trovaLista(id) { for (var i = 0; i < liste.length; i++) if (liste[i].id === id) return liste[i]; return null; }
+  function listaNuova(nome, items) {
+    if (liste.length >= MAX_LISTE) { toast('Al massimo ' + MAX_LISTE + ' liste.'); return null; }
+    var l = { id: newId(), nome: cleanNome(nome) || ('Lista ' + (liste.length + 1)), items: items.slice(0, MAX_ITEMS).map(function (x) { return { n: x.n, voice: x.voice }; }) };
+    liste.push(l);
+    saveListe();
+    return l;
+  }
+  function listaPlay(id, da) {
+    var l = trovaLista(id);
+    if (!l) return;
+    coda.items = l.items.map(function (x) { return { n: x.n, voice: x.voice }; });
+    da = da || 0;
+    var i = -1, k;
+    for (k = da; k < coda.items.length && i < 0; k++) if (okItem(coda.items[k])) i = k;
+    for (k = 0; k < da && i < 0; k++) if (okItem(coda.items[k])) i = k;
+    if (i >= 0) { playCodaAt(i); toast('In coda: «' + l.nome + '».'); }
+    else { codaChanged(); toast('In «' + l.nome + '» non resta niente da ascoltare: le sue Sure sono escluse.'); }
+  }
+
+  /* ---------- riga «Coda e liste» nel lettore ---------- */
+  var ICON_QUEUE = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 6h12M4 11h12M4 16h7"/><path d="M16 14v6l4.5-3z" fill="currentColor" stroke="none"/></svg>';
+  var ICON_MORE = '<svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="12" r="2"/></svg>';
+  var ICON_UP = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 15l6-6 6 6"/></svg>';
+  var ICON_DOWN = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>';
+  var ICON_X = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+
+  function moreBtn(s) {
+    return '<button type="button" class="q-more-btn" data-menu-surah="' + s.n + '" aria-haspopup="dialog" aria-label="Altre azioni: ' + s.nome + '">' + ICON_MORE + '</button>';
+  }
+  function queueRowHtml() {
+    var up = codaInArrivo(), nx = codaNext(), it = nx >= 0 ? coda.items[nx] : null, s = it && getSurah(it.n);
+    return '<div class="q-queue-row">' +
+      '<button type="button" class="btn secondary piccolo q-queue-btn" id="q-queue-btn" aria-haspopup="dialog">' + ICON_QUEUE + '<span>Coda e liste</span>' +
+        (up ? '<span class="q-count">' + up + '<span class="visually-hidden"> in coda</span></span>' : '') + '</button>' +
+      (s ? '<small class="tenue q-queue-next" id="q-queue-next">Dopo: ' + s.nome + (it.voice !== state.reciter ? ', con ' + voceCorta(it.voice) : '') + '</small>' : '') +
+    '</div>';
+  }
+
+  /* ---------- avviso breve in basso ---------- */
+  var toastT = null;
+  function toast(msg) {
+    var t = document.getElementById('q-toast');
+    if (!t) return;
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(toastT);
+    toastT = setTimeout(function () { t.classList.remove('show'); }, 2800);
+  }
+
+  /* ---------- menu «⋯» di una Sura ---------- */
+  var menuIt = null;
+  function openMenu(it) {
+    if (!okItem(it) || !B.openDialog) return;
+    menuIt = it;
+    renderMenu('azioni');
+    var card = document.getElementById('q-menu-card');
+    B.openDialog(document.getElementById('q-menu'), card, card.querySelector('[data-mact]'));
+  }
+  function renderMenu(modo) {
+    var card = document.getElementById('q-menu-card');
+    if (!card || !menuIt) return;
+    var s = getSurah(menuIt.n);
+    var h = '<div class="q-menu-head">' + thumbHtml(s) + '<div><h2 id="q-menu-title">' + s.nome + ' <span class="q-ar">' + s.ar + '</span></h2>' +
+      '<p class="sub">' + s.trad + ' · con ' + D.reciters[menuIt.voice].nome + '</p></div></div>';
+    if (modo === 'azioni') {
+      h += '<div class="q-menu-actions">' +
+        '<button type="button" class="btn secondary" data-mact="dopo">Riproduci dopo</button>' +
+        '<button type="button" class="btn secondary" data-mact="fondo">Aggiungi in fondo alla coda</button>' +
+        '<button type="button" class="btn secondary" data-mact="liste" aria-haspopup="true">Aggiungi a una lista…</button>' +
+        '<button type="button" class="btn q-menu-close" data-mact="chiudi">Annulla</button>' +
+      '</div>';
+    } else {
+      h += '<h3>Aggiungi a una lista</h3><div class="q-menu-actions">' +
+        liste.map(function (l) {
+          return '<button type="button" class="btn secondary" data-mact="in-lista" data-id="' + l.id + '">' + esc(l.nome) + ' <small class="tenue">· ' + l.items.length + '</small></button>';
+        }).join('') +
+        '</div>' +
+        '<form class="name-form q-menu-new" data-mform="nuova">' +
+          '<label class="visually-hidden" for="q-menu-nuova">Nome della nuova lista</label>' +
+          '<input type="text" id="q-menu-nuova" maxlength="40" placeholder="' + (liste.length ? 'Oppure una lista nuova' : 'Nome della nuova lista') + '">' +
+          '<button class="btn" type="submit">Crea</button>' +
+        '</form>' +
+        '<div class="sheet-actions"><button type="button" class="btn secondary" data-mact="indietro">Indietro</button></div>';
+    }
+    card.innerHTML = h;
+  }
+  function menuAction(act, id) {
+    var s = getSurah(menuIt.n);
+    if (act === 'chiudi') { B.closeDialog(); return; }
+    if (act === 'liste') { renderMenu('liste'); var f = document.querySelector('#q-menu-card [data-mact="in-lista"]') || document.getElementById('q-menu-nuova'); if (f) f.focus(); return; }
+    if (act === 'indietro') { renderMenu('azioni'); document.querySelector('#q-menu-card [data-mact="liste"]').focus(); return; }
+    if (act === 'dopo') { if (codaAdd(menuIt, true)) toast(s.nome + ': la prossima in coda.'); B.closeDialog(); return; }
+    if (act === 'fondo') { if (codaAdd(menuIt, false)) toast(s.nome + ': in fondo alla coda (' + codaInArrivo() + ' in arrivo).'); B.closeDialog(); return; }
+    if (act === 'in-lista') {
+      var l = trovaLista(id);
+      if (!l) return;
+      if (l.items.length >= MAX_ITEMS) { toast('La lista è piena.'); return; }
+      l.items.push({ n: menuIt.n, voice: menuIt.voice });
+      saveListe();
+      renderCodaSheet();
+      toast(s.nome + ': aggiunta a «' + l.nome + '».');
+      B.closeDialog();
+    }
+  }
+
+  /* ---------- finestra «Coda e liste» ---------- */
+  var listeAperte = {};
+  function openCoda() {
+    var sheet = document.getElementById('q-coda'), card = document.getElementById('q-coda-card');
+    if (!sheet || !card || !B.openDialog) return;
+    sheet.hidden = false;      // renderCodaSheet disegna solo a finestra aperta
+    renderCodaSheet();
+    B.openDialog(sheet, card, card);
+  }
+  function itemHtml(it, i, lista) {
+    var s = getSurah(it.n), ok = okItem(it), cls = '', stato = '';
+    var L = lista ? lista.items.length : coda.items.length;
+    var idA = lista ? ' data-id="' + lista.id + '"' : '';
+    var pre = lista ? 'l-' : '';
+    if (!ok) { cls = ' esclusa'; stato = ' · esclusa'; }
+    else if (!lista && i === coda.pos && inAscolto(it)) { cls = ' ora'; stato = ' · in ascolto'; }
+    else if (!lista && i <= coda.pos) { cls = ' fatta'; stato = ' · già ascoltata'; }
+    var arrivo = lista || i > coda.pos;
+    return '<li class="q-ci' + cls + '">' +
+      '<button type="button" class="q-ci-main" data-act="' + pre + 'suona" data-i="' + i + '"' + idA + (ok ? '' : ' disabled') + ' aria-label="Ascolta ' + s.nome + ' con ' + voceCorta(it.voice) + '">' +
+        thumbHtml(s) + '<span><strong>' + s.nome + '</strong><small>con ' + voceCorta(it.voice) + stato + '</small></span></button>' +
+      (arrivo
+        ? '<button type="button" class="q-ci-btn" data-act="' + pre + 'su" data-i="' + i + '"' + idA + ((lista ? i === 0 : i <= coda.pos + 1) ? ' disabled' : '') + ' aria-label="Sposta su: ' + s.nome + '">' + ICON_UP + '</button>' +
+          '<button type="button" class="q-ci-btn" data-act="' + pre + 'giu" data-i="' + i + '"' + idA + (i >= L - 1 ? ' disabled' : '') + ' aria-label="Sposta giù: ' + s.nome + '">' + ICON_DOWN + '</button>'
+        : '') +
+      '<button type="button" class="q-ci-btn" data-act="' + pre + 'togli" data-i="' + i + '"' + idA + ' aria-label="Togli ' + (lista ? 'dalla lista' : 'dalla coda') + ': ' + s.nome + '">' + ICON_X + '</button>' +
+    '</li>';
+  }
+  function renderCodaSheet(focusSel) {
+    var sheet = document.getElementById('q-coda'), card = document.getElementById('q-coda-card');
+    if (!sheet || !card || sheet.hidden) return;
+    // dopo il ridisegno: stesso focus e stesso testo nei campi (si ridisegna anche mentre suona)
+    var a = document.activeElement, valori = {};
+    if (!focusSel && a && card.contains(a) && a !== card) {
+      if (a.id) focusSel = '#' + a.id;
+      else if (a.getAttribute('data-act')) focusSel = '[data-act="' + a.getAttribute('data-act') + '"]' + (a.getAttribute('data-i') ? '[data-i="' + a.getAttribute('data-i') + '"]' : '') + (a.getAttribute('data-id') ? '[data-id="' + a.getAttribute('data-id') + '"]' : '');
+    }
+    card.querySelectorAll('input[type="text"]').forEach(function (x) { if (x.id) valori[x.id] = x.value; });
+    var stato = document.getElementById('q-coda-stato');
+    var statoTxt = stato ? stato.textContent : '';
+
+    var h = '<h2 id="q-coda-title">Coda</h2>' +
+      '<p class="sub">Le Sure in coda partono una dopo l’altra, ognuna con la sua voce, prima di «Alla fine». Si aggiungono con il tasto ⋯ accanto a ogni Sura.</p>';
+    if (coda.items.length) {
+      h += '<ol class="q-coda-list" id="q-coda-list">' + coda.items.map(function (it, i) { return itemHtml(it, i, null); }).join('') + '</ol>';
+    } else {
+      h += '<p class="hint">La coda è vuota.</p>';
+    }
+    h += '<label class="check"><input type="checkbox" id="q-coda-ripeti"' + (coda.ripeti ? ' checked' : '') + '><span>Ripeti la coda<small class="tenue" style="display:block">Finita l’ultima Sura, ricomincia dalla prima.</small></span></label>';
+    if (coda.items.length) {
+      h += '<div class="sheet-actions">' +
+        (coda.pos >= 0 ? '<button type="button" class="btn secondary piccolo" data-act="togli-fatte">Togli le già ascoltate</button>' : '') +
+        '<button type="button" class="btn secondary piccolo" data-act="svuota">Svuota la coda</button></div>' +
+        '<form class="name-form q-save-form" data-form="salva">' +
+          '<label class="visually-hidden" for="q-coda-nome">Nome della lista</label>' +
+          '<input type="text" id="q-coda-nome" maxlength="40" placeholder="Nome della lista">' +
+          '<button class="btn secondary" type="submit">Salva come lista</button>' +
+        '</form>';
+    }
+    h += '<h2 class="q-liste-title">Le tue liste</h2>';
+    if (!liste.length) h += '<p class="hint">Ancora nessuna lista. Salva la coda come lista, oppure usa ⋯ → «Aggiungi a una lista».</p>';
+    liste.forEach(function (l) {
+      var nOk = l.items.filter(okItem).length;
+      h += '<details class="q-lista" data-lista="' + l.id + '"' + (listeAperte[l.id] ? ' open' : '') + '>' +
+        '<summary><span>' + esc(l.nome) + '</span> <small class="tenue">' + l.items.length + (l.items.length === 1 ? ' Sura' : ' Sure') + '</small></summary>' +
+        '<div class="sheet-actions">' +
+          '<button type="button" class="btn piccolo" data-act="l-ascolta" data-id="' + l.id + '"' + (nOk ? '' : ' disabled') + '>Ascolta</button>' +
+          '<button type="button" class="btn secondary piccolo" data-act="l-coda" data-id="' + l.id + '"' + (nOk ? '' : ' disabled') + '>Metti in coda</button>' +
+        '</div>' +
+        (l.items.length ? '<ol class="q-coda-list">' + l.items.map(function (it, i) { return itemHtml(it, i, l); }).join('') + '</ol>' : '<p class="hint">La lista è vuota.</p>') +
+        '<form class="name-form" data-form="rinomina" data-id="' + l.id + '">' +
+          '<label class="visually-hidden" for="q-rin-' + l.id + '">Nuovo nome per ' + esc(l.nome) + '</label>' +
+          '<input type="text" id="q-rin-' + l.id + '" maxlength="40" placeholder="Nuovo nome">' +
+          '<button class="btn secondary piccolo" type="submit">Rinomina</button>' +
+        '</form>' +
+        '<button type="button" class="btn secondary piccolo q-danger" data-act="l-elimina" data-id="' + l.id + '">Elimina la lista</button>' +
+      '</details>';
+    });
+    h += '<p class="hint" id="q-coda-stato" role="status" aria-live="polite"></p>' +
+      '<div class="sheet-actions"><button type="button" class="btn" data-act="chiudi">Chiudi</button></div>';
+
+    card.innerHTML = h;
+    for (var k in valori) { var x = document.getElementById(k); if (x) x.value = valori[k]; }
+    var st = document.getElementById('q-coda-stato'); if (st) st.textContent = statoTxt;
+    if (focusSel) { var f = card.querySelector(focusSel); if (f && !f.disabled) f.focus(); else card.focus(); }
+  }
+  function codaStato(msg) { var st = document.getElementById('q-coda-stato'); if (st) st.textContent = msg; }
+
+  function codaAction(act, i, id) {
+    var l = id ? trovaLista(id) : null, t, s;
+    switch (act) {
+      case 'chiudi': B.closeDialog(); return;
+      case 'suona': playCodaAt(i); return;
+      case 'su': if (codaMove(i, -1)) renderCodaSheet('[data-act="su"][data-i="' + (i - 1) + '"]'); return;
+      case 'giu': if (codaMove(i, 1)) renderCodaSheet('[data-act="giu"][data-i="' + (i + 1) + '"]'); return;
+      case 'togli':
+        s = getSurah(coda.items[i].n).nome;
+        codaRemove(i);
+        codaStato(s + ' tolta dalla coda.');
+        renderCodaSheet('[data-act="togli"][data-i="' + Math.min(i, coda.items.length - 1) + '"]');
+        return;
+      case 'togli-fatte': codaTogliAscoltate(); codaStato('Tolte le Sure già ascoltate.'); renderCodaSheet('#q-coda-ripeti'); return;
+      case 'svuota': codaSvuota(); codaStato('Coda svuotata.'); renderCodaSheet('#q-coda-ripeti'); return;
+      case 'l-ascolta': listaPlay(id, 0); return;
+      case 'l-suona': listaPlay(id, i); return;
+      case 'l-coda':
+        if (!l) return;
+        t = 0;
+        l.items.forEach(function (x) { if (coda.items.length < MAX_ITEMS) { coda.items.push({ n: x.n, voice: x.voice }); t++; } });
+        codaChanged();
+        codaStato('«' + l.nome + '» in coda: ' + t + (t === 1 ? ' Sura aggiunta.' : ' Sure aggiunte.'));
+        return;
+      case 'l-su': case 'l-giu':
+        if (!l) return;
+        var j = i + (act === 'l-su' ? -1 : 1);
+        if (j < 0 || j >= l.items.length) return;
+        t = l.items[i]; l.items[i] = l.items[j]; l.items[j] = t;
+        saveListe();
+        renderCodaSheet('[data-act="' + act + '"][data-i="' + j + '"][data-id="' + id + '"]');
+        return;
+      case 'l-togli':
+        if (!l) return;
+        s = getSurah(l.items[i].n).nome;
+        l.items.splice(i, 1);
+        saveListe();
+        codaStato(s + ' tolta da «' + l.nome + '».');
+        renderCodaSheet(l.items.length ? '[data-act="l-togli"][data-i="' + Math.min(i, l.items.length - 1) + '"][data-id="' + id + '"]' : '[data-act="l-ascolta"][data-id="' + id + '"]');
+        return;
+      case 'l-elimina':
+        if (!l || !confirm('Eliminare la lista «' + l.nome + '»? Le Sure restano nell’elenco.')) return;
+        liste = liste.filter(function (x) { return x.id !== id; });
+        delete listeAperte[id];
+        saveListe();
+        codaStato('Lista «' + l.nome + '» eliminata.');
+        renderCodaSheet('#q-coda-ripeti');
+        return;
+    }
+  }
+
+  function setupSheets() {
+    var menu = document.getElementById('q-menu'), mcard = document.getElementById('q-menu-card');
+    var cs = document.getElementById('q-coda'), ccard = document.getElementById('q-coda-card');
+    if (menu && mcard && !menu._pronto) {
+      menu._pronto = true;
+      menu.addEventListener('click', function (e) { if (e.target === menu && B.closeDialog) B.closeDialog(); });
+      mcard.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-mact]');
+        if (b && mcard.contains(b)) menuAction(b.getAttribute('data-mact'), b.getAttribute('data-id'));
+      });
+      mcard.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!menuIt) return;
+        var nome = cleanNome(document.getElementById('q-menu-nuova').value);
+        var l = listaNuova(nome, [menuIt]);
+        if (!l) return;
+        renderCodaSheet();
+        toast(getSurah(menuIt.n).nome + ': nella nuova lista «' + l.nome + '».');
+        B.closeDialog();
+      });
+    }
+    if (cs && ccard && !cs._pronto) {
+      cs._pronto = true;
+      cs.addEventListener('click', function (e) { if (e.target === cs && B.closeDialog) B.closeDialog(); });
+      ccard.addEventListener('click', function (e) {
+        var b = e.target.closest('[data-act]');
+        if (!b || !ccard.contains(b) || b.disabled) return;
+        codaAction(b.getAttribute('data-act'), parseInt(b.getAttribute('data-i'), 10), b.getAttribute('data-id'));
+      });
+      ccard.addEventListener('change', function (e) {
+        if (e.target.id !== 'q-coda-ripeti') return;
+        coda.ripeti = e.target.checked;
+        codaChanged();
+      });
+      ccard.addEventListener('toggle', function (e) {
+        var d = e.target;
+        if (d.tagName === 'DETAILS' && d.getAttribute('data-lista')) listeAperte[d.getAttribute('data-lista')] = d.open;
+      }, true);
+      ccard.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var f = e.target, tipo = f.getAttribute('data-form'), inp = f.querySelector('input'), nome = cleanNome(inp && inp.value);
+        if (tipo === 'salva') {
+          var l = listaNuova(nome, coda.items);
+          if (!l) return;
+          if (inp) inp.value = '';
+          listeAperte[l.id] = true;
+          codaStato('Coda salvata come «' + l.nome + '».');
+          renderCodaSheet('[data-act="l-ascolta"][data-id="' + l.id + '"]');
+        } else if (tipo === 'rinomina') {
+          var x = trovaLista(f.getAttribute('data-id'));
+          if (!x || !nome) return;
+          x.nome = nome;
+          saveListe();
+          if (inp) inp.value = '';
+          codaStato('Lista rinominata: «' + nome + '».');
+          renderCodaSheet('[data-act="l-ascolta"][data-id="' + x.id + '"]');
+        }
+      });
+    }
+  }
+
+  /* ---------- Sure escluse («Su Sakina») ---------- */
+  var esclVoce = 'tutte', esclFiltro = '';
+  function renderEscl() {
+    var box = document.getElementById('q-escl');
+    if (!box) return;
+    box.innerHTML =
+      '<p>Le Sure che non vuoi sentire con una certa voce. Con quella voce spariscono dall’elenco, dalla coda e dall’ascolto automatico; nelle proposte del giorno compaiono con un’altra voce. Puoi rimetterle quando vuoi.</p>' +
+      '<label class="q-escl-voce">Voce<select id="q-escl-voce">' +
+        '<option value="tutte"' + (esclVoce === 'tutte' ? ' selected' : '') + '>Tutte le voci</option>' +
+        RECITERS.map(function (rid) { return '<option value="' + rid + '"' + (esclVoce === rid ? ' selected' : '') + '>' + D.reciters[rid].nome + '</option>'; }).join('') +
+      '</select></label>' +
+      '<p class="hint" id="q-escl-stato" role="status" aria-live="polite"></p>' +
+      '<div class="q-escl-tools">' +
+        '<input type="search" id="q-escl-cerca" placeholder="Cerca una Sura" aria-label="Cerca tra le Sure" autocomplete="off">' +
+        '<button type="button" class="btn secondary piccolo" id="q-escl-reset">Rimetti tutte</button>' +
+      '</div>' +
+      '<div class="q-escl-list" id="q-escl-list" role="group" aria-label="Sure da escludere"></div>';
+    var sel = document.getElementById('q-escl-voce');
+    sel.addEventListener('change', function () { esclVoce = sel.value; renderEsclList(); });
+    var cerca = document.getElementById('q-escl-cerca');
+    cerca.value = esclFiltro;
+    cerca.addEventListener('input', function () { esclFiltro = cerca.value.toLowerCase().trim(); renderEsclList(); });
+    document.getElementById('q-escl-reset').addEventListener('click', function () {
+      delete escluse[esclVoce];
+      esclMsg = esclVoce === 'tutte' ? 'Rimesse le Sure escluse per tutte le voci.' : 'Rimesse tutte le Sure di ' + D.reciters[esclVoce].nome + '.';
+      applyExclChange();
+    });
+    document.getElementById('q-escl-list').addEventListener('change', function (e) {
+      var cb = e.target, n = parseInt(cb.getAttribute('data-n'), 10);
+      if (!n) return;
+      var cand = JSON.parse(JSON.stringify(escluse));
+      var l = cand[esclVoce] || [];
+      if (cb.checked) { if (l.indexOf(n) < 0) l.push(n); } else l = l.filter(function (x) { return x !== n; });
+      l = cleanNums(l);
+      if (l.length) cand[esclVoce] = l; else delete cand[esclVoce];
+      var vuota = voceSenzaSure(cand);
+      if (vuota) { cb.checked = !cb.checked; var st0 = document.getElementById('q-escl-stato'); if (st0) st0.textContent = 'Non si può: ' + D.reciters[vuota].nome + ' resterebbe senza Sure.'; return; }
+      escluse = cand;
+      esclMsg = getSurah(n).nome + (cb.checked ? ' esclusa' : ' rimessa') + (esclVoce === 'tutte' ? ' per tutte le voci.' : ' con ' + D.reciters[esclVoce].nome + '.');
+      applyExclChange();
+    });
+    renderEsclList();
+  }
+  var esclMsg = '';   // ultima azione, detta prima del riepilogo
+  function renderEsclList() {
+    var list = document.getElementById('q-escl-list');
+    if (!list) return;
+    var rid = esclVoce, tutte = {}, mie = {};
+    (escluse.tutte || []).forEach(function (n) { tutte[n] = true; });
+    (escluse[rid] || []).forEach(function (n) { mie[n] = true; });
+    var base = rid === 'tutte' ? D.surahs : baseSurahs(rid), f = esclFiltro;
+    var vis = base.filter(function (s) { return !f || String(s.n) === f || s.nome.toLowerCase().indexOf(f) >= 0 || s.trad.toLowerCase().indexOf(f) >= 0; });
+    var focusN = document.activeElement && list.contains(document.activeElement) ? document.activeElement.getAttribute('data-n') : null;
+    list.innerHTML = vis.length ? vis.map(function (s) {
+      var perTutte = rid !== 'tutte' && tutte[s.n];
+      return '<label class="check q-escl-item"><input type="checkbox" data-n="' + s.n + '"' + ((mie[s.n] || perTutte) ? ' checked' : '') + (perTutte ? ' disabled' : '') + '>' +
+        '<span>' + s.n + '. ' + s.nome + '<small class="tenue">' + s.trad + (perTutte ? ' · esclusa per tutte le voci' : '') + '</small></span></label>';
+    }).join('') : '<p class="hint">Nessuna Sura trovata.</p>';
+    if (focusN) { var fe = list.querySelector('[data-n="' + focusN + '"]'); if (fe) fe.focus(); }
+    var n = (escluse[rid] || []).length, nt = (escluse.tutte || []).length;
+    var reset = document.getElementById('q-escl-reset');
+    if (reset) reset.disabled = !n;
+    var riepilogo = rid === 'tutte'
+      ? (n ? (n === 1 ? 'Una Sura esclusa' : n + ' Sure escluse') + ' per tutte le voci.' : 'Nessuna Sura esclusa per tutte le voci.')
+      : (n ? (n === 1 ? 'Una Sura esclusa' : n + ' Sure escluse') + ' con ' + D.reciters[rid].nome : 'Nessuna Sura esclusa solo con ' + D.reciters[rid].nome) +
+        (nt ? ' (più ' + nt + ' per tutte le voci).' : '.');
+    var st = document.getElementById('q-escl-stato');
+    if (st) st.textContent = esclMsg ? esclMsg + ' ' + riepilogo : riepilogo;
+    esclMsg = '';
+  }
+  function applyExclChange() {
+    try {
+      if (Object.keys(escluse).length) localStorage.setItem(ESCL_KEY, JSON.stringify(escluse));
+      else localStorage.removeItem(ESCL_KEY);
+    } catch (e) {}
+    rebuildExcl();
+    if (!isAllowed(state.reciter, state.surah)) {
+      if (state.playing || state.loading) resetMedia();     // non si continua ad ascoltare una Sura appena esclusa
+      state.surah = neighbour(state.surah, 1) || neighbour(state.surah, -1) || reciterSurahs(state.reciter)[0].n;
+      saveSettings();
+    }
+    renderPlayerCard();
+    renderMoment(true);
+    renderRecommended();
+    renderAllSurahs();
+    renderEsclList();
+  }
+
   // Esporta interfaccia pubblica
   B.QuranPlayer = {
+    _coda: function () { return JSON.parse(JSON.stringify(coda)); },
+    _liste: function () { return JSON.parse(JSON.stringify(liste)); },
+    _escluse: function () { return JSON.parse(JSON.stringify(escluse)); },
+    _debugSeekEnd: function (sec) { if (audioEl.duration) audioEl.currentTime = Math.max(0, audioEl.duration - sec); },
+    refreshEscl: renderEscl,
     _debugSleep: function (sec) { sleepClear(); state.sleepMin = 1; state.sleepEnd = Date.now() + sec * 1000; sleepIv = setInterval(sleepTick, 1000); sleepLabel(); },
     _debugState: function () { return { surah: state.surah, playing: state.playing, loading: state.loading, scrub: state.scrub, endMode: state.endMode, fading: fading, sleepMin: state.sleepMin, paused: audioEl.paused, src: (audioEl.getAttribute('src') || '').slice(-7), reciter: state.reciter, time: audioEl.currentTime }; },
     _debug: function () { return { audioEl: audioEl === elRouted ? 'routed' : 'plain', routedFailed: routedFailed, master: bgMaster(), gain: levelDb(state.reciter, state.surah) }; },
     refreshMoment: function () { renderMoment(false); },
     init: function () {
       renderView();
+      setupSheets();
+      renderEscl();
       migrateOldCache().then(updateCacheIndex);
     },
     playSurah: playSurah,

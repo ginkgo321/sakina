@@ -2,7 +2,7 @@
 
 Sito (PWA) in italiano per ascoltare le recitazioni coraniche (tradizione Hafs): le 114 Sure in cinque voci, con sottofondo di natura, timer di spegnimento e ascolto senza rete delle Sure salvate. Solo HTML, CSS e JavaScript, senza dipendenze e senza build. Non raccoglie dati: nome, voce, Sura e impostazioni restano nel telefono (`localStorage` e Cache del browser).
 
-*Sakina* (سكينة) è la quiete. Le recitazioni nascono dentro un'altra app dello stesso autore (Bonaccia) e l'8 novembre 2026 sono state separate in questa.
+*Sakina* (سكينة) è la quiete.
 
 ## Provarla sul computer
 
@@ -30,13 +30,15 @@ Bonaccia vive sullo stesso indirizzo (`ginkgo321.github.io`), quindi le due app 
 - **Pareggia il volume**: tutte le voci e le Sure a −18 LUFS (`js/recitazioni_livelli.js`, generato da `tools/misura_recitazioni.py`).
 - **Salva sul telefono** (non oltre 100 MB) per ascoltare senza rete.
 - **Saluto** per nome, secondo l'ora; il nome si chiede la prima volta e si cambia solo da «Su Sakina».
-- **Proposte per il momento della giornata** (mattino, pomeriggio, sera, notte) in cima all'elenco; se una Sura non esiste con la voce scelta (voce con selezione protetta, oggi nessuna) compare «con Al-Minshawi» e parte con quella voce.
+- **Proposte per il momento della giornata** (mattino, pomeriggio, sera, notte) in cima all'elenco; se una Sura non c'è con la voce scelta (esclusa dall'utente o fuori da una selezione protetta) compare con un'altra voce, di preferenza «con Al-Minshawi», e parte con quella.
 - **Ricorrenze**: il venerdì (da giovedì al tramonto) Al-Kahf e Al-Jumu'ah; in Ramadan, nelle sue notti dispari delle ultime dieci e nelle due feste (con il saluto «ʿĪd mubārak») le Sure di quei giorni. Il tramonto è un orario indicativo per l'Italia; le date lunari le calcola il telefono (calendario Umm al-Qura) e possono differire di un giorno.
 - **Copertina e mini descrizione** di ogni Sura (`img/sure/`, `js/sure_info.js`).
+- **Coda e liste di riproduzione**, come su Spotify: con ⋯ accanto a ogni Sura la si mette in coda («Riproduci dopo» o in fondo) o in una lista. Ogni elemento ricorda la sua voce. A fine Sura, e con «successiva», la coda ha la precedenza; finita la coda vale «Alla fine». «Ripeti la coda»; il timer ferma tutto. Le liste si salvano dalla coda, si rinominano, si riordinano e si ascoltano.
+- **Sure escluse** (in «Su Sakina»): per una voce o per tutte, le Sure che l'utente non vuole sentire spariscono con quella voce da elenco, ricerca, consigliate, precedente/successiva, fine Sura e coda; nelle proposte del giorno compaiono con un'altra voce. Si rimettono quando si vuole; una voce non resta mai senza Sure.
 
 ## Immagini e descrizioni delle Sure
 
-`tools/immagini/genera_dati.py` contiene, per ogni Sura, la mini descrizione, il luogo della rivelazione (dove l'elenco tradizionale è condiviso) e il soggetto dell'immagine; scrive `js/sure_info.js` e `tools/immagini/soggetti.json`. Le copertine sono illustrazioni originali (acquerello notturno con foglia d'oro, simbolo dentro un cerchio con anello dorato, colori diversi per tema; mai persone, volti o scritte) generate con Antigravity e, a quota finita, con la chiave Google Cloud (`tools/immagini/lotti.py`, `genera_gcloud.py`) e preparate con `tools/immagini/prepara.py` (WebP 480 px e miniature 104 px). Dettagli e regole in `AGENTS.md`.
+`tools/immagini/genera_dati.py` contiene, per ogni Sura, la mini descrizione, il luogo della rivelazione (dove l'elenco tradizionale è condiviso) e il soggetto dell'immagine; scrive `js/sure_info.js` e `tools/immagini/soggetti.json`. Le copertine sono illustrazioni originali (acquerello notturno con foglia d'oro; mai persone, volti o scritte). Come si generano e si preparano: `AGENTS.md`.
 
 ## File
 

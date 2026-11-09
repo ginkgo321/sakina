@@ -35,7 +35,3 @@ Le registrazioni della natura (pioggia, mare, fiume) stanno a circa −19,5 LUFS
 | Vento | −16,9 |
 
 Se cambi i guadagni del motore o i sottofondi, ritara `BG_REF` e rilancia `lettore_barra_timer.mjs`, `voci_e_protezione.mjs` e `lettore_tocchi_rapidi.mjs`.
-
-## Selezione protetta (campo `surahs`)
-
-Fino al 9 novembre 2026 Mishary Al-Afasy aveva solo 11 Sure; ora ha tutte le 114, misurate e pareggiate come le altre voci. Il meccanismo resta nel codice: se un recitatore ha il campo `surahs`, solo quelle Sure esistono con quella voce. `voci_e_protezione.mjs` lo prova con una selezione simulata (elenco, ricerca, riproduzione forzata, precedente/successiva, fine Sura).

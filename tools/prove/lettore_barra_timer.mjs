@@ -5,7 +5,7 @@ import { mkdirSync } from 'node:fs';
 const SP = os.tmpdir().split(String.fromCharCode(92)).join('/') + '/sakina-prove/';
 mkdirSync(SP, { recursive: true });
 const chrome = spawn('C:/Program Files/Google/Chrome/Application/chrome.exe',
-  ['--headless=new', '--disable-gpu', '--autoplay-policy=no-user-gesture-required', '--remote-debugging-port=9390', '--user-data-dir=' + SP + 'prof_lettore_barra_timer', 'about:blank'], { stdio: 'ignore' });
+  ['--headless=new', '--disable-gpu', '--autoplay-policy=no-user-gesture-required', '--remote-debugging-port=9390', '--user-data-dir=' + SP + 'prof_lettore_barra_timer_' + Date.now(), 'about:blank'], { stdio: 'ignore' });
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 let targets;
 for (let i = 0; i < 40; i++) {

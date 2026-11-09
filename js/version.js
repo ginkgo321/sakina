@@ -1,3 +1,3 @@
 /* Sakina – versione del sito. Questo file lo riscrive tools/aggiorna.py: non modificarlo a mano. */
 window.Sakina = window.Sakina || {};
-window.Sakina.Version = { v: '1.5', date: '2026-11-09 07:43' };
+window.Sakina.Version = { v: '1.6', date: '2026-11-09 07:51' };

@@ -492,6 +492,13 @@
     var box = document.getElementById('q-player-box');
     if (!dock || !box) return;
     document.getElementById('q-dock-bwd').addEventListener('click', function () { skip(-15); });
+    /* toccando il nome della Sura nella barra fissa si torna in cima, al lettore grande */
+    document.getElementById('q-dock-top').addEventListener('click', function () {
+      var calmo = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+      try { window.scrollTo({ top: 0, behavior: calmo ? 'auto' : 'smooth' }); } catch (e) { window.scrollTo(0, 0); }
+      var play = document.getElementById('q-play-toggle');
+      if (play) { try { play.focus({ preventScroll: true }); } catch (e) {} }   // chi usa la tastiera ritrova il tasto play
+    });
     document.getElementById('q-dock-fwd').addEventListener('click', function () { skip(15); });
     document.getElementById('q-dock-play').addEventListener('click', togglePlay);
     bindScrub(document.getElementById('q-dock-prog'));
@@ -693,7 +700,7 @@
       '<div class="q-dock" id="q-dock" role="group" aria-label="Comandi di ascolto">' +
         '<input type="range" class="q-range q-dock-prog" id="q-dock-prog" min="0" max="100" step="0.1" value="0" aria-label="Avanzamento audio" disabled>' +
         '<div class="q-dock-row">' +
-          '<div class="q-dock-info"><strong id="q-dock-title"></strong><small id="q-dock-sub"></small></div>' +
+          '<button type="button" class="q-dock-info" id="q-dock-top" aria-label="Torna su, al lettore"><strong id="q-dock-title"></strong><small id="q-dock-sub"></small></button>' +
           '<button type="button" class="q-dock-btn" id="q-dock-bwd" aria-label="Indietro 15 secondi">' + ICON_BWD + '</button>' +
           '<button type="button" class="q-dock-btn q-dock-main" id="q-dock-play" aria-label="Avvia"></button>' +
           '<button type="button" class="q-dock-btn" id="q-dock-fwd" aria-label="Avanti 15 secondi">' + ICON_FWD + '</button>' +

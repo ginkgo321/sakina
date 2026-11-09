@@ -131,7 +131,7 @@
   document.addEventListener('error', function (e) {
     var t = e.target;
     if (!t || t.tagName !== 'IMG') return;
-    if (t.classList.contains('q-thumb')) t.style.display = 'none';
+    if (t.classList.contains('q-thumb') || t.classList.contains('q-dock-thumb')) t.style.display = 'none';
     else if (t.classList.contains('q-cover-img')) { var f = t.closest('.q-cover'); if (f) f.hidden = true; }
   }, true);
 
@@ -482,6 +482,9 @@
     var sub = document.getElementById('q-dock-sub');
     if (t) t.textContent = s.n + '. ' + s.nome;
     if (sub) sub.textContent = r.nome;
+    var im = document.getElementById('q-dock-img');
+    var src = 'img/sure/t/' + s.pad + '.webp';   // la stessa miniatura dell'elenco (104 px), già in memoria
+    if (im && im.getAttribute('src') !== src) { im.style.display = ''; im.setAttribute('src', src); }
     syncTransport();
     updateProgress();
   }
@@ -700,7 +703,10 @@
       '<div class="q-dock" id="q-dock" role="group" aria-label="Comandi di ascolto">' +
         '<input type="range" class="q-range q-dock-prog" id="q-dock-prog" min="0" max="100" step="0.1" value="0" aria-label="Avanzamento audio" disabled>' +
         '<div class="q-dock-row">' +
-          '<button type="button" class="q-dock-info" id="q-dock-top" aria-label="Torna su, al lettore"><strong id="q-dock-title"></strong><small id="q-dock-sub"></small></button>' +
+          '<button type="button" class="q-dock-info" id="q-dock-top" aria-label="Torna su, al lettore">' +
+            '<img class="q-dock-thumb" id="q-dock-img" alt="" width="44" height="44" decoding="async">' +
+            '<span class="q-dock-text"><strong id="q-dock-title"></strong><small id="q-dock-sub"></small></span>' +
+          '</button>' +
           '<button type="button" class="q-dock-btn" id="q-dock-bwd" aria-label="Indietro 15 secondi">' + ICON_BWD + '</button>' +
           '<button type="button" class="q-dock-btn q-dock-main" id="q-dock-play" aria-label="Avvia"></button>' +
           '<button type="button" class="q-dock-btn" id="q-dock-fwd" aria-label="Avanti 15 secondi">' + ICON_FWD + '</button>' +

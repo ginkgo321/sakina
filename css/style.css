@@ -245,11 +245,14 @@ input[type="range"]::-moz-range-thumb { width: 20px; height: 20px; border-radius
 [data-theme="night"] .q-dock-prog { --rt: rgba(0,0,0,.3); }
 .q-dock-row { display: flex; align-items: center; gap: 2px; }
 .q-dock-info {
-  flex: 1; min-width: 0; display: flex; flex-direction: column; line-height: 1.2; padding: 6px 4px 6px 8px; min-height: 48px; justify-content: center;
+  flex: 1; min-width: 0; display: flex; align-items: center; gap: 10px; line-height: 1.2; padding: 4px 4px 4px 6px; min-height: 52px;
   background: none; border: 0; color: inherit; font: inherit; text-align: left; cursor: pointer; border-radius: 14px;
 }
 .q-dock-info:active { background: rgba(255,255,255,.12); }
 [data-theme="night"] .q-dock-info:active { background: rgba(0,0,0,.15); }
+.q-dock-thumb { flex: none; width: 44px; height: 44px; border-radius: 10px; object-fit: cover; background: rgba(255,255,255,.15); box-shadow: 0 0 0 1px rgba(255,255,255,.25); }
+[data-theme="night"] .q-dock-thumb { box-shadow: 0 0 0 1px rgba(0,0,0,.25); }
+.q-dock-text { flex: 1; min-width: 0; display: flex; flex-direction: column; }
 .q-dock-info strong { font-size: .98rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .q-dock-info small { opacity: .85; font-size: .8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .q-dock-btn { width: 48px; height: 48px; border-radius: 50%; border: 0; background: none; color: inherit; display: grid; place-items: center; cursor: pointer; flex: none; }

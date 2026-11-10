@@ -7,12 +7,11 @@
 - Prova `tools/prove/trasferimento.mjs`: 57 ok (server 8093 vecchio e 8094 nuovo). Con `dati_corrotti`, `saluto_e_immagini`, `migrazione_da_bonaccia` e `schermi` tutto ok, su tutti e due i siti.
 
 ## Da fare: Fase B (online, ogni passo solo con l'ok dell'utente)
-1. **Prima il sito nuovo**: creare `dilfal/sakina.150796.xyz`, push, GitHub Pages con dominio `sakina.150796.xyz`.
-2. DNS su gen.xyz (il registrar di 150796.xyz): record `CNAME` `sakina` → `dilfal.github.io`. Non toccare i record della radice di 150796.xyz. Verificare il dominio su GitHub (Verified domains) e attivare HTTPS.
-3. Provare il sito nuovo da un telefono (apertura, installazione, Sure in streaming).
-4. **Solo dopo**: unire `trasferimento` in `main` e push del sito vecchio (la sezione punta al nuovo indirizzo, che deve già rispondere).
-5. Provare il passaggio con un telefono vero (link e file), poi un avviso piccolo e chiudibile nel sito vecchio.
-6. **Mai un `CNAME` nel sito vecchio.** Spegnerlo solo dopo molti mesi, con un avviso più evidente.
+1. ~~Sito nuovo~~ **fatto il 10/11/2026**: `https://sakina.150796.xyz/` online (repo `dilfal/sakina.150796.xyz`, DNS su **Cloudflare**, dominio verificato, HTTPS attivo).
+2. Provare il sito nuovo da un telefono vero (apertura, installazione, Sure in streaming, un ascolto). **← prossimo passo**
+3. **Solo dopo**: unire `trasferimento` in `main` e push del sito vecchio (la sezione punta al nuovo indirizzo, che deve già rispondere).
+4. Provare il passaggio con un telefono vero (link e file), poi un avviso piccolo e chiudibile nel sito vecchio.
+5. **Mai un `CNAME` nel sito vecchio.** Spegnerlo solo dopo molti mesi, con un avviso più evidente.
 - Poi Bonaccia, con lo stesso metodo (per lei solo file: i dati sono più personali e il link finirebbe nella cronologia).
 
 ## Da fare (resto)
